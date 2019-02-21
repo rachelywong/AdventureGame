@@ -2,7 +2,7 @@
 *code for maze 
 * while maze = false 
 
-*	print code #4 
+*	print clue #4 
 *	inventory += 1 \
 *	maze = true 
 *
