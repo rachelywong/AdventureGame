@@ -1,3 +1,10 @@
-**/ Location A - maze
-*
 /*
+*code for maze 
+* while maze = false 
+
+*	print code #4 
+*	inventory += 1 \
+*	maze = true 
+*
+*/
+
