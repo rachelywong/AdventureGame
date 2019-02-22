@@ -113,5 +113,75 @@ public class LocationA{
 			}
 		
 		}
+		while (door2 == false){
+			System.out.println("You've reached the 2nd door!"+
+							"Which way should you go? Type 'A' for left, type 'D' for right or type 'W' for forward.");
+			Scanner keyboard = new Scanner(System.in);
+			String user_input = keyboard.next();
+			if (user_input.equals("A")){
+				System.out.println("You've hit a wall!");
+				door2 = false;
+			}
+			else if (user_input.equals("D")){
+				boolean attack = true;
+				while (attack == true){
+				attack = attack();
+				}
+				System.out.println("You've escaped the monster! Do not go in through this door "+
+									"unless you would like to face the monster again!");
+			}
+			else if (user_input.equals("W")){
+				door2 = true;
+				
+			}
+		
+		}
+		while (door3 == false){
+			System.out.println("You've reached the 3rd door!"+
+							"Which way should you go? Type 'A' for left, type 'D' for right or type 'W' for forward.");
+			Scanner keyboard = new Scanner(System.in);
+			String user_input = keyboard.next();
+			if (user_input.equals("A")){
+				System.out.println("You've hit a wall!");
+				door3 = false;
+			}
+			else if (user_input.equals("D")){
+				door3 = true;
+			}
+			else if (user_input.equals("W")){
+				boolean attack = true;
+				while (attack == true){
+				attack = attack();
+				}
+				System.out.println("You've escaped the monster! Do not go in through this door "+
+									"unless you would like to face the monster again!");
+		
+			}
+		
+		}
+		while (door4 == false){
+			System.out.println("You've reached the 4th door!"+
+							"Which way should you go? Type 'A' for left, type 'D' for right or type 'W' for forward.");
+			Scanner keyboard = new Scanner(System.in);
+			String user_input = keyboard.next();
+			if (user_input.equals("A")){
+				door4 = true;
+				
+			}
+			else if (user_input.equals("D")){
+				boolean attack = true;
+				while (attack == true){
+				attack = attack();
+				}
+				System.out.println("You've escaped the monster! Do not go in through this door "+
+									"unless you would like to face the monster again!");
+			}
+			else if (user_input.equals("W")){
+				System.out.println("You've hit a wall!");
+				door4 = false;	
+		
+			}
+		
+		}
 	}
 }
