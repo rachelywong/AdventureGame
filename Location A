@@ -24,12 +24,15 @@ public class LocationA{
     //Translate computer's randomly generated play to 
     //string using if //statements 
 
-    if (computerInt == 1) 
+    if (computerInt == 1) {
        computerPlay = "R"; 
-    else if (computerInt == 2) 
+	}
+    else if (computerInt == 2){ 
        computerPlay = "P"; 
-    else if (computerInt == 3) 
+	}
+    else if (computerInt == 3){
        computerPlay = "S"; 
+	}
 
 
     //Get player's play from input-- note that this is 
