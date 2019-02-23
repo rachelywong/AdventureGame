@@ -1,1 +1,67 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class DanceOff {
+
+	public static void main (String[] args) {
+		
+		Scanner reader = new Scanner(System.in);  
+		
+		System.out.println ("Please type a 4 letter string with the WASD dance moves: ");
+		String userAnswer = reader.next();
+		
+		String answer = "WWWW";
+		final String alphabet = "WASD";
+		final int N = alphabet.length();
+
+		Random r = new Random();
+
+		for (int suspectAnswerI = 0; suspectAnswerI < 5; suspectAnswerI++) {
+			//char suspectAnswer = (alphabet.charAt(r.nextInt(N)));
+			//String suspectAnswer = "";
+			
+			StringBuilder SA = new StringBuilder();
+			Random rnd = new Random();
+	        while (SA.length() < 5) { // length of the random string.
+	            int index = (int) (rnd.nextFloat() * alphabet.length());
+	            SA.append(alphabet.charAt(index));
+
+	        String suspectAnswer = SA.toString();
+
+			//new StringBuilder(suspectAnswer).append(alphabet.charAt(r.nextInt(N)));
+			System.out.print("The suspect's answer was: ");
+			System.out.println(suspectAnswer);
+	    
+			for (int i = 0; i < 5; i++) {
+				int suspectCount = 0;
+				char c = 'W';
+				if (suspectAnswer.charAt(i) == c) {
+					suspectCount = suspectCount + 1;
+				}
+				if (i == 4) {
+					System.out.println("The suspect matched: " + suspectCount + " times");
+				}
+			}
+			
+			for (int userI = 0; userI < 5; userI++) {
+				int userCount = 0;
+				char c = 'W';
+				if (userAnswer.charAt(userI) == c) {
+						userCount = userCount + 1;
+					}
+				if (userI == 4) {
+					System.out.println("You matched: " + userCount + " times");
+				}
+			}
+
+		System.out.println("The answer to match was: " + answer);
+		
+
+		}
+		
+	}
+
+	
+}
+}
 
