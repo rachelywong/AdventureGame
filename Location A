@@ -90,6 +90,7 @@ public class LocationA{
 		boolean door2 = false;
 		boolean door3 = false;
 		boolean door4 = false;
+		int inventory;
 	
 		while (door1 == false){
 			System.out.println("Which way should you go? Type 'A' for left, type 'D' for right or type 'W' for forward.");
@@ -165,6 +166,7 @@ public class LocationA{
 			Scanner keyboard = new Scanner(System.in);
 			String user_input = keyboard.next();
 			if (user_input.equals("A")){
+				System.out.println("You've found the witness in their mansion!");
 				door4 = true;
 				
 			}
@@ -182,6 +184,16 @@ public class LocationA{
 		
 			}
 		
+		}
+		System.out.println("To talk to the witness, type: TALK\n"+
+							"To look around the room, type: LOOK");
+		String witness = keyboard.next();
+		
+		if (witness.equals("TALK"){
+			System.out.println("Witness: Hello officer. What can I help you with?");
+			System.out.println("You: I need all the information you can provide me with about the night the murder took place");
+			System.out.println("Witness: Clue #4");
+			inventory += 1;
 		}
 	}
 }
