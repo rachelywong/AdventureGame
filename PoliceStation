@@ -1,1 +1,31 @@
+NOT DONE!!
+
+public class PoliceStation {
+	
+	public static String PS {
+		
+		//User input: print inventory
+		//User input: print location
+		
+		System.out.println("");		//print story at crime scene
+		
+		while (inventory >= 0) {
+			if (inventory = 1) {
+				//call A/B
+			}
+			else if (inventory <= 4) {
+				//call A/B/C
+			}
+			else if (inventory = 5) {
+				//call A/B/C/D
+			}
+			
+		}
+		
+		
+		
+	}
+	
+}
+
 
