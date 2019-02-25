@@ -3,14 +3,14 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main (String[] args) {
-	System.out.println("Someone has been murdered. Please choose a detective to solve the mystery.");
+	System.out.println("Welcome to logic-based detective game. Someone has been murdered. Please choose a detective to solve the mystery.");
 	
 	Scanner reader = new Scanner(System.in);  
 	System.out.println("Please type your choice and remember to choose wisely.");
 	System.out.println("Detective A or Detective B?");
 	String detective = reader.next();
 	System.out.println("Congrats, you are detective " + detective);
-	System.out.println("You have been assigned to this case. Make choices by typing the multiple choice letter in uppercase to try to solve the murder");
+	System.out.println("You need to solve crime sing clues, eye-witness's reports and power of deduction. Make choices by typing the multiple choice letter in uppercase to try to solve the murder");
 	
 	System.out.println("How will you get the case file?");
 	System.out.println("A) Talk to your superintendent");
