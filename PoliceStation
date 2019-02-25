@@ -1,4 +1,3 @@
-NOT DONE!!
 import java.util.Scanner; // or import java.util.*;
 
 public class PoliceStation {
@@ -31,18 +30,18 @@ public class PoliceStation {
 		while (inventory >= 0) {
 			if (inventory = 1) {
 				a.doSomething();  //call A/B
-				b.doSometing();
+				b.doSomething();
 				
 			}
 			else if (inventory <= 4) {
 				a.doSomething();
-				b.doSometing();
+				b.doSomething();
 				c.doSomething();
 				//call A/B/C
 			}
 			else if (inventory = 5) {
 				a.doSomething();
-				b.doSometing();
+				b.doSomething();
 				c.doSomething();
 				d.doSomething();
 				
