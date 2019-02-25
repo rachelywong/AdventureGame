@@ -1,31 +1,21 @@
-//Guessing
-/*Game outline:
-/(1)print suspect list --> print inventory
-/(a)prompt user guess
-/   if correct --> call DANCE OFF
-/   if wrong --> print beg supervisor
-           //--> print new riddle
-           //--> while (riddle = false) {
-                      //if (input = answer) {
-                          //riddle = true
-                          //--> PS}
-                      //else { riddle = false}
-                      //}
+/**Guessing
+*(1)print suspect list --> print inventory
+*(a)prompt user guess
+*   if correct --> call DANCE OFF
+*   if wrong --> print beg supervisor
+*            --> print new riddle
+*            --> while (riddle = false) {
+*                       if (input = answer) {
+*                            riddle = true
+*                            --> PS}
+*                       else { riddle = false}
+*/                      }
                       
-//For Guessing Name Game:
-//** If type superintendent name in, GAME OVER!
-//** If type self name in, YOU’VE BEEN FRAMED!
+/**For Guessing Name Game:
+* If type superintendent name in, GAME OVER!
+*/ If type self name in, YOU’VE BEEN FRAMED!
 
-import java.util.Scanner;
-import java.util.Random;
 
-public class GuessingGame {
-
-	public static void main (String[] args) {
-		
-		Scanner reader = new Scanner(System.in);  
-		
-		System.out.println ("Print inventory: ");
 import java.util.Random;
 import java.util.Scanner;
 
@@ -33,21 +23,25 @@ import java.util.Scanner;
 public class GuessingGame {
 	
 	/**
-	 * This method prompts the user for a guess.  It will only prompt the user ones.
-	 * The argument provided is the number the user is supposed to guess.
+	 * This method prompts the user to type a name in.
+	 * The argument provided are the names the user is supposed to guess.
 	 * <p>
-	 * If the user enters a number too high (higher than numberToGuess) then print 'Too high'.  If
-	 * the user enters a number too low (lower than numberToGuess) then print 'Too low'.  If the
-	 * user guesses the number, then print 'You guessed it'.
-	 * <p>
-	 * The number to guess is assumed to be a number between 1 and 20 (but this method doesn't check
-	 * if numberToGuess provided is indeed between 1 and 20).  If the user enters a number that is 
-	 * not between 1 and 20 (it is less than 1 or greater than 20) then the message to the user 
-	 * will be 'Guess is not valid' and no other message is printed.
-	 * 
-	 * @param numberToGuess this is the number the user is required to guess.
+	 * If the user enters a correct name  then call DANSE OFF.  If
+	 * the user enters a wrong name then then the user will beg supervisor for a new riddle. 
+	 * <p> 
+	 * If the user enters a number of other data types other than string
+	 * then the message to the user will be 'Guess is not valid' and the message to 
+	 * try again is prompted.
+	 * @param nameToGuess this is the name the user is required to guess.
 	 * @return true if the guess is correct and equal to numberToGuess and false otherwise.
 	 */
+	 
+
+	public static void main (String[] args) {
+		
+		Scanner reader = new Scanner(System.in);  
+		
+		System.out.println ("Print inventory: ");
 	
 	public static boolean getAndCheckGuess(int numberToGuess) {
 		
