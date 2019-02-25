@@ -2,15 +2,23 @@ NOT DONE!!
 import java.util.Scanner; // or import java.util.*;
 
 public class PoliceStation {
+	LocationA a;
+	a = new LocationA;
+	LocationB b;
+	b = new LocationB;
+	LocationC c;
+	c = new LocationC;
+	LocationD d;
+	d = new LocationD;
 	
 	public static void main ( String[] args) {        //the following was replaced: public static String PS {
-		Scanner a = new Scanner (System.in);
+		Scanner crimeS = new Scanner (System.in);
 		System.out.print("Print inventory: ");    //User input: print inventory
-		String inventory = a.nextLine();
+		String inventory = crimeS.nextLine();
 		System.out.print("Print location: ");     //User input: print location
-		String place = a.nextLine();
+		String place = crimeS.nextLine();
 		System.out.println(inventory + place);
-		a.close();
+		crimeS.close();
 		
 		
 		System.out.println("Police patrols cordoned off the area adjacent to the house and searched it.  
@@ -22,12 +30,22 @@ public class PoliceStation {
 		
 		while (inventory >= 0) {
 			if (inventory = 1) {
-				//call A/B
+				a.doSomething();  //call A/B
+				b.doSometing();
+				
 			}
 			else if (inventory <= 4) {
+				a.doSomething();
+				b.doSometing();
+				c.doSomething();
 				//call A/B/C
 			}
 			else if (inventory = 5) {
+				a.doSomething();
+				b.doSometing();
+				c.doSomething();
+				d.doSomething();
+				
 				//call A/B/C/D
 			}
 			
