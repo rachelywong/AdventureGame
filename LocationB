@@ -1,3 +1,40 @@
-**/ Location B - puzzle, riddle
+**/ Location B - puzzle, riddle --> NOT DONE!!!
 *
 /*
+
+
+
+import java.util.Scanner;
+
+public class LocationB {
+
+	public static boolean crime_scene() {
+		boolean investigation = true;
+		System.out.println("");		//print story at crime scene
+		
+		String user_action = keyboard.next();	//prompt user for action
+		
+		while (investigation = true) {
+			if (weapon) {
+				if (touch) {
+					System.out.println("");//print FRAMED story
+					investigation = false;
+					//exit while
+					//PS
+				}
+				if (picture) {
+					while (puzzle = true) {
+					//call puzzle
+					}
+				}
+			}
+			if (manager) {
+				//call riddle
+				investigation = false;
+				//exit while 
+				//PS
+			}
+		}
+		
+	}
+}
