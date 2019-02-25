@@ -8,12 +8,16 @@ public class Riddle {
 		boolean riddle = true;
 		System.out.println(""); //print story for riddle
 		
+		//Riddle#1
 		//"No legs have I to dance. \n" +
 		//"No lungs have I to breathe. \n" +
 		//"No life have I to live or die \n" +
 		//"And yet I do all three. What am I?" +
 		//ANS: Fire
 		
+		//OR
+		
+		//Riddle#2
 		//"Out of 100 ladies attending the dance, \n" + 
 		//"85 had a white hand bag; \n" +
 		//"75 had black shoes; \n" +
