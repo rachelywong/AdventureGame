@@ -1,1 +1,12 @@
+//Similar to TTT class??
 
+public class FixCameraPuzzle {
+	
+	if (win) {
+		//get clue#2 (inventory +1)
+		investigation = false 
+		//exit while
+		//PS
+	}
+
+}
