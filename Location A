@@ -2,6 +2,12 @@ import java.util.Scanner;
 import java.util.Random; 
 
 public class LocationA{
+	public static String look(){
+		System.out.println("You find a slip of paper attached to the bottom of a shoe, it looks like a recipt from a gym memership!\n"+
+							" This might fallen out of the suspect's pocket! The recipt is worn out but it looks like a locker between" +
+							"100 and 199.");
+		return "100 - 199";
+	}
 	public static boolean attack(){
 	String personPlay; //User's play -- "R", "P", or "S" 
     String computerPlay = ""; //Computer's play -- "R", "P", or "S" 
@@ -90,11 +96,11 @@ public class LocationA{
 		boolean door2 = false;
 		boolean door3 = false;
 		boolean door4 = false;
-		int inventory;
+		Scanner keyboard = new Scanner(System.in);
+		
 	
 		while (door1 == false){
 			System.out.println("Which way should you go? Type 'A' for left, type 'D' for right or type 'W' for forward.");
-			Scanner keyboard = new Scanner(System.in);
 			String user_input = keyboard.next();
 			if (user_input.equals("A")){
 				System.out.println("You've hit a wall!");
@@ -117,7 +123,6 @@ public class LocationA{
 		while (door2 == false){
 			System.out.println("You've reached the 2nd door!"+
 							"Which way should you go? Type 'A' for left, type 'D' for right or type 'W' for forward.");
-			Scanner keyboard = new Scanner(System.in);
 			String user_input = keyboard.next();
 			if (user_input.equals("A")){
 				System.out.println("You've hit a wall!");
@@ -140,7 +145,6 @@ public class LocationA{
 		while (door3 == false){
 			System.out.println("You've reached the 3rd door!"+
 							"Which way should you go? Type 'A' for left, type 'D' for right or type 'W' for forward.");
-			Scanner keyboard = new Scanner(System.in);
 			String user_input = keyboard.next();
 			if (user_input.equals("A")){
 				System.out.println("You've hit a wall!");
@@ -163,7 +167,6 @@ public class LocationA{
 		while (door4 == false){
 			System.out.println("You've reached the 4th door!"+
 							"Which way should you go? Type 'A' for left, type 'D' for right or type 'W' for forward.");
-			Scanner keyboard = new Scanner(System.in);
 			String user_input = keyboard.next();
 			if (user_input.equals("A")){
 				System.out.println("You've found the witness in their mansion!");
@@ -189,11 +192,18 @@ public class LocationA{
 							"To look around the room, type: LOOK");
 		String witness = keyboard.next();
 		
-		if (witness.equals("TALK"){
+		if (witness.equals("TALK")){
 			System.out.println("Witness: Hello officer. What can I help you with?");
 			System.out.println("You: I need all the information you can provide me with about the night the murder took place");
 			System.out.println("Witness: Clue #4");
-			inventory += 1;
+			// add to inventory 
+			System.out.println("Would you still like to look around? If so, type LOOK" );
+			witness = keyboard.next();
+			if (witness.equals("LOOK")){
+				String secret_clue = look();
+				// add secret_clue to inventory?
+			}
+			
 		}
 	}
 }
