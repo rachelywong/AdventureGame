@@ -1,13 +1,19 @@
 NOT DONE!!
+import java.util.Scanner; // or import java.util.*;
 
 public class PoliceStation {
 	
-	public static String PS {
+	public static void main ( String[] args) {        //the following was replaced: public static String PS {
+		Scanner a = new Scanner (System.in);
+		System.out.print("Print inventory: ");    //User input: print inventory
+		String inventory = a.nextLine();
+		System.out.print("Print location: ");     //User input: print location
+		String place = a.nextLine();
+		System.out.println(inventory + place);
+		a.close();
 		
-		//User input: print inventory
-		//User input: print location
 		
-		System.out.println("");		//print story at crime scene
+		System.out.println(" ");		//print story at crime scene
 		
 		while (inventory >= 0) {
 			if (inventory = 1) {
