@@ -2,6 +2,12 @@ import java.util.Scanner;
 import java.util.Random; 
 
 public class LocationA{
+	public static String talk(){
+		System.out.println("Witness: Hello officer. What can I help you with?");
+		System.out.println("You: I need all the information you can provide me with about the night the murder took place");
+		System.out.println("Witness: Clue #4");
+	return "clue #4";
+	}
 	public static String look(){
 		System.out.println("You find a slip of paper attached to the bottom of a shoe, it looks like a recipt from a gym memership!\n"+
 							" This might fallen out of the suspect's pocket! The recipt is worn out but it looks like a locker between" +
@@ -193,15 +199,24 @@ public class LocationA{
 		String witness = keyboard.next();
 		
 		if (witness.equals("TALK")){
-			System.out.println("Witness: Hello officer. What can I help you with?");
-			System.out.println("You: I need all the information you can provide me with about the night the murder took place");
-			System.out.println("Witness: Clue #4");
+			String clue_4 = talk();
 			// add to inventory 
 			System.out.println("Would you still like to look around? If so, type LOOK" );
 			witness = keyboard.next();
 			if (witness.equals("LOOK")){
 				String secret_clue = look();
 				// add secret_clue to inventory?
+			}
+			
+		}
+		else if (witness.equals("LOOK"){
+			String secret_clue = look();
+			// add secret_clue to inventory?
+			System.out.println("To talk to the witness, type: TALK");
+			witness = keyboard.next();
+			if (witness.equals("TALK")){
+			String clue_4 = talk();
+			// add to inventory 
 			}
 			
 		}
