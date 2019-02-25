@@ -27,12 +27,12 @@ public class Riddle {
 		//ANS:10
 		
 		Scanner keyboard = new Scanner(System.in);
-		String user_guess = keyboard.next(); //fix**
+		String user_guess = keyboard.nextLine();
 
-		while (riddle == false) {
+		while (riddle = true) {
 			if (user_guess == riddle_answer) {
-				System.out.println("You answered correctly!");	//fix**
-				riddle = true;
+				System.out.println("You answered correctly! Print clue#3. ");	//ADD**
+				riddle = false;
 				//add clue to inventory
 				//exit while
 				//PS
@@ -40,7 +40,7 @@ public class Riddle {
 			else {
 				System.out.println("You answered wrong! Enter another guess: ");
 				user_guess = keyboard.nextln();
-				riddle = false;
+				riddle = true;
 			}
 		}
 	}
