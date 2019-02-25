@@ -13,12 +13,12 @@ public class PoliceStation {
 		a.close();
 		
 		
-		System.out.println(" Police patrols cordoned off the area adjacent to the house and searched it. 
-		A subsequent inspection of the crime scene by detectives and criminologists, the examination 
-		of the traces and the interrogation of the victims showed that the attacker acted thoughtfully 
-		and very sophisticatedly. Witnesses gave a generally vague, although similar descriptions of 
-		the appearance of the offender. According to them, it was a young woman of dense build at the age 
-		of 20-30 years above average height.);		//print story at crime scene
+		System.out.println("Police patrols cordoned off the area adjacent to the house and searched it.  
+		A subsequent inspection of the crime scene by detectives and criminologists, the examination of 
+		the traces and the interrogation of the victims showed that the attacker acted thoughtfully and 
+		very sophisticatedly. Witnesses gave a generally vague, although similar descriptions of the 
+		appearance of the offender. According to them, it was a young woman of dense build at the age 
+                of 20-30 years above average height.");		//print story at crime scene
 		
 		while (inventory >= 0) {
 			if (inventory = 1) {
