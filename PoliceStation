@@ -14,6 +14,15 @@ public class PoliceStation {
 		Scanner crimeS = new Scanner (System.in);
 		System.out.print("Print inventory: ");    //User input: print inventory
 		String inventory = crimeS.nextLine();
+	
+		ArrayList inventory = new ArrayList(5); //or ArrayList<String> inventory = new ArrayList<String>(5);
+		
+		
+		
+		
+		
+		
+		
 		System.out.print("Print location: ");     //User input: print location
 		String place = crimeS.nextLine();
 		System.out.println(inventory + place);
