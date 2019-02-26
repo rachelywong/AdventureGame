@@ -4,8 +4,6 @@ public class LocationB {
 
 	public static void main(String[] args) {
 	
-	//public static boolean crime_scene() {
-	
 		boolean investigation = true;
 		boolean puzzle = true;
 		
@@ -15,13 +13,13 @@ public class LocationB {
 
 		while (investigation = true) {
 		
-			if (user_action.equals("WEAPON")) { //FIX**
+			if (user_action.equals("WEAPON")) {
 				System.out.println("You've found the weapon..."); //options - touch or picture
 				
 				Scanner keyboard = new Scanner(System.in);
 				String user_action2 = keyboard.nextLine();
 				
-				if (user_action2.equals("TOUCH")) { //FIX**
+				if (user_action2.equals("TOUCH")) {
 					System.out.println("You've been FRAMED!..."); //print FRAMED story
 					investigation = false;
 					//exit while
@@ -34,7 +32,7 @@ public class LocationB {
 				}
 			}
 			
-			if (user_action.equals("MANAGER")) { //FIX**
+			if (user_action.equals("MANAGER")) {
 				investigation = false;
 				//call riddle
 				//exit while 
