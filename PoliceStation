@@ -1,4 +1,5 @@
 import java.util.Scanner; // or import java.util.*;
+import java.util.ArrayList;
 
 public class PoliceStation {
 	LocationA a;
@@ -10,24 +11,18 @@ public class PoliceStation {
 	LocationD d;
 	d = new LocationD;
 	
-	public static void main ( String[] args) {        //the following was replaced: public static String PS {
+	public static void main ( String[] args) {
+	
 		Scanner crimeS = new Scanner (System.in);
-		System.out.print("Print inventory: ");    //User input: print inventory
+		System.out.print("Type in "inventory" if you want to see your clues.");    //User input: print inventory - FIX**
 		String inventory = crimeS.nextLine();
 	
-		ArrayList inventory = new ArrayList(5); //or ArrayList<String> inventory = new ArrayList<String>(5);
+		ArrayList inventory = new ArrayList(); //or ArrayList<String> inventory = new ArrayList<String>();
 		
-		
-		
-		
-		
-		
-		
-		System.out.print("Print location: ");     //User input: print location
+		System.out.print("Print location: ");     //User input: print location - FIX**
 		String place = crimeS.nextLine();
 		System.out.println(inventory + place);
 		crimeS.close();
-		
 		
 		System.out.println("Police patrols cordoned off the area adjacent to the house and searched it.  
 		A subsequent inspection of the crime scene by detectives and criminologists, the examination of 
@@ -37,32 +32,22 @@ public class PoliceStation {
                 of 20-30 years above average height.");		//print story at crime scene
 		
 		while (inventory >= 0) {
-			if (inventory = 1) {
-				a.doSomething();  //call A/B
+			if (inventory = 1) { 	  //call A/B
+				a.doSomething();  
 				b.doSomething();
 				
 			}
-			else if (inventory <= 4) {
+			else if (inventory <= 4) { //call A/B/C
 				a.doSomething();
 				b.doSomething();
 				c.doSomething();
-				//call A/B/C
 			}
-			else if (inventory = 5) {
+			else if (inventory = 5) { //call A/B/C/D
 				a.doSomething();
 				b.doSomething();
 				c.doSomething();
 				d.doSomething();
-				
-				//call A/B/C/D
 			}
-			
 		}
-		
-		
-		
 	}
-	
 }
-
-
