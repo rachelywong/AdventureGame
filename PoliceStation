@@ -1,53 +1,93 @@
-import java.util.Scanner; // or import java.util.*;
+import java.util.Scanner;
 import java.util.ArrayList;
 
 public class PoliceStation {
-	LocationA a;
-	a = new LocationA;
-	LocationB b;
-	b = new LocationB;
-	LocationC c;
-	c = new LocationC;
-	LocationD d;
-	d = new LocationD;
 	
-	public static void main ( String[] args) {
-	
-		Scanner crimeS = new Scanner (System.in);
-		System.out.print("Type in "inventory" if you want to see your clues.");    //User input: print inventory - FIX**
-		String inventory = crimeS.nextLine();
-	
-		ArrayList inventory = new ArrayList(); //or ArrayList<String> inventory = new ArrayList<String>();
+		public static void main(String[] args) {
 		
-		System.out.print("Print location: ");     //User input: print location - FIX**
-		String place = crimeS.nextLine();
-		System.out.println(inventory + place);
-		crimeS.close();
+		//Story
+		System.out.println("A subsequent inspection of the crime scene by detectives and criminologists, \n" +
+		"the examination of the traces and the interrogation of the victims showed that the attacker acted thoughtfully and \n" +
+		"very sophisticatedly. Witnesses gave a generally vague, although similar descriptions of the \n" +
+		"appearance of the offender. According to them, it was a young woman of dense build at the age \n" +
+        "of 20-30 years above average height.");
 		
-		System.out.println("Police patrols cordoned off the area adjacent to the house and searched it.  
-		A subsequent inspection of the crime scene by detectives and criminologists, the examination of 
-		the traces and the interrogation of the victims showed that the attacker acted thoughtfully and 
-		very sophisticatedly. Witnesses gave a generally vague, although similar descriptions of the 
-		appearance of the offender. According to them, it was a young woman of dense build at the age 
-                of 20-30 years above average height.");		//print story at crime scene
+		//Inventory List
+		ArrayList<String> inventory = new ArrayList<String>();
 		
-		while (inventory >= 0) {
-			if (inventory = 1) { 	  //call A/B
-				a.doSomething();  
-				b.doSomething();
+			/**Adding elements
+			inventory.add("c");**/
+			
+			System.out.println("Do you want to see your clues: yes or no?");
+			Scanner keyboard = new Scanner(System.in);
+			String answer = keyboard.nextLine();
+
+			if (answer.equals("yes")) {
+				//prints out elements in list
+				for(String n : inventory) {
+				System.out.println("list = " + n);
+				}
+			}
+			else {
+				//does nothing
+			}
+
+		//user chooses location
+		System.out.println("Choose the location you would like to go to");
+		Scanner keyboard = new Scanner(System.in);
+		String answer = keyboard.nextLine();
+
+		while(inventory ) {
+			if (inventory.size = 1) { //call A/B
 				
+				System.out.println("You have" + inventory.size + "number of clues. Do you want to go to location A or B?");
+				Scanner keyboard = new Scanner(System.in);
+				String answer = keyboard.nextLine();
+				
+				if (answer.equals("A")) {
+					LocationA.main(args);
+				}
+				else {
+					LocationB.main(args);
+				}
+
 			}
-			else if (inventory <= 4) { //call A/B/C
-				a.doSomething();
-				b.doSomething();
-				c.doSomething();
+			else if (inventory.size <= 4) { //call A/B/C
+							
+				System.out.println("You have" + inventory.size + "number of clues. Do you want to go to location A, B, or C?");
+				Scanner keyboard = new Scanner(System.in);
+				String answer = keyboard.nextLine();
+				
+				if (answer.equals("A")) {
+					LocationA.main(args);
+				}
+				else if (answer.equals("B")){
+					LocationB.main(args);
+				}
+				else {
+					LocationC.main(args);
+				}
 			}
-			else if (inventory = 5) { //call A/B/C/D
-				a.doSomething();
-				b.doSomething();
-				c.doSomething();
-				d.doSomething();
+			else if (inventory.size = 5) { //call A/B/C/D
+			
+				System.out.println("You have" + inventory.size + "number of clues. Do you want to go to location A, B, C, or D?");
+				Scanner keyboard = new Scanner(System.in);
+				String answer = keyboard.nextLine();
+				
+				if (answer.equals("A")) {
+					LocationA.main(args);
+				}
+				else if (answer.equals("B")){
+					LocationB.main(args);
+				}
+				else if (answer.equals("C")){
+					LocationC.main(args);
+				}
+				else {
+					LocationD.main(args);
+				}
 			}
+			
+		}	
 		}
-	}
 }
