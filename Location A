@@ -11,7 +11,7 @@ public class LocationA{
 	public static String look(){
 		System.out.println("You find a slip of paper attached to the bottom of a shoe, it looks like a recipt from a gym memership!\n"+
 							" This might fallen out of the suspect's pocket! The recipt is worn out but it looks like a locker between" +
-							"100 and 199.");
+							" 100 and 199.");
 		return "100 - 199";
 	}
 	public static boolean attack(){
@@ -209,7 +209,7 @@ public class LocationA{
 			}
 			
 		}
-		else if (witness.equals("LOOK"){
+		else if (witness.equals("LOOK")){
 			String secret_clue = look();
 			// add secret_clue to inventory?
 			System.out.println("To talk to the witness, type: TALK");
