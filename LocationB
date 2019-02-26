@@ -2,38 +2,39 @@ import java.util.Scanner;
 
 public class LocationB {
 
-	public static boolean crime_scene() {
+	public static void main(String[] args) {
+	
+	//public static boolean crime_scene() {
 	
 		boolean investigation = true;
 		boolean puzzle = true;
 		
 		System.out.println("You've arrived at the crime scene..."); //ADD** options - weapon or manager
-	
 		Scanner keyboard = new Scanner(System.in);
 		String user_action = keyboard.nextLine();
+
+		while (investigation = true) {
 		
-		while (investigation == true) {
-		
-			if (user_action == weapon) { //FIX**
+			if (user_action.equals("WEAPON")) { //FIX**
 				System.out.println("You've found the weapon..."); //options - touch or picture
 				
 				Scanner keyboard = new Scanner(System.in);
-				String user_action = keyboard.nextLine();
+				String user_action2 = keyboard.nextLine();
 				
-				if (user_action == touch) { //FIX**
+				if (user_action2.equals("TOUCH")) { //FIX**
 					System.out.println("You've been FRAMED!..."); //print FRAMED story
 					investigation = false;
 					//exit while
 					//PS
 				}
-				else if (user_action == picture) { //FIX**
-					while (puzzle == true) { //Need this line??
+				else if (user_action2.equals("PICTURE")) { //FIX**
+					while (puzzle = true) { //Need this line??
 					//call puzzle
 					}
 				}
 			}
 			
-			if (user_action == manager) { //FIX**
+			if (user_action.equals("MANAGER")) { //FIX**
 				investigation = false;
 				//call riddle
 				//exit while 
