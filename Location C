@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class LocationC {
@@ -52,11 +51,11 @@ public class LocationC {
 				String hint_choice = keyboard.next();
 				if (hint_choice.equals("HINT")){
 					System.out.print("*ring ring*\n"+ "YOU: Hello supervisor, could I get a hint regarding the lockers?\n"+
-										"SUPERVSOR: Pay attention especially to the clue found at location A!");
+										"SUPERVSOR: Make sure you've found all the needed information from location A!");
 				
 				}
 				else if (hint_choice.equals("QUIT")){
-					System.out.print ("You will be sent to the polic station");
+					System.out.print ("You will be sent to the police station");
 				}
 			}
 		}
