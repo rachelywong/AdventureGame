@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Riddle {
 	
-	public static boolean question() {
+	public static void main(String[] args) {
 		
 		String riddle_answer = ""; //input riddle answer**
 		boolean riddle = true;
