@@ -1,150 +1,51 @@
-/**Guessing
- *(1)print suspect list --> print inventory
- *(a)prompt user guess
- *   if correct --> call DANCE OFF
- *   if wrong --> print beg supervisor
- *            --> print new riddle
- *            --> while (riddle = false) {
- *                       if (input = answer) {
- *                            riddle = true
- *                            --> PS}
- *                       else { riddle = false}
- */                      }
-
-/**For Guessing Name Game:
- * If type superintendent name in, GAME OVER!
- * If type self name in, YOU’VE BEEN FRAMED!*/
-
-
-import java.util.Random;
 import java.util.Scanner;
+import java.util.ArrayList;
 
-
-public class GuessingGame {
-
-	/**
-	 * This method prompts the user to type a name in.
-	 * The argument provided are the names the user is supposed to guess.
-	 * <p>
-	 * If the user enters a correct name  then call DANSE OFF.  If
-	 * the user enters a wrong name then then the user will beg supervisor for a new riddle.
-	 * <p>
-	 * If the user enters a number of other data types other than string
-	 * then the message to the user will be 'Guess is not valid' and the message to
-	 * try again is prompted.
-	 * @param nameToGuess this is the name the user is required to guess.
-	 * @return true if the guess is correct and equal to numberToGuess and false otherwise.
-	 */
-
-
-	public static void main (String[] args) {
-
-		Scanner reader = new Scanner(System.in);
-
-		System.out.println ("Print inventory: ");
-
-		public static boolean getAndCheckGuess(int nameToGuess) {
-
-			Scanner UserGuessing = new Scanner(System.in);
-			System.out.print("Please guess a name: ");
-			int UserGuess = UserGuessing.nextLine();
-
-			/*
-			 * The while loop reprompts the user with an error message and a prompt to re-enter a guess if
-			 * their original guess is invalid. The while loop will continue
-			 * until the user enters a valid guess.
-			 */
-			SUPERINT = "Hossein Khosro";
-			boolean Riddle = false;
-
-			while (	Riddle == false) {
-				if ((UserGuess == SUPERINT) {
-					System.out.println("Guess is not valid");
-					TestUserGuessValid = true;
-					System.out.print("Please guess a number between 1 and 20: ");
-					UserGuess = UserGuessing.nextInt();
-				}
-				else {
-					TestUserGuessValid = false;
-				}
+public class LocationD {
+	
+	public static void main(String[] args){
+		String murderer = "murderer";
+		boolean guess = false;
+		int guessNumber = 0;
+		
+		System.out.println("Who did it? 2 guesses");
+		
+		ArrayList suspectsList = new ArrayList();
+		suspectsList.add( "A" );
+		suspectsList.add( "B" );
+		suspectsList.add( "C" );
+		suspectsList.add( "murderer" );
+		
+		System.out.print(suspectsList);
+		
+		Scanner keyboard = new Scanner(System.in);
+		String user_guess = keyboard.next();
+		
+		while (guess == false & guessNumber < 2){ 
+			guessNumber += 1;
+			
+			if (guessNumber != 2) {
+			
+			if (user_guess.contentEquals("murderer")){
+				System.out.println("Dance off");
+				DanceOff.main(args); //call dance off
+				guess = true;
 			}
-
-			/*
-			 * A valid guess is checked using if and else if statements to determine if it is equal to
-			 * the number to guess, lower, or higher. The user is prompted with messages accordingly
-			 * to either continue guessing or end the game when the number is guessed within 5 guesses.
-			 */
-
-			if (UserGuess == numberToGuess) {
-				System.out.println("You guessed it");
-				return true;
+			else {
+				System.out.println("Wrong");
+				guess = false;
+				System.out.println("Who did it? 2 guesses");
+				user_guess = keyboard.next();
 			}
-			else if (UserGuess < numberToGuess) {
-				System.out.println("Too low");
-				return false;
+			
 			}
-			else if (UserGuess > numberToGuess) {
-				System.out.println("Too high");
-				return false;
+			
+			else {
+				System.out.println("You ran out of guesses");
+				PoliceStation.main(args); //call PS
 			}
-			return false;
-		}
-
-		/**
-		 * When running this program, it will call getAndCheckGuess with a random number to guess.
-		 * If you want to test with a particular number to guess, provide the number to guess
-		 * as an argument to this program.  For example, if you want the numberToGuess to be 17,
-		 * run this program as: java GuessingGame 17
-		 * <p>
-		 * This program will call getAndCheckGuess and then print the value returned by that
-		 * method/function.
-		 * @param args the command line argument provided.  If one is provided it is assumed to be the
-		 * number to guess in the game.
-		 */
-
-		public static void main(String[] args){
-
-			int numToGuess = 0;
-			if (args.length < 1) {
-				Random rand = new Random();
-				// nextInt will return a number between 0 and 20 (exclusive 20).  Adding 1 results in
-				// a number between 1 and 20 (inclusive).
-				numToGuess = rand.nextInt(20) + 1;
-			} else {
-				// get the number provided as a command line argument and use it as the number to
-				// guess for the game.
-				numToGuess = Integer.parseInt(args[0]);
-			}
-
-			/*
-			 * A for loop is used to allow the user five valid guesses to try to guess the number to guess.
-			 * Once the user has guessed the number to guess or has guessed incorrectly 5 times, the game ends
-			 * with messages accordingly. These messages either tell the user they were correct and guessed within
-			 * 5 guesses, or tells the user what the number to guess was.
-			 */
-
-			boolean guessedRight = false;
-			for (int guessCount = 1; guessCount <= 5; guessCount++){
-				if (guessedRight == false){
-					// if the user guess is incorrect, repeat the for loop and allow the user to guess again and increase
-					// the guess count by 1.
-					boolean correct = getAndCheckGuess(numToGuess);
-
-					if (correct == true) {
-						// if the user guess is correct, end the game and tell the user they guessed correctly.
-						System.out.println("Well done!");
-						guessedRight = true ;
-					}
-					if (guessCount == 5 && guessedRight == false ){
-						// if the user has guessed 5 times, end the game and tell the user the number to guess.
-						System.out.println("The number to guess was " + numToGuess);
-					}
-				}
-			}
-
+				
 		}
 	}
 
-
-
-
+}
