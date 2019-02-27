@@ -12,12 +12,11 @@ public class LocationB {
 			if (user_action.equals("weapon")) {
 				System.out.println("You've found the weapon...\n" +
 								"Do you want to take a picture or touch the weapon?");
-				Scanner keyboard = new Scanner(System.in);
 				String user_action2 = keyboard.nextLine();
 				
 				if (user_action2.equals("touch")) {
 					System.out.println("You've been FRAMED!... You go back to the police station. ");
-					investigation = false;
+					boolean investigation = false;
 					PoliceStation.main(args);
 				}
 				else if (user_action2.equals("picture")) {
@@ -37,7 +36,7 @@ public class LocationB {
 				"90 wore a ring; \n" +
 				"How many ladies must have had all four items? \n");
 				
-				Scanner keyboard = new Scanner(System.in);
+
 				String user_guess = keyboard.nextLine();
 
 				while (riddle = true) {
