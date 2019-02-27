@@ -1,93 +1,38 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class PoliceStation {
 	
-		public static void main(String[] args) {
+	public static void main (String[] args) {
+		System.out.println("Where do you want to go? A, B, C, or D");
+		Scanner reader = new Scanner(System.in);  
+		String location = reader.next();
 		
-		//Story
-		System.out.println("A subsequent inspection of the crime scene by detectives and criminologists, \n" +
-		"the examination of the traces and the interrogation of the victims showed that the attacker acted thoughtfully and \n" +
-		"very sophisticatedly. Witnesses gave a generally vague, although similar descriptions of the \n" +
-		"appearance of the offender. According to them, it was a young woman of dense build at the age \n" +
-        "of 20-30 years above average height.");
+		boolean location1 = true;
 		
-		//Inventory List
-		ArrayList<String> inventory = new ArrayList<String>();
+		while (location1 == true) {
 		
-			/**Adding elements
-			inventory.add("c");**/
-			
-			System.out.println("Do you want to see your clues: yes or no?");
-			Scanner keyboard = new Scanner(System.in);
-			String answer = keyboard.nextLine();
-
-			if (answer.equals("yes")) {
-				//prints out elements in list
-				for(String n : inventory) {
-				System.out.println("list = " + n);
-				}
-			}
-			else {
-				//does nothing
-			}
-
-		//user chooses location
-		System.out.println("Choose the location you would like to go to");
-		Scanner keyboard = new Scanner(System.in);
-		String answer = keyboard.nextLine();
-
-		while(inventory ) {
-			if (inventory.size = 1) { //call A/B
-				
-				System.out.println("You have" + inventory.size + "number of clues. Do you want to go to location A or B?");
-				Scanner keyboard = new Scanner(System.in);
-				String answer = keyboard.nextLine();
-				
-				if (answer.equals("A")) {
-					LocationA.main(args);
-				}
-				else {
-					LocationB.main(args);
-				}
-
-			}
-			else if (inventory.size <= 4) { //call A/B/C
-							
-				System.out.println("You have" + inventory.size + "number of clues. Do you want to go to location A, B, or C?");
-				Scanner keyboard = new Scanner(System.in);
-				String answer = keyboard.nextLine();
-				
-				if (answer.equals("A")) {
-					LocationA.main(args);
-				}
-				else if (answer.equals("B")){
-					LocationB.main(args);
-				}
-				else {
-					LocationC.main(args);
-				}
-			}
-			else if (inventory.size = 5) { //call A/B/C/D
-			
-				System.out.println("You have" + inventory.size + "number of clues. Do you want to go to location A, B, C, or D?");
-				Scanner keyboard = new Scanner(System.in);
-				String answer = keyboard.nextLine();
-				
-				if (answer.equals("A")) {
-					LocationA.main(args);
-				}
-				else if (answer.equals("B")){
-					LocationB.main(args);
-				}
-				else if (answer.equals("C")){
-					LocationC.main(args);
-				}
-				else {
-					LocationD.main(args);
-				}
-			}
-			
-		}	
+		if (location.equals("A")) {
+			LocationA.main(args);
+			location1 = false;
 		}
+		
+		else if (location.equals("B")) {
+			LocationB.main(args);
+			location1 = false;
+		}
+		
+		else if (location.equals("C")) {
+			LocationC.main(args);
+			location1 = false;
+		}
+		
+		else if (location.equals("D")) {
+			LocationD.main(args);
+			location1 = false;
+		}
+		
+	}
+		
+	}
+	
 }
