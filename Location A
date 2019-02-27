@@ -1,7 +1,8 @@
-import java.util.Scanner; 
+import java.util.Scanner;
+import java.util.ArrayList;
 import java.util.Random; 
 
-public class LocationA{
+public class LocationA extends PoliceStation{
 	public static String talk(){
 		System.out.println("Witness: Hello officer. What can I help you with?");
 		System.out.println("You: I need all the information you can provide me with about the night the murder took place");
@@ -200,7 +201,9 @@ public class LocationA{
 		
 		if (witness.equals("TALK")){
 			String clue_4 = talk();
+			//addClue();
 			// add to inventory 
+			
 			System.out.println("Would you still like to look around? If so, type LOOK" );
 			witness = keyboard.next();
 			if (witness.equals("LOOK")){
@@ -220,5 +223,17 @@ public class LocationA{
 			}
 			
 		}
+		
+		PoliceStation.main(args);
 	}
+	
+	
+	/** public static void addClue() {
+		PoliceStation PS = new PoliceStation();
+	  ArrayList<String> inventory = PS.getArrayList();
+      inventory.add("clue4");
+  	System.out.println(inventory);
+	}
+	 */ 
+
 }
