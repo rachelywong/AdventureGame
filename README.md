@@ -2,8 +2,17 @@
 
 
 /*In the class Location A, in the method attack(), code for Rock, Paper ,Scissors was inspired by code by an anonymous user online. 
-	Title: StackOverflow 
+	Title: StackOverflow / Rock.java
 	Author: Anonymous User 
+	Date: 02/20/19
+	Availability: https://stackoverflow.com/questions/19204872/rock-paper-scissors-game-java
+	*/
+
+
+
+/*In the class Main, TicTacToe code procided by Dr. Verwaal was used 
+	Title: TicTacToeBoard.java, TicTacToeGame.java and TicTacToeFameProcedural.java
+	Author: Nathaly Verwaal 
 	Date: 02/20/19
 	Availability: https://stackoverflow.com/questions/19204872/rock-paper-scissors-game-java
 	*/
