@@ -11,7 +11,7 @@ public class LocationA extends PoliceStation{
 	}
 	public static String look(){
 		System.out.println("You find a slip of paper attached to the bottom of a shoe, it looks like a recipt from a gym memership!\n"+
-							" This might fallen out of the suspect's pocket! The recipt is worn out but it looks like a locker between" +
+							" This might fallen out of the suspect's pocket! The membership is worn out but it looks like a locker between" +
 							" 100 and 199.");
 		return "100 - 199";
 	}
@@ -104,8 +104,9 @@ public class LocationA extends PoliceStation{
 		boolean door3 = false;
 		boolean door4 = false;
 		Scanner keyboard = new Scanner(System.in);
+		System.out.println("You've arrived at the witness's house, but now you must find him!");
+		System.out.println("Navigate using your keyboard.");
 		
-	
 		while (door1 == false){
 			System.out.println("Which way should you go? Type 'A' for left, type 'D' for right or type 'W' for forward.");
 			String user_input = keyboard.next();
