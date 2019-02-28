@@ -1,5 +1,10 @@
 import java.util.Scanner;
-
+/*TicTacToe code/class that was provided by Dr. Verwaal was used
+Title: TicTacToeBoard.java, TicTacToeGame.java and TicTacToeFameProcedural.java 
+Author: Nathaly Verwaal 
+Date: 02/20/19 
+Availability: Nathaly Verwaal, University of Calgary 
+*/
 public class TicTacToeGameProcedural {
 	static char[][] grid = {{'.','.','.'},	{'.','.','.'}, {'.','.','.'}};
 
