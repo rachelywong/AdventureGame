@@ -1,7 +1,7 @@
 # AdventureGame
 
 
-/*In the class Location A, in attack(), code for Rock, Paper ,Scissors was inspired by code by an anonymous user online. 
+/*In the class Location A, in the method attack(), code for Rock, Paper ,Scissors was inspired by code by an anonymous user online. 
 	Title: StackOverflow 
 	Author: Anonymous User 
 	Date: 02/20/19
