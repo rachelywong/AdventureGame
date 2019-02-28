@@ -15,6 +15,13 @@ public class LocationA extends PoliceStation{
 							" 100 and 199.");
 		return "100 - 199";
 	}
+	
+	/*In attack(), code for the Rock, Paper ,Scissors inspired by code by an anonymous user online. 
+	Title: StackOverflow 
+	Author: Anonymous User 
+	Date: 02/20/19
+	Availability: https://stackoverflow.com/questions/19204872/rock-paper-scissors-game-java
+	*/ 
 	public static boolean attack(){
 	String personPlay; //User's play -- "R", "P", or "S" 
     String computerPlay = ""; //Computer's play -- "R", "P", or "S" 
