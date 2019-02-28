@@ -1,5 +1,6 @@
 # AdventureGame
 
+// Khosro, please run the Main class in order to start
 
 /*In the class Location A, in the method attack(), code for Rock, Paper ,Scissors was inspired by code by an anonymous user online. 
 	Title: StackOverflow / Rock.java
