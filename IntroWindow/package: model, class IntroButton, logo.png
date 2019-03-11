@@ -90,3 +90,9 @@ public class IntroButton extends Button {
 	}
 
 logo.png
+
+model.resources:
+blue_button00.png
+blue_button02.png
+kenvector_future_thin.ttf
+
