@@ -1,0 +1,19 @@
+package model;
+
+public enum DETECTIVE {
+	
+	GOOD("view/resources/detectivechooser/good.png"),
+	BAD("view/resources/detectivechooser/bad.png");
+	
+	private String urlDetective;
+	
+	private DETECTIVE(String urlDetective) {
+		this.urlDetective = urlDetective;
+		}
+	
+	
+	public String getUrl() {
+		return this.urlDetective;
+	}
+
+}
