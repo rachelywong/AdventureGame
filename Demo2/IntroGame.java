@@ -2,9 +2,12 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
+import police.PoliceStation;
 import javafx.scene.layout.VBox;
+import button.HandleButtonClick;
 import javafx.scene.control.*;
 import javafx.scene.image.*;
+import javafx.scene.layout.Region;
 import javafx.animation.AnimationTimer;
  
 public class IntroGame extends Application {
@@ -14,9 +17,12 @@ public class IntroGame extends Application {
     public void start(Stage primaryStage) {
 		
 	//scene1 - Start Menu
+    
         VBox root1 = new VBox();
+        root1.setPrefWidth(800);
+        root1.setPrefHeight(600); 
         Label label1 = new Label("Dead On The Dance Floor");
-        label1.setFont(Font.font("Times New Roman", 24));
+        label1.setFont(Font.font("Times New Roman", 24)); //24
         root1.getChildren().add(label1);
 		//PlayButton
         Button PlayButton = new Button("Play");
@@ -24,9 +30,12 @@ public class IntroGame extends Application {
         root1.getChildren().add(PlayButton);
 		//directs to scene2
 		PlayButton.setOnAction(e -> primaryStage.setScene(scene2));
+	
 		
 	//scene2 - Character Selection
 		VBox root2 = new VBox();
+		root2.setPrefWidth(800);
+        root2.setPrefHeight(600); 
         Label label2 = new Label("Pick a detective: ");
         label2.setFont(Font.font("Times New Roman", 24));
         root2.getChildren().add(label2);
@@ -44,6 +53,8 @@ public class IntroGame extends Application {
 
 	//scene3 - Steal file or talk to supervisor
 		VBox root3 = new VBox();
+		root3.setPrefWidth(800);
+        root3.setPrefHeight(600); 
         Label label3 = new Label("Case file");
         label3.setFont(Font.font("Times New Roman", 24));
         root3.getChildren().add(label3);
@@ -61,6 +72,8 @@ public class IntroGame extends Application {
 		
 	//scene4 - FIRED for stealing file
 		VBox root4 = new VBox();
+		root4.setPrefWidth(800);
+        root4.setPrefHeight(600); 
         Label label4 = new Label("You've been fired!");
         label4.setFont(Font.font("Times New Roman", 24));
         root4.getChildren().add(label4);
@@ -73,6 +86,8 @@ public class IntroGame extends Application {
 		
 	//scene5 - Tic Tac Toe
 		VBox root5 = new VBox();
+		root5.setPrefWidth(800);
+        root5.setPrefHeight(600); 
         Label label5 = new Label("Play Tic Tac Toe or start case");
         label5.setFont(Font.font("Times New Roman", 24));
         root5.getChildren().add(label5);
