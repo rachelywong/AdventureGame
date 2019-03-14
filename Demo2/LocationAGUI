@@ -17,6 +17,9 @@ import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
 public class LocationAGUI {
 
+    //references: doors2.jpg, witness.jpg and brickwall.jpg are stock images
+    
+
     //Create variable
     
 	static Scene scene1, scene2, scene3, scene4, scene5;
