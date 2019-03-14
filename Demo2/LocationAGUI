@@ -1,3 +1,4 @@
+package police;
 import javafx.stage.*;
 import javafx.scene.*;
 import javafx.scene.layout.*;
@@ -25,14 +26,23 @@ public class LocationAGUI {
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("locA");
         
-      
-
+        
+        final ImageView mv1 = new ImageView();
+        final Image background1 = new Image(LocationAGUI.class.getResourceAsStream("doors2.jpg"));
+        mv1.setImage(background1);
+        GridPane root = new GridPane();
+		root.setMaxSize(847, 600);
+		root.getChildren().add(mv1);
+		
+		/*
         //Background
 		Image background1 = new Image("file:doors2.jpg");
 		ImageView mv1 = new ImageView(background1);
 		GridPane root = new GridPane();
 		root.setMaxSize(847, 600);
 		root.getChildren().add(mv1);
+		
+		*/
 		
 		
 		//Intro Label 
