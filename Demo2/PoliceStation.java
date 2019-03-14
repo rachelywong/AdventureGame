@@ -1,3 +1,5 @@
+package police;
+
 import javafx.application.Application; 
 import javafx.scene.Scene; 
 import javafx.scene.shape.*;
@@ -23,6 +25,9 @@ public class PoliceStation {
 		Button b2 = new Button("Location B");
 		Button b3 = new Button("Location C");
 		Button b4 = new Button("Location D");
+		b1.setOnAction(e -> {
+			LocationAGUI.display();
+		});
 		/**b1.setOnAction(e -> {
 		tester.display();
 		});*/
