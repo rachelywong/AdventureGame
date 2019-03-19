@@ -1,0 +1,110 @@
+import javafx.stage.*;
+import javafx.scene.*;
+import javafx.scene.layout.*;
+import javafx.scene.control.*;
+import javafx.geometry.*;
+
+import javafx.scene.shape.*;
+import javafx.scene.image.*;
+import javafx.scene.text.*;
+import javafx.stage.Stage;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.control.*; 
+import javafx.geometry.*; 
+import javafx.event.EventHandler;
+import javafx.event.ActionEvent;
+
+import javafx.application.Application;
+import javafx.scene.text.*;
+import javafx.animation.AnimationTimer;
+ 
+ 
+public class LocationBGUI {
+
+	static Scene scene1, scene2, scene3, scene4;
+
+	public static void display() {
+        Stage primaryStage = new Stage();
+        primaryStage.initModality(Modality.APPLICATION_MODAL);
+        primaryStage.setTitle("locB");
+		
+	//scene1 - crime scene
+        VBox root1 = new VBox();
+        Label label1 = new Label("You've arrived at crime scene.");
+        label1.setFont(Font.font("Times New Roman", 24));
+        root1.getChildren().add(label1);
+		//BouncerButton
+        Button BouncerButton = new Button("Talk to bouncer");
+        BouncerButton.setOnAction(new HandleButtonClick("Bouncer", label1));
+        root1.getChildren().add(BouncerButton);
+		//directs to scene2
+		BouncerButton.setOnAction(e -> primaryStage.setScene(scene2));
+		//WeaponButton
+		Button WeaponButton = new Button("Examine weapon");
+        WeaponButton.setOnAction(new HandleButtonClick("Weapon", label1));
+        root1.getChildren().add(WeaponButton);
+		//directs to scene3
+		WeaponButton.setOnAction(e -> primaryStage.setScene(scene3));
+		
+	//scene2 - clue and back to PS
+		VBox root2 = new VBox();
+        Label label2 = new Label("Clue #3");
+        label2.setFont(Font.font("Times New Roman", 24));
+        root2.getChildren().add(label2);
+		//PSButton
+        Button PSButton = new Button("Back to Police Station");
+        PSButton.setOnAction(new HandleButtonClick("PS", label2));
+        root2.getChildren().add(PSButton);
+		//directs to PS
+		PSButton.setOnAction(e -> {
+			PoliceStation.PS();
+		});
+		
+	//scene3 - weapon scene
+		VBox root3 = new VBox();
+        Label label3 = new Label("Pick up weapon or take pic.");
+        label3.setFont(Font.font("Times New Roman", 24));
+        root3.getChildren().add(label3);
+		//PickUpButton 
+        Button PickUpButton = new Button("Pick up weapon");
+		PickUpButton.setOnAction(new HandleButtonClick("Pick up", label3));
+		root3.getChildren().add(PickUpButton);
+		//directs to scene 4
+		PickUpButton.setOnAction(e -> primaryStage.setScene(scene4));
+		//PhotoButton 
+        Button PhotoButton = new Button("Take picture of weapon");
+        PhotoButton.setOnAction(new HandleButtonClick("puzzle", label3));
+        root3.getChildren().add(PhotoButton);
+		//directs to Puzzle class
+		PhotoButton.setOnAction(e -> {
+			Puzzle.Puz();
+		});
+		
+	//scene4 - framed scene
+		VBox root4 = new VBox();
+        Label label4 = new Label("You've been framed.");
+        label4.setFont(Font.font("Times New Roman", 24));
+        root4.getChildren().add(label4);
+		//PSButton
+        Button PS2Button = new Button("Back to Police Station");
+        PS2Button.setOnAction(new HandleButtonClick("PS", label4));
+        root4.getChildren().add(PS2Button);
+		//directs to PS
+		PS2Button.setOnAction(e -> {
+			PoliceStation.PS();
+		});
+		
+		
+		scene4 = new Scene(root4);
+		scene3 = new Scene(root3);
+		scene2 = new Scene(root2);
+  		scene1 = new Scene(root1);
+		
+		primaryStage.setTitle("Location B");
+        primaryStage.setScene(scene1);
+        primaryStage.show();
+		
+	}
+	
+}
