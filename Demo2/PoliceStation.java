@@ -25,12 +25,19 @@ public class PoliceStation {
 		Button b2 = new Button("Location B");
 		Button b3 = new Button("Location C");
 		Button b4 = new Button("Location D");
+		
 		b1.setOnAction(e -> {
-			LocationAGUI.display();
+		LocationAGUI.display();
 		});
-		/**b1.setOnAction(e -> {
-		tester.display();
-		});*/
+		
+		b2.setOnAction(e -> {
+		LocationBGUI.display();
+		});
+			
+		b3.setOnAction(e -> {
+		LocationCGUI.display();
+		});
+		
 		root.getChildren().add(b1);
 		root.getChildren().add(b2);
 		root.getChildren().add(b3);
