@@ -1,0 +1,14 @@
+private void createBackButton() {
+		TalkStealButton backButton = new TalkStealButton("Go back");
+		addMenuButton(backButton);
+        
+		backButton.setOnAction(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent event) {
+				gameStage.close();
+				menuStage.show();
+	}
+		});
+	}
+	
