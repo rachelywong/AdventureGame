@@ -1,5 +1,19 @@
 package tictactoegui;
 
+/**
+ * @author Team7
+ *
+ * Class represents the TicTacToeGame. 
+ * <p>
+ * Players will play as characters 'x' or 'o'
+ * and play tic tac toe. Their moves will be placed
+ * alone a copy of a tic tac toe board, and updated
+ * as the game continues.
+ * <p>
+ * The class allows the user to play one round of
+ * tic tac toe.
+ */ 
+
 public class TicTacToeGame{
     private int numberOfRounds = 1;
     private TicTacToeBoard board = new TicTacToeBoard();
