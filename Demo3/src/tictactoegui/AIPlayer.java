@@ -4,7 +4,7 @@
  */
 
 /**
- * Class represents the tictactoegui. The class AIPlayer generates a computer player
+ * Class represents the AIPlayer. The class AIPlayer generates a computer player
  * to play against the user in a game of tictactoe.
  * <p>
  * The computer player will be set as the 'x' token and the user is allowed to move
