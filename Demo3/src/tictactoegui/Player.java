@@ -2,6 +2,18 @@ package tictactoegui;
 
 import java.util.Scanner;
 
+/**
+ * @author Team7
+ */
+
+/**
+ * Class represents a player class for the tic tac toe game.
+ * <p>
+ * The class allows the user to act as a player and choose
+ * moves as tokens for the tic tac toe game against an AI computer
+ * player. The game will tell the user when to move and whose turn it is.
+ */ 
+
 public class Player {
     private String id;
     private char token = 'x';
@@ -23,6 +35,11 @@ public class Player {
         return token;
     }
      
+    
+ * Plays the move on the tic tac toe board.
+ * <p>
+ * @return move
+ */
     public Move getMove(TicTacToeBoard board){
         board.print();
         System.out.println(id + " it's your turn.  You're token is " + token);
