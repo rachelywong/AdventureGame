@@ -1,3 +1,16 @@
+
+/**
+ * @author Team7
+ */
+
+/**
+ * Class represents a game controller for the tictactorgui. 
+ * <p>
+ * Action events are used to allow specific positions to be used
+ * by the user with the token 'o' to play tic tac toe against
+ * the AI computer player.
+ */ 
+
 package tictactoegui;
 
 import java.util.Random;
@@ -61,11 +74,11 @@ public class GameController {
             playerToken = 'o';
             ai.setToken('x');
             aiTurn();
-            gui.setMessage("Your turn, you're token is 'o'");
+            gui.setMessage("Your turn, your token is 'o'");
         } else {
             playerToken = 'x';
             ai.setToken('o');
-            gui.setMessage("Your turn, you're token is 'x'");
+            gui.setMessage("Your turn, your token is 'x'");
         }
     }
      
