@@ -1,6 +1,5 @@
 package tictactoegui;
 
-
 	import javafx.application.Application;
 	import javafx.scene.Scene;
 	import javafx.stage.Stage;
@@ -11,7 +10,16 @@ package tictactoegui;
 	import javafx.event.*;
 	import javafx.scene.input.*;
 	 
-
+/**
+ * @author Team7
+ *
+ * Class represents the tictactoegui. 
+ * <p>
+ * Special tokens and symbols are generated
+ * to create the tic tac toe stage. This visual component
+ * implements an eventhandler as well to make the buttons
+ * work for the tic tac toe game GUI.
+ */ 
 	 
 	public class TicTacToeGUI extends Application {
 	    private Button[][] gridButtons = new Button[3][3];
