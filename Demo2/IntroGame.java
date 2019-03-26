@@ -1,122 +1,123 @@
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import javafx.scene.text.Font;
-import police.PoliceStation;
-import javafx.scene.layout.VBox;
-import button.HandleButtonClick;
-import javafx.scene.control.*;
+import javafx.scene.shape.*;
 import javafx.scene.image.*;
-import javafx.scene.layout.Region;
+import javafx.scene.text.*;
+import javafx.scene.*;
+import javafx.stage.*;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.control.*; 
+import javafx.geometry.*; 
+import javafx.event.EventHandler;
+import javafx.event.ActionEvent;
+
+import javafx.application.Application;
 import javafx.animation.AnimationTimer;
  
 public class IntroGame extends Application {
 	
- 	static Scene scene1, scene2, scene3, scene4, scene5;
+ 	static Scene startScene, characterSelection, getInfoScene, FIREDscene, supervisorScene;
 	
-    public void start(Stage primaryStage) {
+    	public void start(Stage primaryStage) {
 		
-	//scene1 - Start Menu
-    
-        VBox root1 = new VBox();
-        root1.setPrefWidth(800);
-        root1.setPrefHeight(600); 
-        Label label1 = new Label("Dead On The Dance Floor");
-        label1.setFont(Font.font("Times New Roman", 24)); //24
-        root1.getChildren().add(label1);
-		//PlayButton
-        Button PlayButton = new Button("Play");
-        PlayButton.setOnAction(new HandleButtonClick("Play", label1));
-        root1.getChildren().add(PlayButton);
+	//scene1 - startScene
+        	VBox root1 = new VBox();
+		//titleLabel
+        	Label titleLabel = new Label("Dead On The Dance Floor");
+        	titleLabel.setFont(Font.font("Times New Roman", 24)); 
+        	root1.getChildren().add(titleLabel);
+		//playButton
+        	Button playButton = new Button("Play");
+        	playButton.setOnAction(new HandleButtonClick("Play", titleLabel));
+        	root1.getChildren().add(playButton);
 		//directs to scene2
-		PlayButton.setOnAction(e -> primaryStage.setScene(scene2));
-	
+		playButton.setOnAction(e -> primaryStage.setScene(characterSelection));
 		
-	//scene2 - Character Selection
+	//scene2 - characterSelection
 		VBox root2 = new VBox();
-		root2.setPrefWidth(800);
-        root2.setPrefHeight(600); 
-        Label label2 = new Label("Pick a detective: ");
-        label2.setFont(Font.font("Times New Roman", 24));
-        root2.getChildren().add(label2);
+		//pickCharLabel
+        	Label pickCharLabel = new Label("Pick a detective: ");
+        	pickCharLabel.setFont(Font.font("Times New Roman", 24));
+        	root2.getChildren().add(pickCharLabel);
 		//aButton
-        Button aButton = new Button("A");
-        aButton.setOnAction(new HandleButtonClick("A", label2));
-        root2.getChildren().add(aButton);
+	        Button aButton = new Button("A");
+		aButton.setOnAction(new HandleButtonClick("A", pickCharLabel));
+	        root2.getChildren().add(aButton);
 		//bButton
-        Button bButton = new Button("B");
-        bButton.setOnAction(new HandleButtonClick("B", label2));
-        root2.getChildren().add(bButton);
+        	Button bButton = new Button("B");
+        	bButton.setOnAction(new HandleButtonClick("B", pickCharLabel));
+        	root2.getChildren().add(bButton);
 		//directs to scene3
-		aButton.setOnAction(e -> primaryStage.setScene(scene3));
-		bButton.setOnAction(e -> primaryStage.setScene(scene3));
+		aButton.setOnAction(e -> primaryStage.setScene(getInfoScene));
+		bButton.setOnAction(e -> primaryStage.setScene(getInfoScene));
 
-	//scene3 - Steal file or talk to supervisor
+	//scene3 - getInfoScene
 		VBox root3 = new VBox();
-		root3.setPrefWidth(800);
-        root3.setPrefHeight(600); 
-        Label label3 = new Label("Case file");
-        label3.setFont(Font.font("Times New Roman", 24));
-        root3.getChildren().add(label3);
-		//StealButton
-        Button StealButton = new Button("Steal file");
-        StealButton.setOnAction(new HandleButtonClick("Steal", label3));
-        root3.getChildren().add(StealButton);
-		//TalkButton
-        Button TalkButton = new Button("Talk to supervisor");
-        TalkButton.setOnAction(new HandleButtonClick("Talk", label3));
-        root3.getChildren().add(TalkButton);
+		//choice1Label
+        	Label choice1Label = new Label("How would you like to go about getting information regarding the case: \n" +
+					"Talk to your supervisor first, or steal the case folder from the filing cabinet?");
+        	choice1Label.setFont(Font.font("Times New Roman", 24));
+        	root3.getChildren().add(choice1Label);
+		//stealButton
+	        Button stealButton = new Button("Steal file");
+	        stealButton.setOnAction(new HandleButtonClick("Steal", choice1Label));
+	        root3.getChildren().add(stealButton);
+		//talkButton
+	        Button talkButton = new Button("Talk to supervisor");
+        	talkButton.setOnAction(new HandleButtonClick("Talk", choice1Label));
+	        root3.getChildren().add(talkButton);
 		//directs to scene4 and scene5
-		StealButton.setOnAction(e -> primaryStage.setScene(scene4));
-		TalkButton.setOnAction(e -> primaryStage.setScene(scene5));
+		stealButton.setOnAction(e -> primaryStage.setScene(FIREDscene));
+		talkButton.setOnAction(e -> primaryStage.setScene(supervisorScene));
 		
-	//scene4 - FIRED for stealing file
+	//scene4 - FIREDscene
 		VBox root4 = new VBox();
-		root4.setPrefWidth(800);
-        root4.setPrefHeight(600); 
-        Label label4 = new Label("You've been fired!");
-        label4.setFont(Font.font("Times New Roman", 24));
-        root4.getChildren().add(label4);
-		//ReturnButton
-        Button ReturnButton = new Button("Return to case");
-        ReturnButton.setOnAction(new HandleButtonClick("Return", label4));
-        root4.getChildren().add(ReturnButton);
+		//FIREDlabel
+       		Label FIREDlabel = new Label("You're FIRED! This has been a test, and you failed. \n" +
+									 "Make better choices in the game!");
+        	FIREDlabel.setFont(Font.font("Times New Roman", 24));
+        	root4.getChildren().add(FIREDlabel);
+		//returnButton
+       	 	Button returnButton = new Button("Return to case");
+       	 	returnButton.setOnAction(new HandleButtonClick("Return", FIREDlabel));
+       	 	root4.getChildren().add(returnButton);
 		//directs back to scene3
-		ReturnButton.setOnAction(e -> primaryStage.setScene(scene3));
+		returnButton.setOnAction(e -> primaryStage.setScene(getInfoScene));
 		
-	//scene5 - Tic Tac Toe
+	//scene5 - supervisorScene
 		VBox root5 = new VBox();
-		root5.setPrefWidth(800);
-        root5.setPrefHeight(600); 
-        Label label5 = new Label("Play Tic Tac Toe or start case");
-        label5.setFont(Font.font("Times New Roman", 24));
-        root5.getChildren().add(label5);
+		//choice2Label
+        	Label choice2Label = new Label("Supervisor: I'm so glad to see that you are so eager. \n" +
+									   "Would you care to play a round of Tic Tac Toe with me before you start the case? \n" +
+									   "If you win, I might give you a hint...");
+        	choice2Label.setFont(Font.font("Times New Roman", 24));
+        	root5.getChildren().add(choice2Label);
 		//TTTButton
 		Button TTTButton = new Button("Play Tic Tac Toe");
-        TTTButton.setOnAction(new HandleButtonClick("TTT", label4));
-        root5.getChildren().add(TTTButton);
+       	 	TTTButton.setOnAction(new HandleButtonClick("TTT", FIREDlabel));
+        	root5.getChildren().add(TTTButton);
 		//directs to TTT class
 		//TTTButton.setOnAction(e -> {
-			//TicTacToe.TTT();
+			//TicTacToeGUI.display();
 		//});
 		
-		//CaseButton
-		Button CaseButton = new Button("Start case");
-        CaseButton.setOnAction(new HandleButtonClick("Case", label5));
-        root5.getChildren().add(CaseButton);
+		//caseButton
+		Button caseButton = new Button("Start case");
+        	caseButton.setOnAction(new HandleButtonClick("Case", choice2Label));
+        	root5.getChildren().add(caseButton);
 		//directs to PoliceStation class
-		CaseButton.setOnAction(e -> {
+		caseButton.setOnAction(e -> {
 			PoliceStation.PS();
 		});
 		
-		scene5 = new Scene(root5);
-		scene4 = new Scene(root4);
-		scene3 = new Scene(root3);
-		scene2 = new Scene(root2);
-  		scene1 = new Scene(root1);
+		supervisorScene = new Scene(root5);
+		FIREDscene = new Scene(root4);
+		getInfoScene = new Scene(root3);
+		characterSelection = new Scene(root2);
+  		startScene = new Scene(root1);
 		
-        primaryStage.setTitle("Dead On The Dance Floor");
-        primaryStage.setScene(scene1);
-        primaryStage.show();
+        	primaryStage.setTitle("Dead On The Dance Floor");
+		primaryStage.setMaximized(true);
+        	primaryStage.setScene(startScene);
+        	primaryStage.show();
     }
 }
