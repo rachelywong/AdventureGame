@@ -18,7 +18,7 @@ import javafx.event.ActionEvent;
 import java.util.Scanner; 
 import java.util.Random; 
 
-public class attackGUI extends attackTerm{
+public class attackGUI extends LocationAGUI{
 	
 	private static String personPlay;
 	private static String computerPlay = "";
@@ -41,6 +41,7 @@ public class attackGUI extends attackTerm{
 				}
 		return computerPlay;
 	}
+
 	
 	public static Scene getAttackScene(){
 		Image attackImage = new Image("file:monster.png");
@@ -55,9 +56,20 @@ public class attackGUI extends attackTerm{
 		choices.setAlignment(Pos.BOTTOM_LEFT);
 		attackPane.getChildren().add(choices);
 		
-		boolean attacking = true;
-		
-			
+		Button backButton = new Button("Go back");
+		backButton.setOnAction(new EventHandler<ActionEvent>() {
+			@Override 
+			public void handle(ActionEvent backto) {
+				
+				window.setScene(scene1);
+
+			}
+		});
+		/*
+		backButton.setOnAction(e -> {
+			LocationAGUI.display();
+			});
+			*/
 		computerPlayer = getcompGen();
 		System.out.println("What's your play?"); 
 		
@@ -73,7 +85,7 @@ public class attackGUI extends attackTerm{
 					System.out.println("You loose");
 				} else if (computerPlayer.equals("S")){
 					System.out.println("You Win");
-					setScene
+					choices.getChildren().add(backButton);
 				}
 				
 			}
@@ -90,7 +102,7 @@ public class attackGUI extends attackTerm{
 					System.out.println("You loose");
 				} else if (computerPlayer.equals("R")){
 					System.out.println("You Win");
-					
+					choices.getChildren().add(backButton);
 				}
 				
 			}
@@ -109,7 +121,7 @@ public class attackGUI extends attackTerm{
 					System.out.println("You loose");
 				} else if (computerPlay.equals("P")){
 					System.out.println("You Win");
-					
+					choices.getChildren().add(backButton);
 				}
 				
 			}
