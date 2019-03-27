@@ -1,0 +1,112 @@
+import javafx.scene.shape.*;
+import javafx.scene.image.*;
+import javafx.scene.text.*;
+import javafx.scene.*;
+import javafx.stage.*;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.control.*; 
+import javafx.geometry.*; 
+import javafx.event.EventHandler;
+import javafx.event.ActionEvent;
+
+import javafx.application.Application;
+import javafx.animation.AnimationTimer;
+
+import javafx.scene.Scene;
+import javafx.scene.Group;
+
+public class LocationDGUI {
+	
+	public static void display() {
+        Stage primaryStage = new Stage();
+        primaryStage.initModality(Modality.APPLICATION_MODAL);
+        primaryStage.setTitle("Location D");
+
+		Group root = new Group();
+		Scene scene = new Scene(root, 800, 600);
+		
+		//Story Line
+		Label storyLab = new Label("You are ready to make your final decision and arrest the murderer. \n" +
+								   "You have been given a list of suspects, and must choose who the \n" +
+								   "murderer is. The list identifies key characteristics of the suspects \n" +
+								   "that may help in your decision.");
+		storyLab.setFont(Font.font("Times New Roman", 21));
+		root.getChildren().add(storyLab);
+		//promptLab
+		Label promptLab = new Label("Murderer: ");
+		promptLab.setLayoutX(200);
+		promptLab.setLayoutY(400);
+		//resultLab
+		Label resultLab = new Label(" ");
+		resultLab.setLayoutX(225);
+		resultLab.setLayoutY(450);
+		//txtField
+		TextField txtField = new TextField("(Name)");
+		txtField.setLayoutX(260);
+		txtField.setLayoutY(395);
+		
+	//suspectList
+		Label suspect1 = new Label("Abi \n" +
+								   "Gender: Female \n" +
+								   "Hair Color: Brown \n" +
+								   "Occupation: Mechanic");
+		suspect1.setLayoutX(100);
+		suspect1.setLayoutY(150);
+		
+		Label suspect2 = new Label("Teresa \n" +
+								   "Gender: Female \n" +
+								   "Hair Color: Red \n" +
+								   "Occupation: Electrician");
+		suspect2.setLayoutX(300);
+		suspect2.setLayoutY(150);
+		
+		Label suspect3 = new Label("Leeroy \n" +
+								   "Gender: Male \n" +
+								   "Hair Color: Brown \n" +
+								   "Occupation: Artist");
+		suspect3.setLayoutX(500);
+		suspect3.setLayoutY(150);
+		
+		
+
+	//Buttons
+	    Button PSButton = new Button("Go back to PS");
+	    Button arrestButton = new Button("Arrest");
+
+        PSButton.setLayoutX(20);
+        PSButton.setLayoutY(450);
+        arrestButton.setLayoutX(20);
+        arrestButton.setLayoutY(480);
+
+	//Actions
+	    EventHandler<ActionEvent> event1 = new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent e1) {						
+				PSButton.setOnAction(e -> {
+					PoliceStation.PS();
+				});
+	        }
+	    };
+		
+	    EventHandler<ActionEvent> event2 = new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent e2) {						
+				if (txtField.getText().toUpperCase().equals("ABI")) {
+					resultLab.setText("Congrats! You've finally caught the murderer and win the game!");
+				} else {
+					resultLab.setText("You arrested the wrong suspect! Please try again.");
+				}
+			}
+	    };	
+
+	    // when button is pressed
+	    PSButton.setOnAction(event1);
+	    arrestButton.setOnAction(event2);
+
+		root.getChildren().addAll(promptLab, txtField, resultLab, PSButton, arrestButton, suspect1, suspect2, suspect3);
+		primaryStage.setScene(scene);
+		primaryStage.show();
+		
+	}
+	
+	
+}
