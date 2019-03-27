@@ -18,8 +18,8 @@ public class LocationAGUI {
 
     //Create static variables for all scenes 
     
-	public static Scene scene1, scene2, scene3, scene4, scene5;
-    private static Stage window;
+	protected static Scene scene1, scene2, scene3, scene4, scene5;
+    protected static Stage window;
 
 	public Stage getStage() {
         return window;
@@ -110,6 +110,8 @@ public class LocationAGUI {
 		arrows1.getChildren().add(arrowA1);
 		arrows1.getChildren().add(arrowB1);
 		arrows1.getChildren().add(arrowC1);
+		
+		scene1 = new Scene(root);
 		
 		//Background2
 		//Image background2 = new Image("file:doors2.jpg");
@@ -205,7 +207,7 @@ public class LocationAGUI {
 		
 		
 		
-		scene1 = new Scene(root);
+		//scene1 = new Scene(root);
 		window.setScene(scene1);
 		window.showAndWait();
 
