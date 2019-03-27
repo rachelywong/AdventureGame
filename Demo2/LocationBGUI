@@ -1,3 +1,4 @@
+package view;
 import javafx.scene.shape.*;
 import javafx.scene.image.*;
 import javafx.scene.text.*;
@@ -13,7 +14,7 @@ import javafx.event.ActionEvent;
 import javafx.application.Application;
 import javafx.animation.AnimationTimer;
  
-public class LocationBGUI {
+public class LocationBView {
 
 	static Scene crimeScene, weaponScene, framedScene;
 
@@ -21,6 +22,15 @@ public class LocationBGUI {
         Stage primaryStage = new Stage();
         primaryStage.initModality(Modality.APPLICATION_MODAL);
         primaryStage.setTitle("locB");
+        
+        
+      //Background
+      	Image background1 = new Image("view/resources/crimescene.jpg");
+      	ImageView mv1 = new ImageView(background1);
+      	GridPane root = new GridPane();
+      	root.setMaxSize(600, 600);
+      	root.getChildren().add(mv1);
+      	
 		
 	//scene1 - crimeScene
         VBox root1 = new VBox();
@@ -30,14 +40,14 @@ public class LocationBGUI {
 								   "\n" +
 								   "Would you like to speak to the DJ, or examin the weapon first?");
         storyLab.setFont(Font.font("Times New Roman", 24));
-        root1.getChildren().add(storyLab);
+        root.getChildren().add(storyLab);
 		//DJButton
         Button DJButton = new Button("Talk to DJ");
         DJButton.setOnAction(new HandleButtonClick("Bouncer", storyLab));
         root1.getChildren().add(DJButton);
 		//directs to Riddle1 class
 		DJButton.setOnAction(e -> {
-			Riddle1.display();
+			//Riddle1.display();
 		});
 		//weaponButton
 		Button weaponButton = new Button("Examine weapon");
@@ -63,7 +73,7 @@ public class LocationBGUI {
         root3.getChildren().add(photoButton);
 		//directs to Puzzle class
 		photoButton.setOnAction(e -> {
-			Puzzle.display();
+			//Puzzle.display();
 		});
 		
 	//scene4 - framedScene
@@ -77,16 +87,19 @@ public class LocationBGUI {
         root4.getChildren().add(PS2Button);
 		//directs to PS
 		PS2Button.setOnAction(e -> {
-			PoliceStation.PS();
+			//PoliceStation.PS();
 		});
 		
 		framedScene = new Scene(root4);
 		weaponScene = new Scene(root3);
-  		crimeScene = new Scene(root1);
+  		crimeScene = new Scene(root);
 		
 		primaryStage.setTitle("Location B");
         primaryStage.setScene(crimeScene);
         primaryStage.show();
+		
+        
+       
 		
 	}
 }
