@@ -1,11 +1,15 @@
 import java.util.Scanner;
 
-public class LocationC {
+public class LocationC extends PoliceStation {
 	
 	public static boolean game(){
-		int locker_num_to_guess = 123;
+		int locker_num_to_guess = 1978;
 		boolean guess = false;
 		int guess2 = 1;
+		
+		LocationC C = new LocationC();
+		
+		System.out.println(C.toString());
 		
 		System.out.println("You've arrived at a room filled with lockers, in fact there are thousands of them!\n"+
 							"Use the clues you have collected so far to open the correct locker of the suspect\n"+
@@ -33,12 +37,11 @@ public class LocationC {
 		}
 		return guess;
 	}
-	public static void main(String[] args){
+	public static void display(){
 		
 		Scanner keyboard = new Scanner(System.in);
 		
 		boolean guess = game();
-		
 		
 		while (guess == false){
 			System.out.println("You did not manage to guess the locker correctly. To try again type: TRY. To quit type: QUIT.");
@@ -61,8 +64,14 @@ public class LocationC {
 		}
 		
 		if (guess == true){
-			System.out.print("Print clue#5");
+			System.out.print("Print clue#5           ");
 		}
 		
+		PoliceStation.display(); //call PS
+		
+	}
+	
+	public String toString() {
+		return (super.toString());
 	}
 }
