@@ -1,27 +1,29 @@
 import java.util.Scanner;
 
-public class LocationB {
+public class LocationB extends PoliceStation {
 
-	public static void main(String[] args) {
+	public static void display() {
 		
-		System.out.println("You've arrived at the crime scene... \n" + 
-							"Do you want to examine the weapon or talk to manager?");
+		LocationB B = new LocationB();
+		
+		System.out.println(B.toString() + "You've arrived at the crime scene... \n" + 
+							"Do you want to examine the weapon (weapon) or talk to manager (manager)?");
 		Scanner keyboard = new Scanner(System.in);
 		String user_action = keyboard.nextLine();
 		
 			if (user_action.equals("weapon")) {
 				System.out.println("You've found the weapon...\n" +
-								"Do you want to take a picture or touch the weapon?");
+								"Do you want to take a picture (picture) or touch (touch) the weapon?");
 				String user_action2 = keyboard.nextLine();
 				
 				if (user_action2.equals("touch")) {
 					System.out.println("You've been FRAMED!... You go back to the police station. ");
 					boolean investigation = false;
-					PoliceStation.main(args);
+					PoliceStation.display();
 				}
 				else if (user_action2.equals("picture")) {
 					System.out.println("Your camera is broken. Play a puzzle game to fix it.");
-					Puzzle.main(args);
+					Puzzle.display();
 				}
 			}
 			
@@ -34,15 +36,17 @@ public class LocationB {
 				"75 had black shoes; \n" +
 				"60 carried an umbrella; \n" +
 				"90 wore a ring; \n" +
-				"How many ladies must have had all four items? \n");
+				"How many ladies must have had all four items?");
 				
 
 				String user_guess = keyboard.nextLine();
 
-				while (riddle = true) {
-					if (user_guess == riddle_answer) {
-						System.out.println("You answered correctly! Print clue#3. ");	//ADD**
+				while (riddle == true) {
+					if (user_guess.equals(riddle_answer)) {
+						
 						riddle = false;
+						
+						System.out.println("You answered correctly! Print clue#3. ");	//ADD**
 						//add clue to inventory
 						//exit while
 						//PS
@@ -52,9 +56,14 @@ public class LocationB {
 						user_guess = keyboard.nextLine();
 						riddle = true;
 					}
+					riddle = false;
 				}
 			System.out.println("Return to PoliceStation. ");
-			PoliceStation.main(args);
+			PoliceStation.display();
 			}
+	}
+	
+	public String toString() {
+		return (super.toString());
 	}
 }
