@@ -2,10 +2,12 @@ import java.util.ArrayList;
 
 import javafx.application.Application;
 import javafx.collections.ObservableList;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -196,6 +198,7 @@ public class Hangman extends Application {
 		primaryStage.setTitle("Show Hangman");
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		
 	}
 
 	public static void main(String[] args) { // main method to launch
@@ -289,8 +292,7 @@ public class Hangman extends Application {
 
 		// Part 6: handle winning
 		if (solved) {
-			// Do something for a win
-			// TODO: Winning message
+			System.out.println("clue: the locker number is between 1500-2000");
 		}
 
 	}
