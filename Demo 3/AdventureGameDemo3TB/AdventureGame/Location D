@@ -1,51 +1,43 @@
 import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.Random;
 
-public class LocationD {
-	
-	public static void main(String[] args){
-		String murderer = "murderer";
-		boolean guess = false;
-		int guessNumber = 0;
+public class LocationD extends PoliceStation{
+
+	public static void display() {
+
+		Scanner reader = new Scanner(System.in);  
 		
-		System.out.println("Who did it? 2 guesses");
+		LocationD D = new LocationD();
 		
-		ArrayList suspectsList = new ArrayList();
-		suspectsList.add( "A" );
-		suspectsList.add( "B" );
-		suspectsList.add( "C" );
-		suspectsList.add( "murderer" );
-		
-		System.out.print(suspectsList);
-		
-		Scanner keyboard = new Scanner(System.in);
-		String user_guess = keyboard.next();
-		
-		while (guess == false & guessNumber < 2){ 
-			guessNumber += 1;
+		System.out.println(D.toString() + "Guess who did it!");
+
+		String answer = "Abi";
+
+		boolean flag = false;
+
+		do {
 			
-			if (guessNumber != 2) {
-			
-			if (user_guess.contentEquals("murderer")){
-				System.out.println("Dance off");
-				DanceOff.main(args); //call dance off
-				guess = true;
+			System.out.println ("Who is the murderer? Abi, Teresa, or Leeroy");
+			String userInput = reader.nextLine();
+
+			if (userInput.equals(answer)) {
+				System.out.println ("Congrats! You win the game!");
+				flag = true;
 			}
 			else {
-				System.out.println("Wrong");
-				guess = false;
-				System.out.println("Who did it? 2 guesses");
-				user_guess = keyboard.next();
+				System.out.println ("You're wrong.");
+
+				flag = false;			
 			}
-			
-			}
-			
-			else {
-				System.out.println("You ran out of guesses");
-				PoliceStation.main(args); //call PS
-			}
-				
 		}
+
+		while (flag == false);
+
 	}
 
+	public String toString() {
+		return (super.toString());
+	}
+	
 }
+
