@@ -86,6 +86,10 @@ our adventure game is separated into two; one is the text-based version where th
 
 Please download the files from the folder labelled as just "Demo 3" the other folder labelled "Demo2/src" is incorrect.
 
+Please upload the files following the format of the screenshots below to ensure the correct files are in the correct packages:
+
+![PackageOrder](https://user-images.githubusercontent.com/45707735/55197281-b6b84b00-5177-11e9-8318-3a024c429a30.jpg)
+
 #About
 The code was written by Abi, Rachel, Elvira and Teresa.
 
