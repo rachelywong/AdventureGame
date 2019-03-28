@@ -50,21 +50,31 @@ public class attackGUI extends LocationAGUI {
 		attackPane.setMaxSize(847, 600);
 		
 		attackPane.getChildren().add(attackView);
-	
+		
+		VBox labels = new VBox();
+		labels.setAlignment(Pos.TOP_LEFT);
+		Label a_label = new Label("You're held cpative,make a choice, and you must win to leave");
+		a_label.setTextFill(Color.web("#FFFFFF"));
+		a_label.setFont(new Font("Times New Roman", 18));
+		Label win_label = new Label("You win!!");
+		win_label.setTextFill(Color.web("#FFFFFF"));
+		win_label.setFont(new Font("Times New Roman", 18));
+		labels.getChildren().add(a_label);
+		attackPane.getChildren().add(labels);
 		
 		HBox choices = new HBox();
 		choices.setAlignment(Pos.BOTTOM_LEFT);
 		attackPane.getChildren().add(choices);
+		
+		
 		
 		Button backButton = new Button("Go back");
 		backButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override 
 			public void handle(ActionEvent backto) {
 				
-				LocationAGUI.display();
+				//LocationAGUI.display();
 
-				Stage stage = getStage();
-				stage.hide();
 				
 				//setScene(scene1);
 
@@ -86,6 +96,7 @@ public class attackGUI extends LocationAGUI {
 					System.out.println("You loose");
 				} else if (computerPlayer.equals("S")){
 					System.out.println("You Win");
+					labels.getChildren().add(win_label);
 					choices.getChildren().add(backButton);
 				}
 				
@@ -103,6 +114,7 @@ public class attackGUI extends LocationAGUI {
 					System.out.println("You loose");
 				} else if (computerPlayer.equals("R")){
 					System.out.println("You Win");
+					labels.getChildren().add(win_label);
 					choices.getChildren().add(backButton);
 				}
 				
@@ -122,13 +134,13 @@ public class attackGUI extends LocationAGUI {
 					System.out.println("You loose");
 				} else if (computerPlay.equals("P")){
 					System.out.println("You Win");
+					labels.getChildren().add(win_label);
 					choices.getChildren().add(backButton);
 				}
 				
 			}
 			});
-	
-	
+		
 		choices.getChildren().addAll(rockchoice,paperchoice,scissorchoice);
 		
 		
