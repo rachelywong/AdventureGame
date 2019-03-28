@@ -26,6 +26,8 @@ public class attackGUI extends LocationAGUI {
 	private static int computerInt; //Randomly generated number used to determine computer's play 
     private String response; 
 	
+	
+	
 	public static String getcompGen(){
 		Random generator = new Random();
 		computerInt = generator.nextInt(3)+1;
@@ -53,14 +55,15 @@ public class attackGUI extends LocationAGUI {
 		
 		VBox labels = new VBox();
 		labels.setAlignment(Pos.TOP_LEFT);
-		Label a_label = new Label("You're held cpative,make a choice, and you must win to leave");
-		a_label.setTextFill(Color.web("#FFFFFF"));
-		a_label.setFont(new Font("Times New Roman", 18));
+		Label a_intro = new Label("You're held cpative,make a choice, and you must win to leave");
+		setFormat(a_intro);
 		Label win_label = new Label("You win!!");
-		win_label.setTextFill(Color.web("#FFFFFF"));
-		win_label.setFont(new Font("Times New Roman", 18));
-		labels.getChildren().add(a_label);
+		setFormat(win_label);
+		Label loose_label = new Label("You loose!!");
+		setFormat(loose_label);
+		labels.getChildren().add(a_intro);
 		attackPane.getChildren().add(labels);
+		
 		
 		HBox choices = new HBox();
 		choices.setAlignment(Pos.BOTTOM_LEFT);
@@ -92,10 +95,12 @@ public class attackGUI extends LocationAGUI {
 				
 				if (personPlay.equals(computerPlayer)){
 					System.out.println("It's a tie!"); 
+					labels.getChildren().add(loose_label);
 				} else if (computerPlayer.equals("P")){
 					System.out.println("You loose");
+					labels.getChildren().add(loose_label);
 				} else if (computerPlayer.equals("S")){
-					System.out.println("You Win");
+					System.out.println("You win!");
 					labels.getChildren().add(win_label);
 					choices.getChildren().add(backButton);
 				}
@@ -109,9 +114,11 @@ public class attackGUI extends LocationAGUI {
 				personPlay ="P";
 				
 				if (personPlay.equals(computerPlayer)){
-					System.out.println("It's a tie!"); 
+					System.out.println("It's a tie!");
+					labels.getChildren().add(loose_label);					
 				} else if (computerPlayer.equals("S")){
 					System.out.println("You loose");
+					labels.getChildren().add(loose_label);
 				} else if (computerPlayer.equals("R")){
 					System.out.println("You Win");
 					labels.getChildren().add(win_label);
@@ -148,5 +155,14 @@ public class attackGUI extends LocationAGUI {
 		
 		return attackscene;
 	}
+	
+	public static void setFormat(Label aResultLabel){
+		aResultLabel.setTextFill(Color.web("#FFFFFF"));
+		aResultLabel.setFont(new Font("Times New Roman", 18));
+		aResultLabel.setWrapText(true);	
+		
+	}
+	
+
 
 }
