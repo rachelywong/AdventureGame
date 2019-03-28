@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class LocationB {
+public class Location B {
 
 	public static void main(String[] args) {
 		
