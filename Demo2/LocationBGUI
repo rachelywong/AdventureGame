@@ -4,6 +4,8 @@ import javafx.scene.image.*;
 import javafx.scene.text.*;
 import javafx.scene.*;
 import javafx.stage.*;
+import model.TalkStealButton;
+import tictactoegui.TicTacToeGUI;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.control.*; 
@@ -14,7 +16,8 @@ import javafx.application.Application;
 import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
  
-public class LocationBGUI {
+/////CONNECT POLICE STATION
+public class LocationBView {
 
 	static Scene crimeScene, weaponScene, framedScene;
 
@@ -22,12 +25,14 @@ public class LocationBGUI {
         Stage primaryStage = new Stage();
         primaryStage.initModality(Modality.APPLICATION_MODAL);
 
-    /**crimeScene Background
+        /*
+        //crimeScene Background
       	Image background1 = new Image("crimescene.png");
       	ImageView mv1 = new ImageView(background1);
       	GridPane root = new GridPane();
       	root.setMaxSize(800, 600);
-      	root.getChildren().add(mv1);*/
+      	root.getChildren().add(mv1);
+      	*/
 		
 	//scene1 - crimeScene
         VBox root1 = new VBox();
@@ -39,8 +44,9 @@ public class LocationBGUI {
 		//storyLab.setTextFill(Color.web("#FFFFFF"));				   
         storyLab.setFont(Font.font("Times New Roman", 24));
         root1.getChildren().add(storyLab);
+        
 		//DJButton
-        Button DJButton = new Button("Talk to DJ");
+        TalkStealButton DJButton = new TalkStealButton("Talk to DJ");
         DJButton.setOnAction(new HandleButtonClick("DJ", storyLab));
         root1.getChildren().add(DJButton);
 		//directs to Riddle1 class
@@ -49,7 +55,7 @@ public class LocationBGUI {
 			Riddle1.display();
 		});
 		//weaponButton
-		Button weaponButton = new Button("Examine weapon");
+		TalkStealButton weaponButton = new TalkStealButton("Examine weapon");
         weaponButton.setOnAction(new HandleButtonClick("Weapon", storyLab));
         root1.getChildren().add(weaponButton);
 		//directs to scene3
@@ -61,22 +67,33 @@ public class LocationBGUI {
         choice3Label.setFont(Font.font("Times New Roman", 24));
         root3.getChildren().add(choice3Label);
 		//pickUpButton 
-        Button pickUpButton = new Button("Pick up weapon");
+        TalkStealButton pickUpButton = new TalkStealButton("Pick up weapon");
 		pickUpButton.setOnAction(new HandleButtonClick("Pick up", choice3Label));
 		root3.getChildren().add(pickUpButton);
 		//directs to scene 4
 		pickUpButton.setOnAction(e -> primaryStage.setScene(framedScene));
 		//photoButton 
-        Button photoButton = new Button("Take picture of weapon");
+		TalkStealButton photoButton = new TalkStealButton("Take picture of weapon");
         photoButton.setOnAction(new HandleButtonClick("Puzzle", choice3Label));
         root3.getChildren().add(photoButton);
-		//directs to Puzzle class
-		//photoButton.setOnAction(e -> {
-			//primaryStage.hide();
-			//Puzzle.start();
-		//});
+        photoButton.setOnAction(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent event) {
+					Puzzle puzzle = new Puzzle();
+					
+					puzzle.start(new Stage()); //chooseDetective
+					//obj.thefunctioname(args);
+					//Class2.main(args);
+				
+
+			}
+		});
 		
-	//scene4 - framedScene
+	
+		
+		
+	    //scene4 - framedScene
 		VBox root4 = new VBox();
         Label frameLabel = new Label("You've been framed! Your captain demands that you return to \n" +
 									 "the station immediately for questioning. You may continue the \n" +
@@ -84,20 +101,20 @@ public class LocationBGUI {
         frameLabel.setFont(Font.font("Times New Roman", 24));
         root4.getChildren().add(frameLabel);
 		//PS2Button
-        Button PS2Button = new Button("Back to Police Station");
+        TalkStealButton PS2Button = new TalkStealButton("Back to Police Station");
         PS2Button.setOnAction(new HandleButtonClick("PS", frameLabel));
         root4.getChildren().add(PS2Button);
 		//directs to PS
 		PS2Button.setOnAction(e -> {
 			primaryStage.hide();
-			PoliceStation.PS();
+			//PoliceStation.PS();
 		});
 		
 		
 		framedScene = new Scene(root4, 847, 600);
 		weaponScene = new Scene(root3, 847, 600);
   		crimeScene = new Scene(root1, 847, 600);
-		
+  		
 		primaryStage.setTitle("Location B");
         primaryStage.setScene(crimeScene);
         primaryStage.show();
