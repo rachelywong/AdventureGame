@@ -9,11 +9,8 @@ import javafx.scene.control.*;
 import javafx.geometry.*; 
 import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
-
 import javafx.application.Application;
 import javafx.animation.AnimationTimer;
-
-import javafx.scene.Scene;
 import javafx.scene.Group;
 
 public class LocationDGUI {
@@ -24,28 +21,34 @@ public class LocationDGUI {
         primaryStage.setTitle("Location D");
 
 		Group root = new Group();
-		Scene scene = new Scene(root, 800, 600);
 		
-		//Story Line
+	//Story Line
 		Label storyLab = new Label("You are ready to make your final decision and arrest the murderer. \n" +
 								   "You have been given a list of suspects, and must choose who the \n" +
 								   "murderer is. The list identifies key characteristics of the suspects \n" +
 								   "that may help in your decision.");
-		storyLab.setFont(Font.font("Times New Roman", 21));
+		storyLab.setFont(Font.font("Times New Roman", 24));
 		root.getChildren().add(storyLab);
+		
+	//Labels
 		//promptLab
-		Label promptLab = new Label("Murderer: ");
-		promptLab.setLayoutX(200);
-		promptLab.setLayoutY(400);
+		Label promptLab = new Label("Murderer: (Press the Submit button to enter guess) ");
+		promptLab.setLayoutX(150);
+		promptLab.setLayoutY(300);
+		promptLab.setFont(Font.font("Times New Roman", 20));
+		root.getChildren().add(promptLab);
 		//resultLab
 		Label resultLab = new Label(" ");
 		resultLab.setLayoutX(225);
 		resultLab.setLayoutY(450);
+		resultLab.setFont(Font.font("Times New Roman", 20));
+		root.getChildren().add(resultLab);
 		//txtField
 		TextField txtField = new TextField("(Name)");
-		txtField.setLayoutX(260);
-		txtField.setLayoutY(395);
-		
+		txtField.setLayoutX(150);
+		txtField.setLayoutY(330);
+		root.getChildren().add(txtField);
+	
 	//suspectList
 		Label suspect1 = new Label("Abi \n" +
 								   "Gender: Female \n" +
@@ -53,6 +56,8 @@ public class LocationDGUI {
 								   "Occupation: Mechanic");
 		suspect1.setLayoutX(100);
 		suspect1.setLayoutY(150);
+		suspect1.setFont(Font.font("Times New Roman", 20));
+		root.getChildren().add(suspect1);
 		
 		Label suspect2 = new Label("Teresa \n" +
 								   "Gender: Female \n" +
@@ -60,6 +65,8 @@ public class LocationDGUI {
 								   "Occupation: Electrician");
 		suspect2.setLayoutX(300);
 		suspect2.setLayoutY(150);
+		suspect2.setFont(Font.font("Times New Roman", 20));
+		root.getChildren().add(suspect2);
 		
 		Label suspect3 = new Label("Leeroy \n" +
 								   "Gender: Male \n" +
@@ -67,28 +74,28 @@ public class LocationDGUI {
 								   "Occupation: Artist");
 		suspect3.setLayoutX(500);
 		suspect3.setLayoutY(150);
-		
-		
+		suspect3.setFont(Font.font("Times New Roman", 20));
+		root.getChildren().add(suspect3);
 
 	//Buttons
+		//PSButton
 	    Button PSButton = new Button("Go back to PS");
-	    Button arrestButton = new Button("Arrest");
-
         PSButton.setLayoutX(20);
         PSButton.setLayoutY(450);
+		root.getChildren().add(PSButton);
+		PSButton.setOnAction(new HandleButtonClick("PS", promptLab));
+		PSButton.setOnAction(e -> {
+			primaryStage.hide();
+			PoliceStation.PS();
+		});
+		//arrestButton
+	    Button arrestButton = new Button("Arrest");
         arrestButton.setLayoutX(20);
         arrestButton.setLayoutY(480);
+		root.getChildren().add(arrestButton);
 
 	//Actions
-	    EventHandler<ActionEvent> event1 = new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent e1) {						
-				PSButton.setOnAction(e -> {
-					PoliceStation.PS();
-				});
-	        }
-	    };
-		
-	    EventHandler<ActionEvent> event2 = new EventHandler<ActionEvent>() {
+	    EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e2) {						
 				if (txtField.getText().toUpperCase().equals("ABI")) {
 					resultLab.setText("Congrats! You've finally caught the murderer and win the game!");
@@ -98,15 +105,11 @@ public class LocationDGUI {
 			}
 	    };	
 
-	    // when button is pressed
-	    PSButton.setOnAction(event1);
-	    arrestButton.setOnAction(event2);
+	//When button is pressed
+	    arrestButton.setOnAction(event);
 
-		root.getChildren().addAll(promptLab, txtField, resultLab, PSButton, arrestButton, suspect1, suspect2, suspect3);
+		Scene scene = new Scene(root, 847, 600);
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		
 	}
-	
-	
 }
