@@ -9,9 +9,9 @@ import javafx.scene.control.*;
 import javafx.geometry.*; 
 import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
-
 import javafx.application.Application;
 import javafx.animation.AnimationTimer;
+import javafx.scene.Group;
  
 public class Riddle2 {
 
@@ -21,65 +21,66 @@ public class Riddle2 {
         primaryStage.setTitle("Riddle2");
 	
 		VBox root = new VBox();
-		Scene scene = new Scene(root, 800, 600);
 
-		Label riddle = new Label("What do you get when you cross a hamburger with a computer?");
-		riddle.setFont(Font.font("Times New Roman", 21));
-		root.getChildren().add(riddle);
+	//Labels 
+		Label riddle2 = new Label("What do you get when you cross a hamburger with a computer?");
+		riddle2.setFont(Font.font("Times New Roman", 24));
+		root.getChildren().add(riddle2);
 
-		Label lab = new Label("Guess:");
-		lab.setLayoutX(150);
-		lab.setLayoutY(90);
-
-		Label outLab = new Label("");
-		outLab.setLayoutX(225);
-		outLab.setLayoutY(120);
-
+	//Labels
+		//promptLab
+		Label promptLab = new Label("Guess: (Press the Submit button to enter guess)");
+		promptLab.setLayoutX(200);
+		promptLab.setLayoutY(200);
+		promptLab.setFont(Font.font("Times New Roman", 20));
+		root.getChildren().add(promptLab);
+		//resultLab
+		Label resultLab = new Label(" ");
+		resultLab.setLayoutX(225);
+		resultLab.setLayoutY(120);
+		resultLab.setFont(Font.font("Times New Roman", 20));
+		root.getChildren().add(resultLab);	
+		//txtField
 		TextField txtField = new TextField("(3 words, first word is A)");
 		txtField.setLayoutX(300);
-		txtField.setLayoutY(90);
+		txtField.setLayoutY(200);
+		root.getChildren().add(txtField);
 
-		// create a button
-	    Button b = new Button("Go back to PS");
-	    Button b2 = new Button("Guess");
+	//Buttons
+		//PSButton
+	    Button PSButton = new Button("Go back to PS");
+	    PSButton.setLayoutX(20);
+		PSButton.setLayoutY(20);
+		root.getChildren().add(PSButton);
+		PSButton.setOnAction(new HandleButtonClick("PS", promptLab));
+		PSButton.setOnAction(e -> {
+			primaryStage.hide();
+			PoliceStation.PS();
+		});
+		//submitButton
+	    Button submitButton = new Button("Submit");
+	    submitButton.setLayoutX(20);
+		submitButton.setLayoutY(50);
+		root.getChildren().add(submitButton);
 
-	    b.setLayoutX(20);
-		b.setLayoutY(20);
-	    b2.setLayoutX(20);
-		b2.setLayoutY(50);
+	//Actions
+	    EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent eve2) {	
+				if (txtField.getText().toUpperCase().equals("A BIG MAC")) {
+					resultLab.setText("The camera is fixed! You use it to take a photo of the weapon. \n" +
+									  "You discover the weapon used was a black high heeled shoe. \n" +
+									  "Return to the police station to report and continue.");						
+				} else {
+					resultLab.setText("Incorrect. Please try again.");
+				}
+	        }
+	    };
 
+	//When button is pressed
+	    submitButton.setOnAction(event);
 
-	        EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
-	            public void handle(ActionEvent eve)
-	            {						
-					b.setOnAction(e -> {
-						PoliceStation.PS();
-					});
-				
-	            }
-	        };
-
-	        EventHandler<ActionEvent> event2 = new EventHandler<ActionEvent>() {
-	            public void handle(ActionEvent eve2)
-	            {	
-					if (txtField.getText().toUpperCase().equals("A BIG MAC")) {
-						outLab.setText("The camera is fixed! You use it to take a photo of the weapon. \n" +
-									   "You discover the weapon used was a black high heeled shoe.");						
-						
-					} else {
-						outLab.setText("please try again.");
-					}
-	            }
-	        };
-
-	    // when button is pressed
-	    b.setOnAction(event);
-	    b2.setOnAction(event2);
-
-		root.getChildren().addAll(lab, txtField, outLab, b, b2);
+		Scene scene = new Scene(root, 847, 600);
 		primaryStage.setScene(scene);
-		primaryStage.setMaximized(true);
-		primaryStage.show();
-		
+		primaryStage.show();	
 	}
 }
