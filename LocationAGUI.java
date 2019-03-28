@@ -21,7 +21,7 @@ public class LocationAGUI {
 	protected static Scene scene1, scene2, scene3, scene4, scene5;
     protected static Stage window;
 
-	public Stage getStage() {
+	public static Stage getStage() {
         return window;
     }
 	
@@ -92,7 +92,7 @@ public class LocationAGUI {
 		setPolygon(arrowA1);
 		
 		Button arrowB1 = new Button("B");
-		arrowB1.setOnAction(e -> window.setScene(scene2));
+		arrowB1.setOnAction(e -> window.setScene(scene4));
 		setPolygon(arrowB1);
 		
 		Button arrowC1 = new Button("C");
@@ -113,87 +113,7 @@ public class LocationAGUI {
 		
 		scene1 = new Scene(root);
 		
-		//Background2
-		//Image background2 = new Image("file:doors2.jpg");
-		ImageView mv2 = new ImageView(background1);
-		GridPane root2 = new GridPane();
-		root2.getChildren().add(mv2);
 		
-		
-		//Intro Label 2
-		HBox door2loc = new HBox();
-		door2loc.setAlignment(Pos.BOTTOM_CENTER);
-		Label door2 = new Label("You are at door #2");
-		door2.setTextFill(Color.web("#FFFFFF"));
-		door2.setFont(new Font("Times New Roman", 36));
-		door2.setTextAlignment(TextAlignment.CENTER);
-		door2.setWrapText(true);			
-		root2.getChildren().add(door2loc);
-		door2loc.getChildren().add(door2);
-		
-		//Arrows2
-		HBox arrows2  = new HBox(250);
-		arrows2.setAlignment(Pos.CENTER);
-		root2.getChildren().add(arrows2);
-		
-		Button arrowA2= new Button("A");
-		arrowA2.setOnAction(e -> window.setScene(block));
-		setPolygon(arrowA2);
-		Button arrowB2 = new Button("B");
-		setPolygon(arrowB2);
-		Button arrowC2 = new Button("C");
-		arrowC2.setOnAction(e -> window.setScene(scene3));
-		setPolygon(arrowC2);
-		
-		
-		
-		arrows2.getChildren().add(arrowA2);
-		arrows2.getChildren().add(arrowB2);
-		arrows2.getChildren().add(arrowC2);
-		
-		scene2 = new Scene(root2);
-		
-		//Background3
-
-		ImageView mv3 = new ImageView(background1);
-		GridPane root3 = new GridPane();
-		root3.getChildren().add(mv3);
-		
-		
-		//Label 3
-		HBox door3loc = new HBox();
-		door3loc.setAlignment(Pos.BOTTOM_CENTER);
-		Label door3 = new Label("You are at door #3");
-		door3.setTextFill(Color.web("#FFFFFF"));
-		door3.setFont(new Font("Times New Roman", 36));
-		door3.setTextAlignment(TextAlignment.CENTER);
-		door3.setWrapText(true);			
-		root3.getChildren().add(door3loc);
-		door3loc.getChildren().add(door3);
-		
-		//Arrows3
-		HBox arrows3  = new HBox(250);
-		arrows3.setAlignment(Pos.CENTER);
-		root3.getChildren().add(arrows3);
-		
-		Button arrowA3= new Button("A");
-		arrowA3.setOnAction(e -> window.setScene(scene4));
-		setPolygon(arrowA3);
-		
-		Button arrowB3 = new Button("B");
-		setPolygon(arrowB3);
-		
-		Button arrowC3 = new Button("C");
-		arrowC3.setOnAction(e -> window.setScene(block));
-		setPolygon(arrowC3);
-	
-
-		
-		arrows3.getChildren().add(arrowA3);
-		arrows3.getChildren().add(arrowB3);
-		arrows3.getChildren().add(arrowC3);
-		
-		scene3 = new Scene(root3);
 		
 		//Background4
 		Image background4 = new Image("file:witness.jpg");
