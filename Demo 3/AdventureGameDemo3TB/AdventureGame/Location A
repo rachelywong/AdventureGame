@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random; 
 
-public class LocationA extends PoliceStation{
+public class LocationA {
 	public static String talk(){
 		System.out.println("Witness: Hello officer. What can I help you with?");
 		System.out.println("You: I need all the information you can provide me with about the night the murder took place");
