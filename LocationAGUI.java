@@ -75,6 +75,8 @@ public class LocationAGUI {
 		introloc.setAlignment(Pos.BOTTOM_CENTER);
 		Label intro = new Label("You have arrived at the witness's house, the front door is open, but you must navigate through the "+
 								"house to find the witness. Keep your eyes peeled, you never know what dangers may lurk!" );
+		System.out.println("You have arrived at the witness's house, the front door is open, but you must navigate through the "+
+								"house to find the witness. Keep your eyes peeled, you never know what dangers may lurk!");
 		intro.setTextFill(Color.web("#FFFFFF"));
 		intro.setFont(new Font("Times New Roman", 18));
 		intro.setTextAlignment(TextAlignment.CENTER);
