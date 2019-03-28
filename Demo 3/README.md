@@ -84,6 +84,8 @@ DEMO3
 Khosro, 
 our adventure game is separated into two; one is the text-based version where the user will be able to play using the console as instructions and prompts are printed to guide them throughout the game. The other is the GUI version which the user will have access to the full graphical interface we created using images, labels, buttons, etc. To play either versions of the game, please run the Main.java class in either folders (TB refers to the text-based code, and GUI refers to the GUI code). The game will run and the story will instruct the user further. This will create a seperation of logic and interface. There will be one set for text and one for GUI.
 
+Please download the files from the folder labelled as just "Demo 3" the other folder labelled "Demo2/src" is incorrect.
+
 #About
 The code was written by Abi, Rachel, Elvira and Teresa.
 
