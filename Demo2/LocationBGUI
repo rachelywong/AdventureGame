@@ -10,27 +10,24 @@ import javafx.scene.control.*;
 import javafx.geometry.*; 
 import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
-
 import javafx.application.Application;
 import javafx.animation.AnimationTimer;
+import javafx.scene.Group;
  
-public class LocationBView {
+public class LocationBGUI {
 
 	static Scene crimeScene, weaponScene, framedScene;
 
 	public static void display() {
         Stage primaryStage = new Stage();
         primaryStage.initModality(Modality.APPLICATION_MODAL);
-        primaryStage.setTitle("locB");
-        
-        
-      //Background
-      	Image background1 = new Image("view/resources/crimescene.jpg");
+
+    /**crimeScene Background
+      	Image background1 = new Image("crimescene.png");
       	ImageView mv1 = new ImageView(background1);
       	GridPane root = new GridPane();
-      	root.setMaxSize(600, 600);
-      	root.getChildren().add(mv1);
-      	
+      	root.setMaxSize(800, 600);
+      	root.getChildren().add(mv1);*/
 		
 	//scene1 - crimeScene
         VBox root1 = new VBox();
@@ -39,15 +36,17 @@ public class LocationBView {
 								   "here if you would like to speak to him." + 
 								   "\n" +
 								   "Would you like to speak to the DJ, or examin the weapon first?");
+		//storyLab.setTextFill(Color.web("#FFFFFF"));				   
         storyLab.setFont(Font.font("Times New Roman", 24));
-        root.getChildren().add(storyLab);
+        root1.getChildren().add(storyLab);
 		//DJButton
         Button DJButton = new Button("Talk to DJ");
-        DJButton.setOnAction(new HandleButtonClick("Bouncer", storyLab));
+        DJButton.setOnAction(new HandleButtonClick("DJ", storyLab));
         root1.getChildren().add(DJButton);
 		//directs to Riddle1 class
 		DJButton.setOnAction(e -> {
-			//Riddle1.display();
+			primaryStage.hide();
+			Riddle1.display();
 		});
 		//weaponButton
 		Button weaponButton = new Button("Examine weapon");
@@ -72,13 +71,16 @@ public class LocationBView {
         photoButton.setOnAction(new HandleButtonClick("Puzzle", choice3Label));
         root3.getChildren().add(photoButton);
 		//directs to Puzzle class
-		photoButton.setOnAction(e -> {
-			//Puzzle.display();
-		});
+		//photoButton.setOnAction(e -> {
+			//primaryStage.hide();
+			//Puzzle.start();
+		//});
 		
 	//scene4 - framedScene
 		VBox root4 = new VBox();
-        Label frameLabel = new Label("You've been framed!");
+        Label frameLabel = new Label("You've been framed! Your captain demands that you return to \n" +
+									 "the station immediately for questioning. You may continue the \n" +
+									 "case after.");
         frameLabel.setFont(Font.font("Times New Roman", 24));
         root4.getChildren().add(frameLabel);
 		//PS2Button
@@ -87,19 +89,17 @@ public class LocationBView {
         root4.getChildren().add(PS2Button);
 		//directs to PS
 		PS2Button.setOnAction(e -> {
-			//PoliceStation.PS();
+			primaryStage.hide();
+			PoliceStation.PS();
 		});
 		
-		framedScene = new Scene(root4);
-		weaponScene = new Scene(root3);
-  		crimeScene = new Scene(root);
+		
+		framedScene = new Scene(root4, 847, 600);
+		weaponScene = new Scene(root3, 847, 600);
+  		crimeScene = new Scene(root1, 847, 600);
 		
 		primaryStage.setTitle("Location B");
         primaryStage.setScene(crimeScene);
         primaryStage.show();
-		
-        
-       
-		
 	}
 }
