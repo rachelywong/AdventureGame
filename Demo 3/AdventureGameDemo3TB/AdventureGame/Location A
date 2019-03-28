@@ -2,18 +2,20 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random; 
 
-public class LocationA {
+public class LocationA extends PoliceStation {
+
+	
 	public static String talk(){
 		System.out.println("Witness: Hello officer. What can I help you with?");
 		System.out.println("You: I need all the information you can provide me with about the night the murder took place");
-		System.out.println("Witness: Clue #4");
-	return "clue #4";
+		System.out.println("Witness: Suspect has brown hair");
+	return "Suspect has brown hair";
 	}
 	public static String look(){
 		System.out.println("You find a slip of paper attached to the bottom of a shoe, it looks like a recipt from a gym memership!\n"+
 							" This might fallen out of the suspect's pocket! The membership is worn out but it looks like a locker between" +
-							" 100 and 199.");
-		return "100 - 199";
+							" 1500 - 2000.");
+		return "1500 - 2000";
 	}
 	
 	/*In attack(), code for the Rock, Paper ,Scissors inspired by code by an anonymous user online. 
@@ -103,15 +105,22 @@ public class LocationA {
 	return attack;
 	}
 	
+	public String toString() {
+		return (super.toString());
+	}
 	
-	public static void main(String[] args){
+	public static void display(){
 		
 		boolean door1 = false;
 		boolean door2 = false;
 		boolean door3 = false;
 		boolean door4 = false;
+		
 		Scanner keyboard = new Scanner(System.in);
-		System.out.println("You've arrived at the witness's house, but now you must find him!");
+		
+		LocationA A = new LocationA();
+		
+		System.out.println(A.toString() + "You have arrived at the witness house. You must find the witness!");
 		System.out.println("Navigate using your keyboard.");
 		
 		while (door1 == false){
@@ -232,7 +241,7 @@ public class LocationA {
 			
 		}
 		
-		PoliceStation.main(args);
+		PoliceStation.display();
 	}
 	
 	
