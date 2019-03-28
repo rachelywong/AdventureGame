@@ -55,7 +55,7 @@ public class attackGUI extends LocationAGUI {
 		
 		VBox labels = new VBox();
 		labels.setAlignment(Pos.TOP_LEFT);
-		Label a_intro = new Label("You're held cpative,make a choice, and you must win to leave");
+		Label a_intro = new Label("You're held captive,make a choice, and you must win to leave");
 		setFormat(a_intro);
 		Label win_label = new Label("You win!!");
 		setFormat(win_label);
