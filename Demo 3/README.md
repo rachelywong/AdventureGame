@@ -82,18 +82,29 @@ DEMO3
 
 #About 
 Khosro, 
-our adventure game is separated into two; one is the text-based version where the user will be able to play using the console as instructions and prompts are printed to guide them throughout the game. The other is the GUI version which the user will have access to the full graphical interface we created using images, labels, buttons, etc. To play either versions of the game, please run the Main.java class in either folders (TB refers to the text-based code, and GUI refers to the GUI code). The game will run and the story will instruct the user further. 
+our adventure game is separated into two; one is the text-based version where the user will be able to play using the console as instructions and prompts are printed to guide them throughout the game. The other is the GUI version which the user will have access to the full graphical interface we created using images, labels, buttons, etc. To play either versions of the game, please run the Main.java class in either folders (TB refers to the text-based code, and GUI refers to the GUI code). The game will run and the story will instruct the user further. This will create a seperation of logic and interface. There will be one set for text and one for GUI.
 
 #About
 The code was written by Abi, Rachel, Elvira and Teresa.
 
-For Demo3 we focused on adding more GUI to the game and connecting the different classes together so that the transition between scenes/locations is better. Most of the GUI and connection is complete, 
+For Demo3 we focused on adding more GUI to the game and connecting the different classes together so that the transition between scenes/locations is better. Most of the GUI and connection is complete, just a few more graphics like backgrounds and storyline text need to be implemented.
 
 We have inheritance in the text-based version of the game; all the locations extends the Police Station. There is a toString() method in the Police Station that is used amongst the different locations to "Welcome" the user as they navigate throughout the game.
 
-We also have JUnit tests that run against the TicTacToe.java and Puzzle.java for the GUI version.
+We also have JUnit tests that run against the TicTacToe.java and Puzzle.java for the GUI version. We are currently working on adding one more JUnit test for LocationC to test the guessing game. This will test the logic classes for our project.
 
-#References
+#newReferences
+
+References updated for Demo 3:
+
+1. Hangman game
+Adapted from: https://gist.github.com/desrtfx/9fd13c48008e9aec25d7
+Dictionary class connected was created seperately.
+
+2. Sliding puzzle game shoe picture
+Image from: https://midlifemixtape.com/2013/05/doing-the-dansko-and-a-giveaway.html
+
+
 
 
 
