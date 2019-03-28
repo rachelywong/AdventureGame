@@ -72,6 +72,6 @@ public class LocationC extends PoliceStation {
 	}
 	
 	public String toString() {
-		return (super.toString());
+		return (super.toString()); 
 	}
 }
