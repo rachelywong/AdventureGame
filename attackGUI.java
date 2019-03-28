@@ -18,7 +18,7 @@ import javafx.event.ActionEvent;
 import java.util.Scanner; 
 import java.util.Random; 
 
-public class attackGUI extends LocationAGUI{
+public class attackGUI extends LocationAGUI {
 	
 	private static String personPlay;
 	private static String computerPlay = "";
@@ -61,15 +61,16 @@ public class attackGUI extends LocationAGUI{
 			@Override 
 			public void handle(ActionEvent backto) {
 				
-				window.setScene(scene1);
+				LocationAGUI.display();
+
+				Stage stage = getStage();
+				stage.hide();
+				
+				//setScene(scene1);
 
 			}
 		});
-		/*
-		backButton.setOnAction(e -> {
-			LocationAGUI.display();
-			});
-			*/
+		
 		computerPlayer = getcompGen();
 		System.out.println("What's your play?"); 
 		
