@@ -110,6 +110,14 @@ Dictionary class connected was created seperately.
 2. Sliding puzzle game shoe picture
 Image from: https://midlifemixtape.com/2013/05/doing-the-dansko-and-a-giveaway.html
 
+3. Subscenes creation
+Adapted from: https://www.youtube.com/watch?v=6BKI26gxK2Q
+
+4.Background images:
+disco.png - https://dribbble.com/shots/2677156-Moon-Hits-the-Disco-Ball
+
+
+
 
 
 
