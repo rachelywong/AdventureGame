@@ -114,6 +114,7 @@ Image from: https://midlifemixtape.com/2013/05/doing-the-dansko-and-a-giveaway.h
 Adapted from: https://www.youtube.com/watch?v=6BKI26gxK2Q
 
 4. Background images:
+
 disco.png - https://dribbble.com/shots/2677156-Moon-Hits-the-Disco-Ball
 
 map.png - https://www.16pic.com/pic/pic_8587056.html
