@@ -113,8 +113,12 @@ Image from: https://midlifemixtape.com/2013/05/doing-the-dansko-and-a-giveaway.h
 3. Subscenes creation
 Adapted from: https://www.youtube.com/watch?v=6BKI26gxK2Q
 
-4.Background images:
+4. Background images:
 disco.png - https://dribbble.com/shots/2677156-Moon-Hits-the-Disco-Ball
+map.png - https://www.16pic.com/pic/pic_8587056.html
+topsecret.png - https://www.hussiancollege.edu/alumni/zachery-torre-class-of-2002/
+bad.png, good.png - https://opengameart.org/content/fallen-angel-chibi-sprites
+all button extensions, empty.png, empty1.png, font assets - https://kenney.nl/assets/ui-pack
 
 
 
