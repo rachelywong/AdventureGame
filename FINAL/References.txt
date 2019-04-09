@@ -1,0 +1,60 @@
+                                        CPSC 219 - WINTER 2019
+                                        DEAD ON THE DANCE FLOOR
+Authors:
+Team 7 - Rachel, Teresa, Abi, and Elvira
+
+References for Code:
+
+1. TicTacToe
+TicTacToe code/class that was provided by Dr. Verwaal was used
+Title: TicTacToeBoard.java, TicTacToeGame.java and TicTacToeFameProcedural.java 
+Author: Nathaly Verwaal 
+Date: 02/20/19 
+Availability: Nathaly Verwaal, University of Calgary 
+
+2. LocationA (Witness House)
+In the class Location A, in the method attack(), code for Rock, Paper ,Scissors was inspired by code by an anonymous user online. 
+Title: StackOverflow / Rock.java
+Author: Anonymous User 
+Date: 02/20/19
+Availability: https://stackoverflow.com/questions/19204872/rock-paper-scissors-game-java
+
+3. LocationA (Witness House)
+In the class Location A, the Hangman game code was adapted from an anonymous user online known as
+desrtfx.
+Title: hangman.java
+Author: desrtfx
+Data: 05/08/15
+Avaliability: https://gist.github.com/desrtfx/9fd13c48008e9aec25d7
+
+References for Images:
+
+1. Clipart Images
+Public domain images do not require references.
+
+2. Introductory Window for Start page
+Image in Introduction ViewManager class
+Title: disco.png
+Date: 03/10/19
+Availability: https://dribbble.com/shots/2677156-Moon-Hits-the-Disco-Ball
+
+Other References:
+
+1. Riddles
+Riddles for the game.
+Title: Best Riddles
+Date: 03/11/19
+Avaliability: https://www.riddles.com/best-riddles
+
+2. Communication - TA
+Khosro Salmani
+Avaliability: khosro.salmani@ucalgary.ca
+
+3. Communication - TA
+Syed Zain Rizvi
+Avaliability: szrrizvi@ucalgary.ca
+
+4. Communication - Professor
+Nathaly Verwaal
+Avaliability: verwaal@cpsc.ucalgary.ca
+Avaliability: nmverwaa@ucalgary.ca
