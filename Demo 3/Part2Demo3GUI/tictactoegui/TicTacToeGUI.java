@@ -1,26 +1,36 @@
+/**
+ * @author Team7
+ */
+
+/**
+ * Class represents the tictactoegui. 
+ * <p>
+ * Special tokens and symbols are generated
+ * to create the tic tac toe stage. This visual component
+ * implements an eventhandler as well to make the buttons
+ * work for the tic tac toe game GUI.
+ */ 
+
 package tictactoegui;
 
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.scene.layout.*;
+import javafx.scene.text.Text;
+import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+import javafx.event.*;
+import javafx.scene.input.*;
+import model.TTTButton;
 
-	import javafx.application.Application;
-	import javafx.scene.Scene;
-	import javafx.stage.Stage;
-	import javafx.scene.layout.*;
-	import javafx.scene.text.Text;
-	import javafx.scene.control.Label;
-	import javafx.scene.control.Button;
-	import javafx.event.*;
-	import javafx.scene.input.*;
-	import model.TTTButton;
-	 
-
-	 
-	public class TicTacToeGUI extends Application {
-	    private Button[][] gridButtons = new Button[3][3];
-	    private Text messages = new Text();
-	     
-	    @Override
-	    public void start(Stage primaryStage) {
-	        // build grid of buttons for the board (visual component)
+public class TicTacToeGUI extends Application {
+	private Button[][] gridButtons = new Button[3][3];
+	private Text messages = new Text();
+	
+	@Override
+	public void start(Stage primaryStage) {
+		// build grid of buttons for the board (visual component)
 	        GridPane grid = new GridPane();
 	        for (int row = 0; row < 3; row++) {
 	            for (int column = 0; column < 3; column++){
@@ -31,15 +41,13 @@ package tictactoegui;
 	        }
 	         
 	        new GameController(this);
-	         
+	        
 	        // build entire scene: grid and label
 	        BorderPane root = new BorderPane();
 	        root.setCenter(grid);
-		    
 		root.setMargin(grid, new Insets(80, 80, 120, 120));
-
 	        root.setBottom(messages);
-	         
+	       
 	        Scene scene = new Scene(root, 300, 300);
 	 
 	        primaryStage.setTitle("Tic Tac Toe");
