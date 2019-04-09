@@ -14,11 +14,15 @@ import javafx.scene.control.*;
 import javafx.geometry.*; 
 import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
+
+/*
+ *Class displays Location A (aka the Witness House). Scene 1 displays the doors 
+ */
 public class LocationAGUI {
 
     //Create static variables for all scenes 
     
-	protected static Scene scene1, scene2, scene3, scene4, scene5;
+	protected static Scene scene1, scene4;
     protected static Stage window;
 
 	public static Stage getStage() {
