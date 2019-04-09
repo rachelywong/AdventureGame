@@ -1,3 +1,15 @@
+/**
+ * @author Team7
+ */
+
+/**
+ * Class represents a game controller for the tictactorgui. 
+ * <p>
+ * Action events are used to allow specific positions to be used
+ * by the user with the token 'o' to play tic tac toe against
+ * the AI computer player.
+ */ 
+
 package tictactoegui;
 
 import java.util.Random;
@@ -6,7 +18,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
- 
+
 public class GameController {
     public class HandleCellClick implements EventHandler<ActionEvent> {
         private int row;
@@ -47,7 +59,7 @@ public class GameController {
             gui.disable();
         }       
     }
-     
+ 
     public GameController(TicTacToeGUI gui){
         this.gui = gui;
         for (int row = 0; row < 3; row++){
@@ -68,6 +80,4 @@ public class GameController {
             gui.setMessage("Your turn, you're token is 'x'");
         }
     }
-     
 }
-
