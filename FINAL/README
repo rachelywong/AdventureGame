@@ -1,1 +1,34 @@
-//Please upload all final versions of code in this folder
+                                                     CPSC 219 - WINTER 2019
+                                                     DEAD ON THE DANCE FLOOR
+Authors:
+Group 7 - Rachel, Teresa, Abi, and Elvira
+
+Final versions of all of the code for Dead on The Dance Floor (adventure game) can be found here. 
+
+All of the files for the text-based version of the game can be found in the folder "AdventureGame-TB-FINAL" 
+Further information regarding the text-based and GUI versions of the game can be found in the description
+of the folders. The text-based version and GUI version of the games share the same logic. However, they are
+seperate interfaces (one for text,and one for GUI).
+
+In order to run either games (text-based or GUI), please run the "Main" class to start.
+
+Game Summary:
+This is a murder mystery game where the user navigates through different scenes/locations and plays various
+mini-games to discover clues. Once the user has collected all of the clues, they can arrest the murderer. Please
+see the proposal file on D2L for more information on how the game works.
+
+JUnit Tests:
+The JUnit tests for TicTacToeTest, PoliceStationTest, LocationATest, LocationBTest, LocationCTest, LocationDTest can
+be found in the folder for the text-based version of the game. These tests test the logic classes. 
+
+Inheritance:
+The inheritance can be found mostly in the parent class PoliceStation where the child classes are the various locations 
+which share a toString method. To see this, please look at the Java files in the text-based version of the game.
+
+Exceptions:
+Exceptions can be found particularily in the sliding puzzle game in the GUI version of the game (please see the file). As well,
+exceptions are found in ...
+
+References:
+References for adapted code can be found in the Javadoc in each Java file if code was taken from a third party. Please read
+the Javadoc for more information. Other references can be found in the "References" text file uploaded in this folder.
