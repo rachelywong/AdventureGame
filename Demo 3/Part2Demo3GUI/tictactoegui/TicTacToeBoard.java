@@ -1,3 +1,19 @@
+/**
+ * @author Team7
+ */
+
+/**
+ * Class represents the tictactoe board. 
+ * <p>
+ * A board will be generated based on '.' in rows and columns.
+ * These '.' will be replaced by tokens of 'x' or 'o' depending
+ * on player and AI moves. Subsequent
+ * <p>
+ * Subsequent methods after generating the board will check the 
+ * board to ensure the moves have been implemented correctly
+ * and the spaces on the board are filled properly.
+ */ 
+
 package tictactoegui;
 
 public class TicTacToeBoard {
@@ -14,19 +30,27 @@ public class TicTacToeBoard {
             default:
         }
     }
-     
+    
+    /**
+     * Method will form the tic tac toe board.
+     * <p>
+     * Using a for loop, we can generate a tic tac
+     * toe board that is 3x3x3.
+     * </p>
+     *
+     * @param  boardtoCopy
+     * @return null
+     */
     public TicTacToeBoard(TicTacToeBoard boardToCopy){
         for (int row = 0; row < 3; row++) {
             for (int column = 0; column < 3; column++) {
                 grid[row][column] = boardToCopy.grid[row][column];
             }
-        }
-         
+        }    
     }
-     
+    
     public void placeToken(char token, int row, int column){
         grid[row][column] = token;
-         
     }
      
     public boolean isValidPlacement(int row, int column){
