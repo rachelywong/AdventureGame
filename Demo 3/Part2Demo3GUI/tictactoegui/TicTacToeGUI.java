@@ -35,6 +35,9 @@ package tictactoegui;
 	        // build entire scene: grid and label
 	        BorderPane root = new BorderPane();
 	        root.setCenter(grid);
+		    
+		root.setMargin(grid, new Insets(80, 80, 120, 120));
+
 	        root.setBottom(messages);
 	         
 	        Scene scene = new Scene(root, 300, 300);
