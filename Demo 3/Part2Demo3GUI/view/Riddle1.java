@@ -1,3 +1,10 @@
+/**
+ * @author Team7
+ */
+
+/**
+ * Class represents a riddle.
+ */
 
 package view;
 
@@ -25,15 +32,15 @@ public class Riddle1 {
         primaryStage.initModality(Modality.APPLICATION_MODAL);
         primaryStage.setTitle("Riddle1");
 
-		Group root = new Group();
+	Group root = new Group();
 		
 	//Story Line
         Label storyLab = new Label("You find the DJ at the club and ask him to tell you what he saw that night." +
-								   "\n" +
-								   "DJ: 'If you want my witness account, you'll have to prove to me you're \n" +
-								   "a good detective. Solve the following riddle.' \n" +
-								   "\n" +
-								   "I can be cracked, I can be made. I can be told, I can be played.");
+				   "\n" +
+				   "DJ: 'If you want my witness account, you'll have to prove to me you're \n" +
+				   "a good detective. Solve the following riddle.' \n" +
+				   "\n" +
+			  	   "I can be cracked, I can be made. I can be told, I can be played.");
         storyLab.setFont(Font.font("Times New Roman", 24));
         root.getChildren().add(storyLab);
 
