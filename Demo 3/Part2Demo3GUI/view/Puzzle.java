@@ -20,6 +20,12 @@ public class Puzzle extends Application {
 			
 			Group root = new Group();
 			Scene scene = new Scene(root, 500, 500);
+		
+			Label clue = new Label("Solve the puzzle to show the murder weapon, \n" +
+					       "and reveal a clue about the murderer.");
+			clue.setLayoutX(100);
+			clue.setLayoutY(400);
+			root.getChildren().add(clue);
 						
 			//Take in tile images
 			FileInputStream t1 = new FileInputStream("shoe1.jpg"); 
