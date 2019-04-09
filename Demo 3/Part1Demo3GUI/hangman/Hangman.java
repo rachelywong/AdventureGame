@@ -1,4 +1,4 @@
-//package hangman;
+package hangman;
 
 import java.util.ArrayList;
 import javafx.application.Application;
