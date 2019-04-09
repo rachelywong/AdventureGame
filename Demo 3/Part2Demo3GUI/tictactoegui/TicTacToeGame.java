@@ -1,3 +1,19 @@
+/**
+ * @author Team7
+ */
+
+/**
+ * Class represents the TicTacToeGame. 
+ * <p>
+ * Players will play as characters 'x' or 'o'
+ * and play tic tac toe. Their moves will be placed
+ * alone a copy of a tic tac toe board, and updated
+ * as the game continues.
+ * <p>
+ * The class allows the user to play one round of
+ * tic tac toe.
+ */ 
+
 package tictactoegui;
 
 public class TicTacToeGame{
@@ -7,13 +23,12 @@ public class TicTacToeGame{
     private Player player2 = new Player('o');
      
     public TicTacToeGame(){}
+    
     public TicTacToeGame(int aNumberOfRounds) {
         numberOfRounds = aNumberOfRounds;
-         
     }
      
     public void play(){
-         
         while (!board.gameOver()){
             // Don't trust the player so don't give the player the 
             // original board, instead give a copy by using the copy
