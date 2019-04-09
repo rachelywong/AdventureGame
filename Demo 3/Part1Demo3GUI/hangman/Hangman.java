@@ -1,7 +1,6 @@
-package hangman;
+//package hangman;
 
 import java.util.ArrayList;
-
 import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
@@ -23,44 +22,37 @@ import javafx.stage.Stage;
 import javafx.scene.layout.HBox;
 
 public class Hangman extends Application {
+
 	private TextField tfGuess = new TextField();
 	private TextField tfLettersGuessed = new TextField();
 	Dictionary word = new Dictionary();
-
 	// JavaFX Text elements to display the letters
 	// Stored in an array to make them easily visible
 	private Text[] text;
-
 	private Label guessesRemaining;
-
+	///////
+	private Label resultLab;
+	///////
 	private int left;
 
 	// This arrayList holds the individual parts of the body.
 	private ArrayList<Shape> body;
-
 	private ObservableList<Node> children;
-
 	private StringBuilder guessedLetters;
-
 	private String theWord;
-
 	private void initGallows() {
-
 		Line gallow1 = new Line(25, 25, 200, 25);
 		gallow1.setStroke(Color.BROWN);
 		gallow1.setStrokeWidth(3);
 		children.add(gallow1);
-
 		Line gallow2 = new Line(25, 25, 25, 300);
 		gallow2.setStroke(Color.BROWN);
 		gallow2.setStrokeWidth(3);
 		children.add(gallow2);
-
 		Line gallow3 = new Line(300, 300, 25, 300);
 		gallow3.setStroke(Color.BROWN);
 		gallow3.setStrokeWidth(3);
 		children.add(gallow3);
-
 		Line rope = new Line(200, 25, 200, 75);
 		rope.setStroke(Color.BROWN);
 		rope.setStrokeWidth(3);
@@ -71,9 +63,7 @@ public class Hangman extends Application {
 	 * Initializes and draws the body All elements are hidden by default
 	 */
 	private void initBody() {
-
 		body = new ArrayList<Shape>();
-
 		Ellipse head = new Ellipse(200, 112, 35, 35);
 		head.setStroke(Color.BLACK);
 		head.setFill(Color.WHITE);
@@ -81,21 +71,20 @@ public class Hangman extends Application {
 		head.setVisible(false);
 		children.add(head);
 		body.add(head);
-
+		
 		Line tor = new Line(200, 200, 200, 150);
 		tor.setStroke(Color.GOLD);
 		tor.setStrokeWidth(5);
 		tor.setVisible(false);
 		children.add(tor);
 		body.add(tor);
-
+		
 		Line lftArm = new Line(150, 225, 200, 175);
 		lftArm.setStroke(Color.BLACK);
 		lftArm.setStrokeWidth(5);
 		lftArm.setVisible(false);
 		children.add(lftArm);
 		body.add(lftArm);
-
 		Line rtArm = new Line(250, 225, 200, 175);
 		rtArm.setStroke(Color.BLACK);
 		rtArm.setStrokeWidth(5);
@@ -153,33 +142,23 @@ public class Hangman extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
-
 		Pane pane = new Pane();
-
 		// Store the children variable for easier access
 		children = pane.getChildren();
-
 		// initialize and draw the gallows
 		initGallows();
-
 		// initialize the body
 		initBody();
-
 		theWord = word.getHiddenWord().toUpperCase();
-
 		// Initialize the guessed Letters StringBuilder
 		guessedLetters = new StringBuilder();
-
 		// initialize the Blanks (lines)
 		initBlanks(theWord);
 		System.out.println(theWord);
-
 		// initialize the word drawing
 		text = initText(theWord);
-
 		// initialize the remaining guesses
 		left = 6;
-
 		GridPane gridPane = new GridPane(); // Create UI
 		gridPane.setHgap(5);
 		gridPane.setVgap(5);
@@ -190,38 +169,35 @@ public class Hangman extends Application {
 		gridPane.add(new Label("Guesses Remaining: "), 0, 2);
 		guessesRemaining = new Label(String.valueOf(left));
 		gridPane.add(guessesRemaining, 0, 3);
-
+		
+		//resultLab
+		gridPane.add(new Label(" "), 0, 40);
+		resultLab = new Label();
+		gridPane.add(resultLab, 0, 40);
+		///////////
+		
 		BorderPane thing = new BorderPane();
 		thing.setRight(gridPane);
 		thing.setCenter(pane);
 
 		tfGuess.setOnAction(e -> playGame());
-
+		
 		Scene scene = new Scene(thing, 700, 400);
 		primaryStage.setTitle("Show Hangman");
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		
 	}
 
-	public static void main(String[] args) { // main method to launch
-												// application
+	public static void main(String[] args) { // main method to launch application
 		Application.launch(args);
 	}
 
 	private void playGame() {
-
 		// Part 1: Get the guessed letter
 		String guess = tfGuess.getText(); // first letter of user entered value
 		if (guess.length() == 0) {
-			// Textbox was empty
-			// TODO: Write an error message to the user
-			// Leave the method - can't do anything on an empty guess
+			//doesn't do anything with empty textbox
 			return;
-			//public class Hangman {
-
-			//}
-
 		}
 		if (guess.length() > 1) { // if more than one letter, take only the
 									// first
@@ -230,7 +206,7 @@ public class Hangman extends Application {
 		guess = guess.toUpperCase();
 		// reset the textbox for guessing the letter
 		tfGuess.setText("");
-
+		
 		// Part 2: Check if the letter has already been guessed
 		// Check if this is not the first guess
 		if (guessedLetters.length() > 0) {
@@ -261,11 +237,10 @@ public class Hangman extends Application {
 				// occur more than once
 			}
 		}
-
+		
 		// Part 4: Check if letter was not in word
 		// good == false means that the letter was not in the word
 		if (!good) {
-
 			// Draw the part of the torso
 			// Actually, only the respective part is made visible
 			body.get(6 - left).setVisible(true);
@@ -274,13 +249,13 @@ public class Hangman extends Application {
 			// Update the Remaining Guesses Text
 			guessesRemaining.setText(String.valueOf(left));
 		}
-
 		// No more guesses - GAME OVER
 		if (left == 0) {
 			// GAME OVER
 			// TODO: Losing message
+			resultLab.setText("Game over.");
 		}
-
+	
 		// Part 5: Check if word is solved
 		// This is very simple:
 		// If all text[] items are visible, the word is solved
@@ -292,17 +267,11 @@ public class Hangman extends Application {
 				break;
 			}
 		}
-
+		
 		// Part 6: handle winning
 		if (solved) {
-			Label winclue = new Label();
-			HBox win = new HBox();
-			//gridPane.getChildren().add(win);
-			win.getChildren().add(winclue);
-			System.out.println("clue: the locker number is between 1500-2000");
+			resultLab.setText("You win! \n" + "Clue: the locker \n" + "number is between \n" + "1500 - 2000");
 		}
-		}
-
 	}
 
-
+}	
