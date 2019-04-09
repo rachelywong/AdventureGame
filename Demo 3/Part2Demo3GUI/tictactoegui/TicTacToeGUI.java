@@ -47,37 +47,37 @@ public class TicTacToeGUI extends Application {
 	        root.setCenter(grid);
 		root.setMargin(grid, new Insets(80, 80, 120, 120));
 	        root.setBottom(messages);
-	       
+	  
 	        Scene scene = new Scene(root, 300, 300);
 	 
 	        primaryStage.setTitle("Tic Tac Toe");
 	        primaryStage.setScene(scene);
 	        primaryStage.show();
 	    }
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
 	     
-	    public static void main(String[] args) {
-	        launch(args);
-	    }
-	     
-	    public void placeToken(char token, int row, int col) {
-	        Button b = gridButtons[row][col];
+	public void placeToken(char token, int row, int col) {
+	      	Button b = gridButtons[row][col];
 	        b.setText("" + token);
 	        b.setDisable(true);
-	    }
+	}
 	     
-	    public void setMessage(String message) {
+	public void setMessage(String message) {
 	        messages.setText(message);
-	    }
+	}
 	     
-	    public void disable() {
-	        for (Button[] row : gridButtons) {
+	public void disable() {
+	    	for (Button[] row : gridButtons) {
 	            for (Button b : row) {
 	                b.setDisable(true);
 	            }
 	        }
 	    }
 	     
-	    public void setButtonHandler(EventHandler<ActionEvent> handler, int row, int col){
+	public void setButtonHandler(EventHandler<ActionEvent> handler, int row, int col){
 	        gridButtons[row][col].setOnAction(handler);     
-	    }
 	}
+}
