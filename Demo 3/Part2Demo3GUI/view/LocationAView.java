@@ -62,7 +62,7 @@ public class LocationAView {
 	}
 	
 	/*
-	*Will take the specific button specified and change it's shape into an arrow
+	*Will create a new Stage and display scene 1 (doors) on the stage. Background is a 
 	* 
 	* @param the button for arrows pointing to the doors and sets their shapes as arrows
 	* @return no return
