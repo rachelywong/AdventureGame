@@ -1,4 +1,15 @@
+/**
+ * @author Team 7
+ */
+
+/**
+ * Class represents Location B graphic user interface for the game.
+ * <p>
+ * GUI is created using multiple images, labels, and buttons with Action events
+ * to help guide user through this part of the game.
+ */
 package view;
+
 import javafx.scene.shape.*;
 import javafx.scene.image.*;
 import javafx.scene.text.*;
@@ -18,7 +29,10 @@ import javafx.scene.Group;
  
 /////CONNECT POLICE STATION
 public class LocationBView {
-
+	
+	/**
+     	 * Create static variables for all scenes.
+    	 */
 	static Scene crimeScene, weaponScene, framedScene;
 	
 	public static PoliceStation ps;
@@ -36,12 +50,7 @@ public class LocationBView {
       	mv1.setFitWidth(800);
       	*/
       	
-      	
-      	
-      	
-      	
-      	
-      	
+
 
         /*
         //crimeScene Background
