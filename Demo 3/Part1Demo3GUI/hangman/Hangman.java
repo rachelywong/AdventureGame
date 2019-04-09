@@ -1,3 +1,12 @@
+/**
+ * @author Team7
+ */
+
+/**
+ * Class represents the mini game of Hangman.
+ * <p>
+ */ 
+
 package hangman;
 
 import java.util.ArrayList;
@@ -30,9 +39,7 @@ public class Hangman extends Application {
 	// Stored in an array to make them easily visible
 	private Text[] text;
 	private Label guessesRemaining;
-	///////
 	private Label resultLab;
-	///////
 	private int left;
 
 	// This arrayList holds the individual parts of the body.
