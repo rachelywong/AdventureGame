@@ -12,6 +12,11 @@ seperate interfaces (one for text,and one for GUI).
 
 In order to run either games (text-based or GUI), please run the "Main" class to start.
 
+How to Download and Run:
+For the text-based version please download all files in the folder "AdventureGame-TB-Final" and run them from the Main
+class.
+For the GUI version please download...
+
 Game Summary:
 This is a murder mystery game where the user navigates through different scenes/locations and plays various
 mini-games to discover clues. Once the user has collected all of the clues, they can arrest the murderer. Please
