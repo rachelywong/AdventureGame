@@ -1,0 +1,1 @@
+Game created and developed by Team 7 (Rachel, Abi, Teresa, and Elvira) for CPSC 219 - Winter 2019. Game uses Java and Javafx.
