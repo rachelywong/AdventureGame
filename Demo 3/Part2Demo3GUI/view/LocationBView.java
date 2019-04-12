@@ -47,7 +47,12 @@ public class LocationBView {
 	    window.setTitle("Crime scene");
 		
 	
-        //Background
+       /*
+        * Background 
+	*
+	*Opens backfround image using ImageView and adds GridPane root
+	*/		
+	
 	    
 		Image background1 = new Image("view/resources/crime.jpg");
 		ImageView mv1 = new ImageView(background1);
@@ -58,7 +63,12 @@ public class LocationBView {
 		root.getChildren().add(mv1);
 
 		
-		//Intro Label 
+		
+		/*
+        	* Intro Label 
+		*
+		*Creates introlabel and adds to GridPane root
+		*/
 		HBox introloc = new HBox();
 		Label intro = new Label("You have arrived at the Crime scene" );
 		introloc.setAlignment(Pos.TOP_CENTER);
@@ -71,39 +81,57 @@ public class LocationBView {
 		introloc.getChildren().add(intro);
 		
 		
-		//Buttons
+		/*
+        	* Buttons
+		*
+		*Creates new HBox butt to which a new TalkStealButton is added.
+		* TalkStealButton hides window and directs to riddle minigame class. 
+		*/
 		HBox butt = new HBox(150);
 		butt.setAlignment(Pos.CENTER);
 		root.getChildren().add(butt);
-		//DJButton
+		
 		TalkStealButton DJButton = new TalkStealButton("Talk to DJ");
-		//weaponButton
-	    DJButton.setLayoutX(20);
-        DJButton.setLayoutY(190);
-        //DJButton.setOnAction(new HandleButtonClick("DJ", storyLab));
-        root.getChildren().add(DJButton);
-		//directs to Riddle1 class
+		
+	   	DJButton.setLayoutX(20);
+        	DJButton.setLayoutY(190);
+        	
+        	root.getChildren().add(DJButton);
+		
 		DJButton.setOnAction(e -> {
 			window.hide();
 			Riddle1.display();
 		});
+		
+		/* 
+		*
+		*New TalkStealButton weaponButton is created and added to root.
+		* Weaponbutton is redirects to Scene weaponScene.
+		*/
 		
 		TalkStealButton weaponButton = new TalkStealButton("Examine weapon");
 		weaponButton.setLayoutX(20);
 		weaponButton.setLayoutY(260);
 		//weaponButton.setOnAction(new HandleButtonClick("Weapon", storyLab));
 		root.getChildren().add(weaponButton);
-        //directs to scene3
+       
 		
-	    weaponButton.setOnAction(e -> window.setScene(weaponScene));
-	    //weaponButton.setOnAction(e -> window.setScene(block));
+	    	weaponButton.setOnAction(e -> window.setScene(weaponScene));
+		    
 		
 		
-	    butt.getChildren().add(DJButton);
-	    butt.getChildren().add(weaponButton);
+	    	butt.getChildren().add(DJButton);
+	    	butt.getChildren().add(weaponButton);
 	    
 
-	    //scene3 - weaponScene
+	    /*
+             * weaponScene
+	     *
+	     * Player is given a choice to either pick up the weapon or take a photo.
+	     * If player chooses to pick up the weapon, they are directed to framedScene.
+	     * If player choose to tke a photo, they are directed to puzzleScene (minigame)
+	     * 
+	     */
 	    Image background3 = new Image("view/resources/crime.jpg");
 	    ImageView mv3 = new ImageView(background3);
 	    Group root3 = new Group();
@@ -116,44 +144,49 @@ public class LocationBView {
 		root3.getChildren().add(lab);
 		    
 			    
-		//create buttons
+	//create buttons
 	    VBox PTbutt = new VBox(50);
 	    PTbutt.setAlignment(Pos.CENTER);
 	    root3.getChildren().add(PTbutt);
 	    
-	    //pick button
-		TalkStealButton pickUpButton = new TalkStealButton("Pick up weapon");
-		pickUpButton.setLayoutX(100);
-		pickUpButton.setLayoutY(200);
-		root3.getChildren().add(pickUpButton);
-		pickUpButton.setOnAction(new HandleButtonClick("Pick up", lab));
-  		pickUpButton.setOnAction(e -> window.setScene(framedScene));
+
+	TalkStealButton pickUpButton = new TalkStealButton("Pick up weapon");
+	pickUpButton.setLayoutX(100);
+	pickUpButton.setLayoutY(200);
+	root3.getChildren().add(pickUpButton);
+	pickUpButton.setOnAction(new HandleButtonClick("Pick up", lab));
+  	pickUpButton.setOnAction(e -> window.setScene(framedScene));
 		
 		
-		TalkStealButton photoButton = new TalkStealButton("Take picture of weapon");
-		photoButton.setLayoutX(100);
-		photoButton.setLayoutY(250);
-		root3.getChildren().add(photoButton);
+	TalkStealButton photoButton = new TalkStealButton("Take picture of weapon");
+	photoButton.setLayoutX(100);
+	photoButton.setLayoutY(250);
+	root3.getChildren().add(photoButton);
         photoButton.setOnAction(new HandleButtonClick("Puzzle", lab));
         photoButton.setOnAction(new EventHandler<ActionEvent>() {
 			
-			@Override
-			public void handle(ActionEvent event) {
-					Puzzle puzzle = new Puzzle();
+	@Override
+	public void handle(ActionEvent event) {
+		Puzzle puzzle = new Puzzle();
 					
-					puzzle.start(new Stage()); 
-					
+		puzzle.start(new Stage()); 
 				
-
-			}
-		});
+		}
+	});
         
         PTbutt.getChildren().add(pickUpButton);
         PTbutt.getChildren().add(photoButton);
 	    
             
 
-	        //scene4 - framedScene
+	     /*
+             * framedScene
+	     *
+	     * Opens a background image. 
+	     * Player has been framed for the murder therefore is redirected back to the Polic Station 
+	     * by pressing button. 
+	     * 
+	     */
             Image background4 = new Image("view/resources/crime.jpg");
             ImageView mv4 = new ImageView(background4);
 	  		Group root4 = new Group();
