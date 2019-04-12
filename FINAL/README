@@ -15,7 +15,7 @@ In order to run either games (text-based or GUI), please run the "Main" class to
 How to Download and Run:
 For the text-based version please download all files in the folder "AdventureGame-TB-Final" and run them from the Main
 class.
-For the GUI version please download...
+For the GUI version please download all files in the folder "AdventureGame-GUI" and run them from the Main class.
 
 Game Summary:
 This is a murder mystery game where the user navigates through different scenes/locations and plays various
@@ -32,7 +32,7 @@ which share a toString method. To see this, please look at the Java files in the
 
 Exceptions:
 Exceptions can be found particularily in the sliding puzzle game in the GUI version of the game (please see the file). As well,
-exceptions are found in ...
+exceptions are found in the steal and talk button section of GUI.
 
 References:
 References for adapted code can be found in the Javadoc in each Java file if code was taken from a third party. Please read
