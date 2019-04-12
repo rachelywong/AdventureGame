@@ -68,8 +68,8 @@ public class TTTButton extends Button {
 	
 	/**
 	 * Creates style for when buttons are pressed
-	 * @ param void
-	 * @ return void
+	 * @param void
+	 * @return void
 	 */
 	public void setButtonPressedStyle() {
 		setStyle(BUTTON_PRESSED_STYLE);
@@ -78,8 +78,8 @@ public class TTTButton extends Button {
 	}
 	/**
 	 * Creates style for when buttons are released
-	 * @ param void
-	 * @ return void
+	 * @param void
+	 * @return void
 	 */
 	public void setButtonReleasedStyle() {
 		setStyle(BUTTON_FREE_STYLE);
@@ -88,8 +88,8 @@ public class TTTButton extends Button {
 	}
 	/**
 	 * Creates ButtonListeners and EventHandlers for when buttons are pressed and released
-	 * @ param void
-	 * @ return void
+	 * @param void
+	 * @return void
 	 */
 	private void initializeButtonListeners() {
 		setOnMouseEntered(new EventHandler<MouseEvent>() {
