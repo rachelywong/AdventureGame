@@ -1,3 +1,14 @@
+
+/**
+ * @author Team7
+ */
+
+/**
+ * Class represents the witness 
+ * <p>
+ *
+ */ 
+
 package view;
 
 
