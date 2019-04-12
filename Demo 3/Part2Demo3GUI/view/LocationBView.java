@@ -20,24 +20,23 @@ import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
 import model.TalkStealButton;
 public class LocationB {
-
-    
+	
+	// Establishing static instantaneous variables
 	public static Scene crimeScene, weaponScene, framedScene;
 	private static Stage window;
 	public static PoliceStation ps;
 
-	 
+	 /*
+	*Will finds the stage in which this movie was made
+	* 
+	* @param no parameters
+	* @return returns current window. 
+	*/
 	public Stage getStage() {
         return window;
     }
 	
-
-	/*
-	*Will take the specific button specified and change it's shape into an arrow
-	* 
-	* @param the button for arrows pointing to the doors and sets their shapes as arrows
-	* @return no return
-	*/		
+		
 	
 	
 	public static void display() {
@@ -47,7 +46,12 @@ public class LocationB {
 	    window.setTitle("Location B");
 		
 	
-        //Background
+       
+		/*
+		*Recieves background image and displays using ImageView(). 
+		* Creates GridPane root which is the base upon which other elements are added.
+		*
+		*/
 	    
 		Image background1 = new Image("view/resources/crime.jpg");
 		ImageView mv1 = new ImageView(background1);
