@@ -5,6 +5,7 @@
 /**
  * Class represents the mini game of Hangman.
  * <p>
+ * This game is adapted from the code from desrtfx.
  */ 
 
 package hangman;
@@ -31,7 +32,12 @@ import javafx.stage.Stage;
 import javafx.scene.layout.HBox;
 
 public class Hangman extends Application {
-
+	/**
+	* Code is generated to create a GUI interface where user input is taken in 
+	* and checked to see if it is in the word "DISCO" to play a hangman game.
+	* The code takes information from the Dictionary class to determine what
+	* the word to guess is
+	*/
 	private TextField tfGuess = new TextField();
 	private TextField tfLettersGuessed = new TextField();
 	Dictionary word = new Dictionary();
@@ -68,6 +74,7 @@ public class Hangman extends Application {
 
 	/**
 	 * Initializes and draws the body All elements are hidden by default
+	 * @param void
 	 */
 	private void initBody() {
 		body = new ArrayList<Shape>();
@@ -113,7 +120,11 @@ public class Hangman extends Application {
 		children.add(rtLeg);
 		body.add(rtLeg);
 	}
-
+	
+	/**
+	 * Initializes the blanks
+	 * @param void
+	 */
 	private void initBlanks(String word) {
 		Line[] blanks = new Line[word.length()];
 		int xStart = 375;
@@ -129,7 +140,11 @@ public class Hangman extends Application {
 			children.add(blanks[i]);
 		}
 	}
-
+	
+	/**
+	 * Initializes the text
+	 * @return text
+	 */
 	private Text[] initText(String word) {
 		Text[] text = new Text[word.length()];
 		int xStartw = 355;
@@ -146,7 +161,10 @@ public class Hangman extends Application {
 		}
 		return text;
 	}
-
+	/**
+	 * Initializes and start
+	 * @param void
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		Pane pane = new Pane();
@@ -195,10 +213,16 @@ public class Hangman extends Application {
 		primaryStage.show();
 	}
 
+	/**
+	 * The main method
+	 */
 	public static void main(String[] args) { // main method to launch application
 		Application.launch(args);
 	}
-
+	/**
+	 * Initializes the play game
+	 * @param void
+	 */
 	private void playGame() {
 		// Part 1: Get the guessed letter
 		String guess = tfGuess.getText(); // first letter of user entered value
