@@ -1,3 +1,11 @@
+/**
+ * @author Team7
+ */
+
+/**
+ * Class represents the mini game of Hangman.
+ * <p>
+ */ 
 package view;
 
 import java.util.ArrayList;
