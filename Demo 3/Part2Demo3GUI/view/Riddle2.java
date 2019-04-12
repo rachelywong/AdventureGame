@@ -1,3 +1,14 @@
+/**
+ * @author Team7
+ */
+
+/**
+ * Class represents the riddle that is prompted in Location D that must be solved to get hint. 
+ * <p>
+ * T
+ */ 
+
+
 package view;
 
 import javafx.scene.shape.*;
@@ -21,7 +32,7 @@ public class Riddle2 extends PoliceStation{
 	/*
 	* display()
 	*
-	* display method is called by Location B
+	* display method is called by Location D
 	* New Stage is created called "Riddle2".
 	* Player is given a riddle, that they must solve to aquire a hint 
 	*3 buttons to submit, for a hint or to back to the Police Station.
