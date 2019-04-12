@@ -1,3 +1,7 @@
+/**
+* @author Team 7
+* This class formats the background of the subscene 
+*/
 package model;
 
 import javafx.animation.TranslateTransition;
@@ -17,6 +21,11 @@ public class IntroSubScene extends SubScene {
 	
 	private boolean isHidden;
 	
+	/**
+	* Formats the subscene to have a background image.
+	* @param void
+	 *@return void
+	*/
 	public IntroSubScene() {
 		super(new AnchorPane(), 700, 800);
 		prefWidth(500);
@@ -34,7 +43,11 @@ public class IntroSubScene extends SubScene {
 		setLayoutY(180);
 		
 	}
-	
+	/**
+	* Transition for subscene 
+	* @param void
+	 *@return void
+	*/
 	public void moveSubScene() {
 		TranslateTransition transition = new TranslateTransition();
 		transition.setDuration(Duration.seconds(0.3));
