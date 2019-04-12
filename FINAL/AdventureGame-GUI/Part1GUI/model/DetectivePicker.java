@@ -4,23 +4,18 @@
 */
 package model;
 
-
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
-
 public class DetectivePicker extends VBox {
 	
 	private ImageView circleImage;
 	private ImageView detectiveImage;
-	
 	private String circleNotChoosen = "view/resources/detectivechooser/empty1.png";
 	private String circleChoosen = "view/resources/detectivechooser/empty.png";
-	
 	private Detective detective;
-	
 	private boolean isCircleChoosen;
 	
 	/**
@@ -38,7 +33,6 @@ public class DetectivePicker extends VBox {
 		this.getChildren().add(circleImage);
 		this.getChildren().add(detectiveImage);
 	}
-	
 	
 	/**
 	* Getter for detective 
@@ -68,7 +62,7 @@ public class DetectivePicker extends VBox {
 		
 		if (!a) { imageToSet ="view/resources/detectivechooser/empty1.png"	;}
 		else { imageToSet ="view/resources/detectivechooser/empty.png";}
-		
+	
 		System.out.println(imageToSet);
 		circleImage.setImage(new Image(imageToSet));
 	}
