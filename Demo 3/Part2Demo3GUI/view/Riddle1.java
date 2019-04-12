@@ -20,6 +20,16 @@ import model.Clabel;
  
 /////CONNECT POLICE STATION
 public class Riddle1 extends PoliceStation{
+	
+	/*
+	* display()
+	*
+	* display method is called by Location B
+	* New Stage is created called "Riddle1".
+	* DJ gives player a riddle, that they must solve to aquire a hint 
+	*3 buttons to submit, for a hint or to back to the Police Station.
+	* 
+	*/
 
 	public static void display() {
         Stage primaryStage = new Stage();
@@ -32,7 +42,7 @@ public class Riddle1 extends PoliceStation{
 		ImageView mvR = new ImageView(backgroundR);
 		Group root = new Group();
 		
-	//Story Line
+	//Label for riddle presented by the DJ.
         Label storyLab = new Label("You find the DJ at the club and ask him to tell you what he saw that night." +
 								   "\n" +
 								   "DJ: 'If you want my witness account, you'll have to prove to me you're \n" +
@@ -47,7 +57,7 @@ public class Riddle1 extends PoliceStation{
         
 
 	//Labels
-		//promptLab
+		//Prompt field to submit answer. 
 		Label promptLab = new Label("What am I? (Press the submit button to enter guess)");
 		promptLab.setLayoutX(240);
 		promptLab.setLayoutY(150);
@@ -66,7 +76,7 @@ public class Riddle1 extends PoliceStation{
 		root.getChildren().add(txtField);
 
 	//Buttons
-		//PSButton
+		//New TalkStealButton that direct to the Police Station. 
 		TalkStealButton PSButton = new TalkStealButton("Back to Map");
         PSButton.setLayoutX(20);
         PSButton.setLayoutY(300);
@@ -85,7 +95,7 @@ public class Riddle1 extends PoliceStation{
         submitButton.setLayoutY(230);
 		root.getChildren().add(submitButton);
 		
-	//Actions
+	//Appropriate messages that are displayed if riddle is guessed correctly. 
 	    EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e1) {						
 				if (txtField.getText().toUpperCase().equals("A JOKE")) {
@@ -108,7 +118,7 @@ public class Riddle1 extends PoliceStation{
 			}
 	    };		
 	
-	//When button is pressed
+	//When submit button is pressed the message is prompted. 
 	    submitButton.setOnAction(event);
 		
 		Scene scene = new Scene(root, 847, 600);
