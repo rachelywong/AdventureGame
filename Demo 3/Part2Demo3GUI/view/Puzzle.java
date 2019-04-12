@@ -1,3 +1,13 @@
+/**
+ * @author Team7
+ */
+
+/**
+ * Class represents the mini game of puzzle to get clue in Location B. 
+ * <p>
+ * This game is adapted from the code from desrtfx.
+ */ 
+
 package view;
 
 import java.io.FileInputStream;
@@ -14,7 +24,12 @@ import javafx.scene.input.MouseEvent;
 
 public class Puzzle extends Application {
 	
-	
+	/**
+	* Code is generated to create a GUI interface where user input is taken in 
+	* and checked to see if the images are displayed in the correct secquence. 
+	* Images are added to ArrayList and shuffled.
+	* 
+	*/
 	public void start(Stage primaryStage) {
 		try {
 			
@@ -27,7 +42,7 @@ public class Puzzle extends Application {
 			clue.setLayoutY(400);
 			root.getChildren().add(clue);
 						
-			//Take in tile images
+			//Input tile images
 			FileInputStream t1 = new FileInputStream("shoe1.jpg"); 
 			Image tile1 = new Image(t1);
 			ImageView iv_t1 = new ImageView(tile1);
@@ -114,7 +129,7 @@ public class Puzzle extends Application {
 			// Make -1 indicate the blank
 			boardStatus[(int) Math.sqrt(numSquares) - 1][(int) Math.sqrt(numSquares) - 1] = -1;
 
-			// Make all the buttons clickable
+			// Make all the buttons clickable and check if can be moved for each space
 			iv_t1.setOnMouseClicked((MouseEvent e) -> {
 				System.out.println(canMove(1, boardStatus));
 				if(canMove(1, boardStatus)) {
@@ -182,7 +197,9 @@ public class Puzzle extends Application {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * Prints the board
+	 */
 	public void printBoard(int[][] boardStatus) {
 		for(int i = 0; i < 3; i++)
 		   {
@@ -193,7 +210,10 @@ public class Puzzle extends Application {
 		      System.out.println();
 		   }
 	}
-	
+	/**
+	 * Moves the picture
+	 * @param int tileNum, int [][] boardStat, image, image size and spacing
+	 */
 	public void movePic(int tileNum, int [][] boardStat, ImageView imgToMove, int imgSize, int spacing) {
 		
 		int tileXIndex = 0;
@@ -241,7 +261,12 @@ public class Puzzle extends Application {
 		
 		
 	}
-	
+	/**
+	 * canMove() check if it can move
+	 *
+	 * @param int tileNum and int boardStat
+	 * @return boolean if tile can move
+	 */
 	public boolean canMove(int tileNum, int [][] boardStat) {
 		
 		boolean ret = false;
