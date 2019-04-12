@@ -17,6 +17,16 @@ import javafx.scene.Group;
 import model.TalkStealButton;
  
 public class Riddle2 extends PoliceStation{
+	
+	/*
+	* display()
+	*
+	* display method is called by Location B
+	* New Stage is created called "Riddle2".
+	* Player is given a riddle, that they must solve to aquire a hint 
+	*3 buttons to submit, for a hint or to back to the Police Station.
+	* 
+	*/
 
 	public static void display() {
         Stage primaryStage = new Stage();
@@ -29,7 +39,7 @@ public class Riddle2 extends PoliceStation{
 		Group root = new Group();
 		
 
-	//Labels 
+	//Labels that display the question
 		Label riddle2 = new Label("Solve riddle to get a hint. \n" +
 	     "What do you get when you cross a hamburger with a computer?");
 		riddle2.setTextFill(Color.web("#FFFFFF"));
@@ -38,7 +48,7 @@ public class Riddle2 extends PoliceStation{
 		root.getChildren().add(riddle2);
 
 	//Labels
-		//promptLab
+		//promptLab: prompts user to submit
 		Label promptLab = new Label("Guess: (Press the submit button to enter guess)");
 		promptLab.setTextFill(Color.web("#FFFFFF"));
 		promptLab.setLayoutX(1);
@@ -59,7 +69,7 @@ public class Riddle2 extends PoliceStation{
 		root.getChildren().add(txtField);
 
 	//Buttons
-		//PSButton
+		//TalkStealButton PSButton directs user back to the Poilic Station
 	    TalkStealButton PSButton = new TalkStealButton("Back to Local Gym");
 	    PSButton.setLayoutX(1);
 		PSButton.setLayoutY(140);
@@ -76,7 +86,7 @@ public class Riddle2 extends PoliceStation{
 		submitButton.setLayoutY(190);
 		root.getChildren().add(submitButton);
 
-	//Actions
+	//Actions: Appropriate message is displayed depending on whether riddle has been solved. 
 	    EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent eve2) {	
 				if (txtField.getText().toUpperCase().equals("A BIG MAC")) {
@@ -89,7 +99,7 @@ public class Riddle2 extends PoliceStation{
 	        }
 	    };
 
-	//When button is pressed
+	//When button is pressed, appropriate message is prompted
 	    submitButton.setOnAction(event);
 
 		Scene scene = new Scene(root, 847, 600);
