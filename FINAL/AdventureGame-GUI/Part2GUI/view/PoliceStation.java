@@ -1,3 +1,9 @@
+lines (165 sloc)  5.6 KB
+    
+/**
+* @author Team 7
+* This class represents the map Police station that allows the user to go to different locations to solve the mystery 
+*/
 package view;
 
 import javafx.stage.Stage;
@@ -32,7 +38,15 @@ import javafx.animation.AnimationTimer;
 public class PoliceStation {
 	
 	
-	
+	/**
+	* This is the display method used for this scene.
+	*
+	* <p>
+	* A background image is uploaded to create the scene and the user is prompted
+	* to submit who they believe is the murderer. Actionevents and specific buttons.
+	*
+	* @param void
+	*/
 
 	
 	private AnchorPane talkPane;
