@@ -1,3 +1,8 @@
+    
+/**
+* @author Team 7
+* This class formats the talk or steal subscene to appear 
+*/
 package model;
 
 import javafx.scene.SubScene;
@@ -20,6 +25,11 @@ public class TalkorStealSubScene extends SubScene {
 	
 	private boolean isHidden;
 	
+	/**
+	* Formats and imports image to create background to desired results.
+	* @param void
+	 *@return void
+	*/
 	public TalkorStealSubScene() {
 		super(new AnchorPane(), 600, 200); // y = 400
 		prefWidth(300);
@@ -39,6 +49,11 @@ public class TalkorStealSubScene extends SubScene {
 		
 	}
 	
+	/**
+	* Format the transition of subscene for appearence  
+	* @param void
+	 *@return void
+	*/
 	public void moveSubScene() {
 		TranslateTransition transition = new TranslateTransition();
 		transition.setDuration(Duration.seconds(0.3));
