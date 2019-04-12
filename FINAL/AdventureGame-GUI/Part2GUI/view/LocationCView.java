@@ -1,3 +1,8 @@
+    
+/**
+* @author Team 7
+* This class represents location C, the locker room guessing game.
+*/
 package view;
 
 import javafx.scene.shape.*;
@@ -18,7 +23,15 @@ import javafx.application.Application;
 import javafx.animation.AnimationTimer;
 
 public class LocationCView extends PoliceStation {
-	
+	/*
+	* display()
+	*
+	* display method is called by Police Station.
+	* New Stage is created called "Local Gym".
+	* Guessing game minigame, where you must use hints previously gathered to make a guess. 
+	*3 buttons to submit, for a hint or to back to the Polic Station.
+	* 
+	*/
 	public static void display() {
         Stage primaryStage = new Stage();
         primaryStage.initModality(Modality.APPLICATION_MODAL);
@@ -75,21 +88,9 @@ public class LocationCView extends PoliceStation {
 		});
 	
 
-		
-		
-		
 
-		/*
-	    EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent e1) {						
-				PSButton.setOnAction(e -> {
-					primaryStage.hide();
-					//PoliceStation.PS();
-				});
-	        }
-	    };
-	    */
-		
+	
+	 // Messages that are displayed depending on whether or not locker was guessed correctly by the player.
 	    EventHandler<ActionEvent> event2 = new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e2) {						
 				if (txtField.getText().toUpperCase().equals("1978")) {
@@ -107,24 +108,7 @@ public class LocationCView extends PoliceStation {
 			}
 	    };	
          
-	    /*
-		EventHandler<ActionEvent> event3 = new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent e3) {
-				//LocAButton.setOnAction(e -> {
-					LocationAView.display();
-				//});
-			}
-		};
-		
-		/*
-		EventHandler<ActionEvent> event4 = new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent e4) {
-				hintButton.setOnAction(e -> {
-					Riddle2.display();
-				});
-			}
-		};
-		*/
+	
 
 	    // when button is pressed
 	    //PSButton.setOnAction(event);
