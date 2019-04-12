@@ -14,6 +14,7 @@ import javafx.event.ActionEvent;
 import javafx.application.Application;
 import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
+import model.TalkStealButton;
  
 public class Riddle2 extends PoliceStation{
 
@@ -22,38 +23,46 @@ public class Riddle2 extends PoliceStation{
         primaryStage.initModality(Modality.APPLICATION_MODAL);
         primaryStage.setTitle("Riddle2");
 	
-		VBox root = new VBox();
+        
+        Image background1 = new Image("view/resources/bigmac.jpg");
+		ImageView mv1 = new ImageView(background1);
+		Group root = new Group();
+		
 
 	//Labels 
 		Label riddle2 = new Label("Solve riddle to get a hint. \n" +
 	     "What do you get when you cross a hamburger with a computer?");
+		riddle2.setTextFill(Color.web("#FFFFFF"));
 		riddle2.setFont(Font.font("Times New Roman", 24));
+		root.getChildren().add(mv1);
 		root.getChildren().add(riddle2);
 
 	//Labels
 		//promptLab
-		Label promptLab = new Label("Guess: (Press the Submit button to enter guess)");
-		promptLab.setLayoutX(200);
-		promptLab.setLayoutY(200);
+		Label promptLab = new Label("Guess: (Press the submit button to enter guess)");
+		promptLab.setTextFill(Color.web("#FFFFFF"));
+		promptLab.setLayoutX(1);
+		promptLab.setLayoutY(110);
 		promptLab.setFont(Font.font("Times New Roman", 20));
 		root.getChildren().add(promptLab);
 		//resultLab
 		Label resultLab = new Label(" ");
-		resultLab.setLayoutX(225);
-		resultLab.setLayoutY(120);
+		resultLab.setLayoutX(400);
+		resultLab.setLayoutY(80);
+		resultLab.setTextFill(Color.web("#FFFFFF"));
 		resultLab.setFont(Font.font("Times New Roman", 20));
 		root.getChildren().add(resultLab);	
 		//txtField
 		TextField txtField = new TextField("(3 words, first word is A)");
-		txtField.setLayoutX(300);
-		txtField.setLayoutY(200);
+		txtField.setLayoutX(1);
+		txtField.setLayoutY(80);
 		root.getChildren().add(txtField);
 
 	//Buttons
 		//PSButton
-	    Button PSButton = new Button("Back");
-	    PSButton.setLayoutX(20);
-		PSButton.setLayoutY(20);
+	    TalkStealButton PSButton = new TalkStealButton("Back to Local Gym");
+	    PSButton.setLayoutX(1);
+		PSButton.setLayoutY(140);
 		root.getChildren().add(PSButton);
 		PSButton.setOnAction(new HandleButtonClick("PS", promptLab));
 		PSButton.setOnAction(e -> {
@@ -62,19 +71,20 @@ public class Riddle2 extends PoliceStation{
 			//PoliceStation.PS();
 		});
 		//submitButton
-	    Button submitButton = new Button("Submit");
-	    submitButton.setLayoutX(20);
-		submitButton.setLayoutY(50);
+		TalkStealButton submitButton = new TalkStealButton("Submit");
+	    submitButton.setLayoutX(1);
+		submitButton.setLayoutY(190);
 		root.getChildren().add(submitButton);
 
 	//Actions
 	    EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent eve2) {	
 				if (txtField.getText().toUpperCase().equals("A BIG MAC")) {
-					resultLab.setText("You solved the riddle. \n" +
-									  "Make sure you have been to Witness House.");						
+					resultLab.setText("You solved the riddle. Make sure you have been \n" +
+									  "to Witness House.");						
 				} else {
 					resultLab.setText("Incorrect. Please try again.");
+					
 				}
 	        }
 	    };
