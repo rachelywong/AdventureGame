@@ -2,50 +2,42 @@
  * @author Team7
  */
 
+
 /**
  * Class represents the mini game of Rock Paper Scissors
  * <p>
  * 
  */ 
 
-
-import javafx.stage.*;
+package view;
 import javafx.scene.*;
 import javafx.scene.layout.*;
 import javafx.scene.control.*;
 import javafx.geometry.*;
-
-import javafx.scene.shape.*;
 import javafx.scene.image.*;
 import javafx.scene.text.*;
-import javafx.stage.Stage;
-import javafx.scene.layout.*;
+import model.TalkStealButton;
 import javafx.scene.paint.Color;
-import javafx.scene.control.*; 
-import javafx.geometry.*; 
 import javafx.event.EventHandler;
-import javafx.event.ActionEvent;
-
-import java.util.Scanner; 
+import javafx.event.ActionEvent; 
 import java.util.Random; 
 
-public class attackGUI extends LocationAGUI {
+public class RPS extends PoliceStation {
 	
 	//instance variables 
 	private static String personPlay;
 	private static String computerPlay = "";
 	private static String computerPlayer = "";
 	private static int computerInt; //Randomly generated number used to determine computer's play 
-    	private String response; 
+    //private String response; 
 	
 	
-	 /**
+    /**
 	 * Method generates random int (1-3). Int is then converted to Strings R, P or S.
 	 * 
 	 * @param no parameters
 	 * @return returns String R, P or S
 	 */ 
-         
 	public static String getcompGen(){
 		Random generator = new Random();
 		computerInt = generator.nextInt(3)+1;
@@ -71,16 +63,17 @@ public class attackGUI extends LocationAGUI {
 	 * @return returns Scene attackScene
 	 */ 
 	public static Scene getAttackScene(){
-		Image attackImage = new Image("file:monster.png");
+		Image attackImage = new Image("view/resources/monster.png");
 		ImageView attackView = new ImageView(attackImage);
 		GridPane attackPane = new GridPane();
-		attackPane.setMaxSize(847, 600);
+		attackPane.setMaxSize(400, 300);
 		
 		attackPane.getChildren().add(attackView);
 		
 		VBox labels = new VBox();
 		labels.setAlignment(Pos.TOP_LEFT);
-		Label a_intro = new Label("You've encountered a monster! Win Rock Paper Scissors in order to go back!");
+		Label a_intro = new Label("You've encountered a monster! Win Rock Paper Scissors \n" +
+		                          "in order to go back!");
 		setFormat(a_intro);
 		Label win_label = new Label("You win!!");
 		setFormat(win_label);
@@ -95,18 +88,13 @@ public class attackGUI extends LocationAGUI {
 		attackPane.getChildren().add(choices);
 		
 		
-		
-		Button backButton = new Button("Go back");
+		TalkStealButton backButton = new TalkStealButton("Back to Map");
 		backButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override 
 			public void handle(ActionEvent backto) {
-			
+				talkStage.show();
 				
 				
-
-				
-				//setScene(scene1);
-
 			}
 		});
 		
@@ -133,6 +121,7 @@ public class attackGUI extends LocationAGUI {
 				
 			}
 			});
+		
 		Button paperchoice = new Button("P");
 		paperchoice.setOnAction(new EventHandler<ActionEvent>(){
 			@Override
@@ -175,11 +164,8 @@ public class attackGUI extends LocationAGUI {
 			});
 		
 		choices.getChildren().addAll(rockchoice,paperchoice,scissorchoice);
-		
-		
 		Scene attackscene = new Scene(attackPane);
-		
-		return attackscene;
+	    return attackscene;
 	}
 	
 	public static void setFormat(Label aResultLabel){
@@ -188,8 +174,4 @@ public class attackGUI extends LocationAGUI {
 		aResultLabel.setWrapText(true);	
 		
 	}
-	
-
-
-
 }
