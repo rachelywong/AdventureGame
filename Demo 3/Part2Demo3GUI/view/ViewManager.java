@@ -26,6 +26,10 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.Node;
 import javafx.scene.layout.HBox;
+import javafx.scene.text.Font;
+import model.Clabel;
+import javafx.scene.control.Label;
+
 
 
 public class ViewManager {
@@ -59,6 +63,7 @@ public class ViewManager {
 		mainScene = new Scene(mainPane, WIDTH, HEIGHT);
 		mainStage = new Stage();
 		mainStage.setScene(mainScene);
+		mainStage.setResizable(false);
 		createSubScene();
 		createButtons();
 		createBackground();
@@ -77,15 +82,49 @@ public class ViewManager {
 	}
 	
 	private void createSubScene() {
-		creditsSubScene = new IntroSubScene();
-		mainPane.getChildren().add(creditsSubScene);
+		
+		
+		
 		
 		helpSubScene = new IntroSubScene();
 		mainPane.getChildren().add(helpSubScene);
 		
+		Label helpLabel = new Label(" To begin the game please press PLAY \n" + 
+		                            " and then follow the instructions as \n" +  
+		                            " prompted to play throughout the game.");
+		
+		helpLabel.setFont(new Font("Times New Roman", 23));
+		helpLabel.setLayoutX(10);
+		helpLabel.setLayoutY(30);
+		
+		creditsSubScene = new IntroSubScene();
+		mainPane.getChildren().add(creditsSubScene);
+		
+		Label creditLabel = new Label("  Game created and developed by \n" +   
+		                              "  Team 7 (Elvira, Rachel, Abi, \n" +  
+		                              "  and Teresa) for CPSC 219 - Winter \n" + 
+		                              "  2019. Game uses Java and Javafx.");
+		creditLabel.setFont(new Font("Times New Roman", 23));
+		creditLabel.setLayoutX(10);
+		creditLabel.setLayoutY(30);
+		
+		creditsSubScene.getPane().getChildren().add(creditLabel);
+		
+		helpSubScene.getPane().getChildren().add(helpLabel);
+		
 		scoreSubScene = new IntroSubScene();
 		mainPane.getChildren().add(scoreSubScene);
 		
+		Label scoreLabel = new Label("  This version of the game does not \n" + 
+		                             "  utilize scoring methods. Please stay \n" + 
+		                             "  tuned for if we ever work on this \n" + 
+		                             "  game after CPSC 219.");
+		scoreLabel.setFont(new Font("Times New Roman", 23));
+		
+		scoreLabel.setLayoutX(10);
+		scoreLabel.setLayoutY(30);
+		
+		scoreSubScene.getPane().getChildren().add(scoreLabel);
 		
 		createDetectiveChooserSubScene();
 	}
@@ -96,7 +135,7 @@ public class ViewManager {
 		
 		InfoLabel chooseDetectiveLabel = new InfoLabel("CHOOSE YOUR DETECTIVE");
 		chooseDetectiveLabel.setLayoutX(10);
-		chooseDetectiveLabel.setLayoutY(30); //70
+		chooseDetectiveLabel.setLayoutY(15); 
 		detectiveChooserScene.getPane().getChildren().add(chooseDetectiveLabel);
 		detectiveChooserScene.getPane().getChildren().add(createDetectivesToChoose());
 		detectiveChooserScene.getPane().getChildren().add(createButtonToStart());
