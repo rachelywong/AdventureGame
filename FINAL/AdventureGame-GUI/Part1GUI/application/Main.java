@@ -1,11 +1,18 @@
+/**
+ * @authors Team7
+ */
+
+/**
+ * Class represents the Main class of the adventure game. 
+ * <p>
+ * The package "application" and other specific imports to Javafx
+ * have been imported for this class. Main class extends Application.
+ */
 package application;
 	
 import javafx.application.Application;
 import javafx.stage.Stage;
 import view.ViewManager;
-
-
-
 
 public class Main extends Application {
 	@Override
@@ -18,7 +25,6 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
-	
 	public static void main(String[] args) {
 		launch(args);
 	}
