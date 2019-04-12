@@ -1,4 +1,12 @@
-/*
+/**
+ * @author Team7
+ */
+
+/**
+ * Class represents the witness 
+ * <p>
+ *
+ */ 
 package view;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
