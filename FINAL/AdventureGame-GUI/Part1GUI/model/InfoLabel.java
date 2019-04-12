@@ -7,7 +7,6 @@ package model;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
@@ -21,7 +20,6 @@ import javafx.scene.text.Font;
 public class InfoLabel  extends Label {
 	
 	public final static String FONT_PATH = "src/model/resources/kenvector_future_thin.ttf";
-	
 	public final static String BACKGROUND_IMAGE = "view/resources/blue_button13.png";
 	
 	/**
@@ -30,18 +28,17 @@ public class InfoLabel  extends Label {
 	 *@return InfoLabel
 	*/
 	public InfoLabel(String text) {
-		
 		setPrefWidth(400);
 		setPrefHeight(75);
 		setText(text);
 		setWrapText(true);
 		setLabelFont();
 		setAlignment(Pos.CENTER);
-		
-		BackgroundImage backgroundImage = new BackgroundImage(new Image(BACKGROUND_IMAGE, 380/*width */, 60/*height*/, false, true), BackgroundRepeat.NO_REPEAT,
+		BackgroundImage backgroundImage = new BackgroundImage(new Image(BACKGROUND_IMAGE, 380, 60, false, true), BackgroundRepeat.NO_REPEAT,
 				BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, null);
 		setBackground(new Background(backgroundImage));
 	}
+	
 	/**
 	* set Font for desired text
 	* @param void
@@ -55,5 +52,4 @@ public class InfoLabel  extends Label {
 			setFont(Font.font("Verdana", 23));
 		}
 	}
-
 }
