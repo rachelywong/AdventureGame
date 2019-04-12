@@ -1,4 +1,12 @@
+/**
+ * @author Team7
+ */
 
+/**
+ * Class represents riddle that must be solved to get clue in Location B
+ * <p>
+ * 
+ */ 
 package view;
 
 import javafx.scene.shape.*;
