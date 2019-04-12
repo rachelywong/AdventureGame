@@ -1,10 +1,8 @@
-package view;
-
 /**
 * @author Team 7
 * This class represents location D, the suspect guessing scene.
 */
-
+package view;
 import javafx.scene.shape.*;
 import javafx.scene.image.*;
 import javafx.scene.text.*;
