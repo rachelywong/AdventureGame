@@ -1,3 +1,8 @@
+/**
+* @author Team 7
+* This class represents location A , you have to find the witness in their house and depending on the door picked differnt scenes or
+*mini games are called.
+*/
 package view;
 import javafx.stage.*;
 import javafx.scene.*;
