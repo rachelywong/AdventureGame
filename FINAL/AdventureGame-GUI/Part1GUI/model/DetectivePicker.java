@@ -1,3 +1,7 @@
+/**
+* @author Team 7
+* This class formats the detective choosing expereince 
+*/
 package model;
 
 
@@ -19,7 +23,11 @@ public class DetectivePicker extends VBox {
 	
 	private boolean isCircleChoosen;
 	
-	//constructor
+	/**
+	* Constructor that develops the Detective chooser scene 
+	* @param Detective 
+	 *@return DetectivePicker
+	*/
 	public DetectivePicker (Detective detective) {
 		circleImage = new ImageView(circleNotChoosen);
 		detectiveImage = new ImageView(detective.getUrl());
@@ -31,22 +39,36 @@ public class DetectivePicker extends VBox {
 		this.getChildren().add(detectiveImage);
 	}
 	
-
+	
+	/**
+	* Getter for detective 
+	* @param Detective 
+	 *@return DetectivePicker
+	*/
 	public Detective getDetective() {
 		return detective;
 	}
-
+	
+	/**
+	* Getter that for checking of circle is chosen 
+	* @param void 
+	 *@return boolean 
+	*/
 	public boolean getIsCircleChoosen() {
 		return isCircleChoosen;
 	}
+	
+	/**
+	* Checks weather circle is chosen  
+	* @param boolean 
+	 *@return void 
+	*/
 	public void setIsCircleChoosen(boolean a) {
 		String imageToSet;
-		//System.out.println(isCirlceChoosen);
-		//this.isCircleChoosen = isCircleChoosen;
+		
 		if (!a) { imageToSet ="view/resources/detectivechooser/empty1.png"	;}
 		else { imageToSet ="view/resources/detectivechooser/empty.png";}
 		
-		//String imageToSet = this.isCircleChoosen ? "view/resources/detectivechooser/empty.png" : "view/resources/detectivechooser/empty1.png";
 		System.out.println(imageToSet);
 		circleImage.setImage(new Image(imageToSet));
 	}
