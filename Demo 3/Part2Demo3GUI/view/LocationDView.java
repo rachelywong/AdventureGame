@@ -5,7 +5,9 @@ import javafx.scene.image.*;
 import javafx.scene.text.*;
 import javafx.scene.*;
 import model.TalkStealButton;
+import tictactoegui.TicTacToeGUI;
 import javafx.stage.*;
+import dance.JavaFX_12;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.control.*; 
@@ -22,8 +24,11 @@ public class LocationDView {
 	public static void display() {
         Stage primaryStage = new Stage();
         primaryStage.initModality(Modality.APPLICATION_MODAL);
-        primaryStage.setTitle("Location D");
+        primaryStage.setTitle("Guess the Murderer");
 
+        
+        Image backgroundD = new Image("view/resources/prison.jpg");
+		ImageView mvD = new ImageView(backgroundD);
 		Group root = new Group();
 		
 	//Story Line
@@ -31,25 +36,29 @@ public class LocationDView {
 								   "You have been given a list of suspects, and must choose who the \n" +
 								   "murderer is. The list identifies key characteristics of the suspects \n" +
 								   "that may help in your decision.");
+		storyLab.setTextFill(Color.web("#FFFFFF"));
 		storyLab.setFont(Font.font("Times New Roman", 24));
+		root.getChildren().add(mvD);
 		root.getChildren().add(storyLab);
 		
 	//Labels
 		//promptLab
 		Label promptLab = new Label("Murderer: (Press the Submit button to enter guess) ");
-		promptLab.setLayoutX(100);
+		promptLab.setTextFill(Color.web("#FFFFFF"));
+		promptLab.setLayoutX(240);
 		promptLab.setLayoutY(300);
 		promptLab.setFont(Font.font("Times New Roman", 20));
 		root.getChildren().add(promptLab);
 		//resultLab
 		Label resultLab = new Label(" ");
-		resultLab.setLayoutX(225);
-		resultLab.setLayoutY(450);
+		resultLab.setTextFill(Color.web("#FFFFFF"));
+		resultLab.setLayoutX(240);
+		resultLab.setLayoutY(400);
 		resultLab.setFont(Font.font("Times New Roman", 20));
 		root.getChildren().add(resultLab);
 		//txtField
 		TextField txtField = new TextField("(Name)");
-		txtField.setLayoutX(100);
+		txtField.setLayoutX(240);
 		txtField.setLayoutY(330);
 		root.getChildren().add(txtField);
 	
@@ -58,7 +67,9 @@ public class LocationDView {
 								   "Gender: Female \n" +
 								   "Hair Color: Brown \n" +
 								   "Occupation: Mechanic");
-		suspect1.setLayoutX(100);
+		
+		suspect1.setTextFill(Color.web("#FFFFFF"));
+		suspect1.setLayoutX(240);
 		suspect1.setLayoutY(150);
 		suspect1.setFont(Font.font("Times New Roman", 20));
 		root.getChildren().add(suspect1);
@@ -67,7 +78,8 @@ public class LocationDView {
 								   "Gender: Female \n" +
 								   "Hair Color: Red \n" +
 								   "Occupation: Electrician");
-		suspect2.setLayoutX(300);
+		suspect2.setTextFill(Color.web("#FFFFFF"));
+		suspect2.setLayoutX(440);
 		suspect2.setLayoutY(150);
 		suspect2.setFont(Font.font("Times New Roman", 20));
 		root.getChildren().add(suspect2);
@@ -76,14 +88,15 @@ public class LocationDView {
 								   "Gender: Male \n" +
 								   "Hair Color: Brown \n" +
 								   "Occupation: Artist");
-		suspect3.setLayoutX(500);
+		suspect3.setTextFill(Color.web("#FFFFFF"));
+		suspect3.setLayoutX(640);
 		suspect3.setLayoutY(150);
 		suspect3.setFont(Font.font("Times New Roman", 20));
 		root.getChildren().add(suspect3);
 
 	//Buttons
 		//PSButton
-		TalkStealButton PSButton = new TalkStealButton("Go back to PS");
+		TalkStealButton PSButton = new TalkStealButton("Back to Map");
         PSButton.setLayoutX(20);
         PSButton.setLayoutY(500);
 		root.getChildren().add(PSButton);
@@ -102,9 +115,13 @@ public class LocationDView {
 	    EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e2) {						
 				if (txtField.getText().toUpperCase().equals("ABI")) {
+					JavaFX_12 java = new JavaFX_12();
+					java.start(new Stage());
 					resultLab.setText("Congrats! You've finally caught the murderer and win the game!");
+					
 				} else {
 					resultLab.setText("You arrested the wrong suspect! Please try again.");
+					
 				}
 			}
 	    };	
