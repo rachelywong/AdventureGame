@@ -1,3 +1,7 @@
+/**
+* @author Team 7
+* This class formats the button for a better viewing experience in the intro.
+*/
 package model;
 
 import java.io.FileInputStream;
@@ -19,6 +23,11 @@ public class IntroButton extends Button {
 	private final String BUTTON_PRESSED_STYLE = "-fx-background-color: transparent; -fx-background-image: url('/model/resources/blue_button00.png');";
 	private final String BUTTON_FREE_STYLE = "-fx-background-color: transparent; -fx-background-image: url('/model/resources/blue_button02.png');";
 	
+	/**
+	* Formats text to set a desired position.
+	* @param String 
+	 *@return IntroButton
+	*/
 	public IntroButton(String text) {
 		setText(text);
 		setButtonFont();
@@ -28,7 +37,11 @@ public class IntroButton extends Button {
 		initializeButtonListeners();
 		
 	}
-	
+	/**
+	* set Font for desired text
+	* @param void
+	 *@return void
+	*/
 	private void setButtonFont() {
 		
 		try {
@@ -37,19 +50,31 @@ public class IntroButton extends Button {
 			setFont(Font.font("Verdana", 23));
 			}
 	}
-	
+	/**
+	* set Font for desired text when button pressed
+	* @param void
+	 *@return void
+	*/
 	private void setButtonPressedStyle() {
 		setStyle(BUTTON_PRESSED_STYLE);
 		setPrefHeight(45);
 		setLayoutY(getLayoutY() + 4);
 	}
-	
+	/**
+	* set Font for desired text when button released 
+	* @param void
+	 *@return void
+	*/
 	private void setButtonReleasedStyle() {
 		setStyle(BUTTON_FREE_STYLE);
 		setPrefHeight(49);
 		setLayoutY(getLayoutY()-4);
 	}
-	
+	/**
+	* set buttons to desired effects 
+	* @param void
+	 *@return void
+	*/
 	private void initializeButtonListeners() {
 		
 		setOnMousePressed(new EventHandler<MouseEvent>() {
