@@ -1,3 +1,7 @@
+/**
+* @author Team 7
+* This class formats the label for a better viewing experience an aestheic for the infolabel
+*/
 package model;
 
 import java.io.File;
@@ -20,6 +24,11 @@ public class InfoLabel  extends Label {
 	
 	public final static String BACKGROUND_IMAGE = "view/resources/blue_button13.png";
 	
+	/**
+	* Format label to  desired position and aesthetic 
+	* @param String (desired text)
+	 *@return InfoLabel
+	*/
 	public InfoLabel(String text) {
 		
 		setPrefWidth(400);
@@ -33,7 +42,11 @@ public class InfoLabel  extends Label {
 				BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, null);
 		setBackground(new Background(backgroundImage));
 	}
-	
+	/**
+	* set Font for desired text
+	* @param void
+	 *@return void
+	*/
 	private void setLabelFont() {
 		
 		try {
