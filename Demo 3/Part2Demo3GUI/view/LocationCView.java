@@ -1,3 +1,8 @@
+/**
+* @author Team 7
+* This class represents location C, the locker room guessing game.
+*/
+
 package view;
 
 import javafx.scene.shape.*;
