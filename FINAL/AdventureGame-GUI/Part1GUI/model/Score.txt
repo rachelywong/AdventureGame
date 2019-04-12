@@ -1,0 +1,1 @@
+This version of the game does not utilize scoring methods. Please stay tuned for if we ever work on this game after CPSC 219.
