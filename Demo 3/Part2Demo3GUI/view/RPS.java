@@ -1,3 +1,14 @@
+/**
+ * @author Team7
+ */
+
+/**
+ * Class represents the mini game of Rock Paper Scissors
+ * <p>
+ * 
+ */ 
+
+
 import javafx.stage.*;
 import javafx.scene.*;
 import javafx.scene.layout.*;
