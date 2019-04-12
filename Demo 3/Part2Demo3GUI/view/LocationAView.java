@@ -84,7 +84,13 @@ public class LocationAView {
 	    
 	    
 	    
-		//block scene
+		
+		/*
+		 *Block scene
+		 *
+		 *Creating scene for the blocked pathway using ImageView() method. 
+		 *TalkStealButtons are used display formatted Play buttons. 
+		 */
 		Image blockImage = new Image("view/resources/brickwall.png");
 		ImageView blockView = new ImageView(blockImage);
 		Group blockPane = new Group();
@@ -104,9 +110,14 @@ public class LocationAView {
 		
 		
 		
+
+		/*
+		 *Background
+		 *
+		 *Initial backdrop of beginning of Location A. 
+		 *Using metho Imageview()
+		 */
 		
-		
-        //Background
 		Image background1 = new Image("view/resources/doors2.jpg");
 		ImageView mv1 = new ImageView(background1);
 		Group root = new Group();
@@ -135,27 +146,51 @@ public class LocationAView {
 		
 		
 
+		/*
+		 *Intro Label 
+		 *
+		 *Creates HBox introloc which displays the initial instructions
+		 *Creates a label to introduce the initial challenge of finding the correct door that has the witness.
+		 *Formats label and adds to HBox introloc
+		 */
 		
-		//Intro Label 
 		HBox introloc = new HBox();
+		introloc.setAlignment(Pos.BOTTOM_CENTER);
 		Label intro = new Label("You have arrived at the witness's house, the front door is open, but you must navigate through the "+
 								"house to find the witness. Keep your eyes peeled, you never know what dangers may lurk!" );
-		intro.setLayoutX(100);
-		intro.setLayoutY(300);
+		System.out.println("You have arrived at the witness's house, the front door is open, but you must navigate through the "+
+								"house to find the witness. Keep your eyes peeled, you never know what dangers may lurk!");
 		intro.setTextFill(Color.web("#FFFFFF"));
 		intro.setFont(new Font("Times New Roman", 18));
+		intro.setTextAlignment(TextAlignment.CENTER);
 		intro.setWrapText(true);			
 		root.getChildren().add(introloc);
 		introloc.getChildren().add(intro);
 		
-		//Go Back button 
+		
+		/*
+		 *Go Back button 
+		 *
+		 *Creates HBox gback which allows user to return to the police station.
+		 *Creates new TalkStealButton that displays "Go Back". 
+		 *Button is added to Hbox gback which is added to the root
+		 */
 		HBox gback = new HBox();
 		gback.setAlignment(Pos.TOP_LEFT);
 		TalkStealButton gbutton = new TalkStealButton("Go Back");
 		root.getChildren().add(gback);
 		gback.getChildren().add(gbutton);
 		
-		//Arrows
+		
+		/*
+		 *Arrows
+		 *
+		 *Creates HBox arrows1 at size 250. HBox arrows1 is added to the root. 
+		 *3 new buttons are created, formatted using the method setPolygon(). 
+		 *Arrow buttons either lead to a blocked wall, a Rock Paper Scissors mini game or 
+		 *to the witness. 
+		 *Buttons are added to HBox arrows1. 
+		 */
 		HBox arrows1  = new HBox(250);
 		arrows1.setAlignment(Pos.CENTER);
 		root.getChildren().add(arrows1);
@@ -175,7 +210,7 @@ public class LocationAView {
 			public void handle(ActionEvent attack) {
 				Scene attackerScene = RPS.getAttackScene();
 				window.setScene(attackerScene);
-				//attackTerm.doattackTerm();
+				
 			}
 		});
 		
@@ -185,9 +220,13 @@ public class LocationAView {
 		arrows1.getChildren().add(arrowC1);
 		
 		
-		
-		
-		//Background4
+	
+		/*
+		 *Background4
+		 *
+		 *Creating scene for the witness that calls the Hangman mini-game. 
+		 *TalkStealButtons are used display formatted Play buttons. 
+		 */
 		Image background4 = new Image("view/resources/witness.jpg");
 		ImageView mv4 = new ImageView(background4);
 		Group root4 = new Group();
