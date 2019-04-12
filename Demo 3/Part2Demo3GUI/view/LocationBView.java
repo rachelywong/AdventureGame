@@ -19,39 +19,35 @@ import javafx.geometry.*;
 import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
 import model.TalkStealButton;
-public class LocationB {
-	
-	// Establishing static instantaneous variables
+public class LocationBView {
+
+    
 	public static Scene crimeScene, weaponScene, framedScene;
 	private static Stage window;
 	public static PoliceStation ps;
 
-	 /*
-	*Will finds the stage in which this movie was made
-	* 
-	* @param no parameters
-	* @return returns current window. 
-	*/
+	 
 	public Stage getStage() {
         return window;
     }
 	
-		
+
+	/*
+	*Will take the specific button specified and change it's shape into an arrow
+	* 
+	* @param the button for arrows pointing to the doors and sets their shapes as arrows
+	* @return no return
+	*/		
 	
 	
 	public static void display() {
 		
 		Stage window = new Stage();
 	    window.initModality(Modality.APPLICATION_MODAL);
-	    window.setTitle("Location B");
+	    window.setTitle("Crime scene");
 		
 	
-       
-		/*
-		*Recieves background image and displays using ImageView(). 
-		* Creates GridPane root which is the base upon which other elements are added.
-		*
-		*/
+        //Background
 	    
 		Image background1 = new Image("view/resources/crime.jpg");
 		ImageView mv1 = new ImageView(background1);
@@ -76,7 +72,7 @@ public class LocationB {
 		
 		
 		//Buttons
-		HBox butt = new HBox(250);
+		HBox butt = new HBox(150);
 		butt.setAlignment(Pos.CENTER);
 		root.getChildren().add(butt);
 		//DJButton
@@ -107,7 +103,7 @@ public class LocationB {
 	    butt.getChildren().add(weaponButton);
 	    
 
-	  //scene3 - weaponScene
+	    //scene3 - weaponScene
 	    Image background3 = new Image("view/resources/crime.jpg");
 	    ImageView mv3 = new ImageView(background3);
 	    Group root3 = new Group();
@@ -116,24 +112,29 @@ public class LocationB {
 	    lab.setLayoutY(1);
 	    lab.setTextFill(Color.web("#FFFFFF"));
 		lab.setFont(Font.font("Times New Roman", 24));
-		
 		root3.getChildren().add(mv3);
 		root3.getChildren().add(lab);
-		
+		    
+			    
+		//create buttons
+	    VBox PTbutt = new VBox(50);
+	    PTbutt.setAlignment(Pos.CENTER);
+	    root3.getChildren().add(PTbutt);
+	    
+	    //pick button
 		TalkStealButton pickUpButton = new TalkStealButton("Pick up weapon");
 		pickUpButton.setLayoutX(100);
 		pickUpButton.setLayoutY(200);
-  		pickUpButton.setOnAction(new HandleButtonClick("Pick up", lab));
-  		root3.getChildren().add(pickUpButton);
-  		
+		root3.getChildren().add(pickUpButton);
+		pickUpButton.setOnAction(new HandleButtonClick("Pick up", lab));
   		pickUpButton.setOnAction(e -> window.setScene(framedScene));
-  		
-  		
-  		TalkStealButton photoButton = new TalkStealButton("Take picture of weapon");
-  		pickUpButton.setLayoutX(100);
-		pickUpButton.setLayoutY(250);
+		
+		
+		TalkStealButton photoButton = new TalkStealButton("Take picture of weapon");
+		photoButton.setLayoutX(100);
+		photoButton.setLayoutY(250);
+		root3.getChildren().add(photoButton);
         photoButton.setOnAction(new HandleButtonClick("Puzzle", lab));
-        root3.getChildren().add(photoButton);
         photoButton.setOnAction(new EventHandler<ActionEvent>() {
 			
 			@Override
@@ -146,6 +147,9 @@ public class LocationB {
 
 			}
 		});
+        
+        PTbutt.getChildren().add(pickUpButton);
+        PTbutt.getChildren().add(photoButton);
 	    
             
 
@@ -161,16 +165,24 @@ public class LocationB {
 	          root4.getChildren().add(mv4);
 	          root4.getChildren().add(frameLabel);
 	  		//PS2Button
-	          TalkStealButton PS2Button = new TalkStealButton("Back to Police Station");
+	          TalkStealButton PS2Button = new TalkStealButton("Back to Map");
 	          PS2Button.setLayoutX(1);
 	          PS2Button.setLayoutY(150);
 	          PS2Button.setOnAction(new HandleButtonClick("PS", frameLabel));
 	          root4.getChildren().add(PS2Button);
 	  		//directs to PS
-	  		PS2Button.setOnAction(e -> {
-	  			window.hide();
+	          PS2Button.setOnAction( new EventHandler<ActionEvent>() {
+	        	  @Override
+	        	  public void handle(ActionEvent event) {
+	        		  ps.display1();
+	        		  window.hide();
+	        	  }
+	          });
+	  		//PS2Button.setOnAction(e -> {
+	  			//ps.display1();
+	  			//window.hide();
 	  			//PoliceStation.PS();
-	  		});
+	  		//});
 	   
 		
 	  	framedScene = new Scene(root4, 847, 600);
@@ -183,4 +195,6 @@ public class LocationB {
     }
 
 }
+
+
 
