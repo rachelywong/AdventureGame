@@ -1,4 +1,7 @@
-
+/**
+* @author Team 7
+* This class represents location B, depending on the choices the player makes, different mini games appear that help you find the suspect.
+*/
 package view;
 import javafx.stage.*;
 import javafx.scene.*;
