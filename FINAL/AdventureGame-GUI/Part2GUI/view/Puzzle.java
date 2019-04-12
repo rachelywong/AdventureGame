@@ -1,3 +1,12 @@
+/**
+ * @author Team7
+ */
+
+/**
+ * Class represents the mini game of puzzle to get clue in Location B. 
+ * <p>
+ * This game is adapted from the code from desrtfx.
+ */ 
 package view;
 
 import java.io.FileInputStream;
@@ -15,7 +24,12 @@ import javafx.scene.control.Label;
 
 public class Puzzle extends Application {
 	
-	
+	/**
+	* Code is generated to create a GUI interface where user input is taken in 
+	* and checked to see if the images are displayed in the correct secquence. 
+	* Images are added to ArrayList and shuffled.
+	* 
+	*/
 	public void start(Stage primaryStage) {
 		try {
 			
@@ -185,6 +199,9 @@ public class Puzzle extends Application {
 		}
 	}
 	
+	/**
+	 * Prints the board
+	 */
 	public void printBoard(int[][] boardStatus) {
 		for(int i = 0; i < 3; i++)
 		   {
@@ -195,7 +212,10 @@ public class Puzzle extends Application {
 		      System.out.println();
 		   }
 	}
-	
+	/**
+	 * Moves the picture
+	 * @param int tileNum, int [][] boardStat, image, image size and spacing
+	 */
 	public void movePic(int tileNum, int [][] boardStat, ImageView imgToMove, int imgSize, int spacing) {
 		
 		int tileXIndex = 0;
@@ -243,7 +263,12 @@ public class Puzzle extends Application {
 		
 		
 	}
-	
+	/**
+	 * canMove() check if it can move
+	 *
+	 * @param int tileNum and int boardStat
+	 * @return boolean if tile can move
+	 */
 	public boolean canMove(int tileNum, int [][] boardStat) {
 		
 		boolean ret = false;
