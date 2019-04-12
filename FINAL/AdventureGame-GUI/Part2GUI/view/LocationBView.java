@@ -1,3 +1,8 @@
+    
+/**
+* @author Team 7
+* This class represents location B, depending on the choices the player makes, different mini games appear that help you find the suspect.
+*/
 
 package view;
 import javafx.stage.*;
@@ -47,7 +52,11 @@ public class LocationBView {
 	    window.setTitle("Crime scene");
 		
 	
-        //Background
+         /*
+        * Background 
+	*
+	*Opens backfround image using ImageView and adds GridPane root
+	*/	
 	    
 		Image background1 = new Image("view/resources/crime.jpg");
 		ImageView mv1 = new ImageView(background1);
@@ -58,7 +67,11 @@ public class LocationBView {
 		root.getChildren().add(mv1);
 
 		
-		//Intro Label 
+		/*
+        	* Intro Label 
+		*
+		*Creates introlabel and adds to GridPane root
+		*/
 		HBox introloc = new HBox();
 		Label intro = new Label("You have arrived at the Crime scene" );
 		introloc.setAlignment(Pos.TOP_CENTER);
@@ -71,7 +84,12 @@ public class LocationBView {
 		introloc.getChildren().add(intro);
 		
 		
-		//Buttons
+		/*
+        	* Buttons
+		*
+		*Creates new HBox butt to which a new TalkStealButton is added.
+		* TalkStealButton hides window and directs to riddle minigame class. 
+		*/
 		HBox butt = new HBox(150);
 		butt.setAlignment(Pos.CENTER);
 		root.getChildren().add(butt);
@@ -88,6 +106,12 @@ public class LocationBView {
 			Riddle1.display();
 		});
 		
+		/* 
+		*
+		*New TalkStealButton weaponButton is created and added to root.
+		* Weaponbutton is redirects to Scene weaponScene.
+		*/
+		
 		TalkStealButton weaponButton = new TalkStealButton("Examine weapon");
 		weaponButton.setLayoutX(20);
 		weaponButton.setLayoutY(260);
@@ -103,7 +127,14 @@ public class LocationBView {
 	    butt.getChildren().add(weaponButton);
 	    
 
-	    //scene3 - weaponScene
+	    /*
+             * weaponScene
+	     *
+	     * Player is given a choice to either pick up the weapon or take a photo.
+	     * If player chooses to pick up the weapon, they are directed to framedScene.
+	     * If player choose to tke a photo, they are directed to puzzleScene (minigame)
+	     * 
+	     */
 	    Image background3 = new Image("view/resources/crime.jpg");
 	    ImageView mv3 = new ImageView(background3);
 	    Group root3 = new Group();
@@ -153,7 +184,14 @@ public class LocationBView {
 	    
             
 
-	        //scene4 - framedScene
+	        /*
+             * framedScene
+	     *
+	     * Opens a background image. 
+	     * Player has been framed for the murder therefore is redirected back to the Polic Station 
+	     * by pressing button. 
+	     * 
+	     */
             Image background4 = new Image("view/resources/crime.jpg");
             ImageView mv4 = new ImageView(background4);
 	  		Group root4 = new Group();
