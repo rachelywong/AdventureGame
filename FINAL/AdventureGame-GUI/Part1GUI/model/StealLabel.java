@@ -1,3 +1,8 @@
+/**
+* @author Team 7
+* This class formats the label for a better viewing experience inside the StealLabel class 
+*/
+
 package model;
 
 import java.io.File;
@@ -20,6 +25,12 @@ public class StealLabel  extends Label {
 	
 	public final static String BACKGROUND_IMAGE = "view/resources/blue_button13.png";
 	
+	
+	/**
+	* Changes different aspects of the label to for the correct position 
+	* @param String that is being formatted
+	* @return void
+	*/
 	public StealLabel(String text) {
 		
 		setPrefWidth(300);
@@ -34,6 +45,11 @@ public class StealLabel  extends Label {
 		setBackground(new Background(backgroundImage));
 	}
 	
+	/**
+	* set Font for desired text
+	* @param void
+	* @return void
+	*/
 	private void setLabelFont() {
 		
 		try {
