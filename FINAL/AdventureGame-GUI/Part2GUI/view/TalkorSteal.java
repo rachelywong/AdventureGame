@@ -1,3 +1,7 @@
+/**
+* @author Team 7
+* Class that displays stealing the case, talking to the supervisor and go back button. Can play tictactoe or start the case whichwill lead to the polic station class.
+*/
 package view;
 
 import javafx.event.EventHandler;
