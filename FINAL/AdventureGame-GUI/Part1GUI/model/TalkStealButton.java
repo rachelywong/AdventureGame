@@ -1,3 +1,8 @@
+/**
+ * @author Team 7
+ * This class formats the buttons for the TalkSteal class
+ */
+
 package model;
 import java.io.FileNotFoundException;
 
@@ -33,7 +38,11 @@ public class TalkStealButton extends Button {
 	private final String BUTTON_PRESSED_STYLE = "-fx-background-color: transparent; -fx-background-image: url('/model/resources/blue_button00.png');";
 	private final String BUTTON_FREE_STYLE = "-fx-background-color: transparent; -fx-background-image: url('/model/resources/blue_button02.png');";
 	
-	//creating a string that will be shown
+	/**
+	 * Creates a String that will be shown and changes different aspects of the button for correct positioning
+	 * @param String that is being formatted
+	 * @return void
+	 */
 	public TalkStealButton(String text) {
 		setText(text);
 		setSTButtonFont();
@@ -43,8 +52,12 @@ public class TalkStealButton extends Button {
 		initializeButtonListeners();
 		
 	}
-	
-	//method that will set the font
+		
+	/**
+	 * set Font for desired text
+	 * @param void
+	 * @return void
+	 */
 	private void setSTButtonFont() {
 		try {
 			setFont(Font.loadFont(new FileInputStream(FONT_PATH), 12));
@@ -52,19 +65,33 @@ public class TalkStealButton extends Button {
 			setFont(Font.font("Verdana", 23)); //if application will not be able to set desired font, then it will set Verdana font
 		}
 	}
-	
-	//method for pressed and released style
+		
+	/**
+	 * Creates style for when buttons are pressed
+	 * @param void
+	 * @return void
+	 */
 	public void setButtonPressedStyle() {
 		setStyle(BUTTON_PRESSED_STYLE);
 		setPrefHeight(45);
 		setLayoutY(getLayoutY() +4 ); //pressed button is 4 pixels smaller than released one
 	}
+	
+	/**
+	 * Creates style for when buttons are released
+	 * @param void
+	 * @return void
+	 */
 	public void setButtonReleasedStyle() {
 		setStyle(BUTTON_FREE_STYLE);
 		setPrefHeight(49);
 		setLayoutY(getLayoutY() -4);
 	}
-	
+	/**
+	 * Creates ButtonListeners and EventHandlers for when buttons are pressed and released
+	 * @param void
+	 * @return void
+	 */
 	private void initializeButtonListeners() {
 		setOnMouseEntered(new EventHandler<MouseEvent>() {
 			@Override
