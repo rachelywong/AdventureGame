@@ -1,3 +1,14 @@
+/**
+ * @author Team7
+ */
+
+/**
+ * Class represents the fired 
+ * <p>
+ * 
+ */
+
+
 package view;
 
 import javafx.scene.Scene;
@@ -6,6 +17,7 @@ import javafx.stage.Stage;
 
 public class Fired {
 	
+	//instance variables
 	private AnchorPane gamePane;
 	private Scene gameScene;
 	private Stage gameStage;
@@ -19,7 +31,7 @@ public class Fired {
 	public Fired() {
 		initializeStage();
 	}
-	
+	//Initializes stage with a new anchorpane and gameScene
 	private void initializeStage() {
 		gamePane = new AnchorPane();
 		gameScene = new Scene(gamePane, GAME_WIDTH, GAME_HEIGHT);
