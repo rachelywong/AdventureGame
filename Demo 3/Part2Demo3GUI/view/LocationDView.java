@@ -1,5 +1,10 @@
 package view;
 
+/**
+* @author Team 7
+* This class represents location D, the suspect guessing scene.
+*/
+
 import javafx.scene.shape.*;
 import javafx.scene.image.*;
 import javafx.scene.text.*;
@@ -21,6 +26,16 @@ import javafx.scene.Group;
 //RETURN TO POLICE STATION
 public class LocationDView {
 	
+	/**
+	* This is the display method used for this scene.
+	*
+	* <p>
+	* A background image is uploaded to create the scene and the user is prompted
+	* to submit who they believe is the murderer. Actionevents and specific buttons
+	* are used to send the user back to the police station map is required.
+	*
+	* @param void
+	*/
 	public static void display() {
         Stage primaryStage = new Stage();
         primaryStage.initModality(Modality.APPLICATION_MODAL);
