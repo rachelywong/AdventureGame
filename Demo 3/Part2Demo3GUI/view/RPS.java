@@ -20,14 +20,21 @@ import java.util.Random;
 
 public class attackGUI extends LocationAGUI {
 	
+	//instance variables 
 	private static String personPlay;
 	private static String computerPlay = "";
 	private static String computerPlayer = "";
 	private static int computerInt; //Randomly generated number used to determine computer's play 
-    private String response; 
+    	private String response; 
 	
 	
-	
+	 /**
+	 * Method generates random int (1-3). Int is then converted to Strings R, P or S.
+	 * 
+	 * @param no parameters
+	 * @return returns String R, P or S
+	 */ 
+         
 	public static String getcompGen(){
 		Random generator = new Random();
 		computerInt = generator.nextInt(3)+1;
@@ -45,7 +52,13 @@ public class attackGUI extends LocationAGUI {
 	}
 	
 
-	
+	/**
+	 * getAttackScene() Scene creates a monster Scene with buttons to choose either R,P or S.
+	 * Once player has won, "Go back" button redirects them back to Polic Station.
+	 * 
+	 * @param no parameters
+	 * @return returns Scene attackScene
+	 */ 
 	public static Scene getAttackScene(){
 		Image attackImage = new Image("file:monster.png");
 		ImageView attackView = new ImageView(attackImage);
