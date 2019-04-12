@@ -1,4 +1,12 @@
+/**
+ * @author Team7
+ */
 
+/**
+ * Class represents riddle that must be solved to get clue in Location B
+ * <p>
+ * 
+ */ 
 package view;
 
 import javafx.scene.shape.*;
@@ -21,6 +29,15 @@ import model.Clabel;
 /////CONNECT POLICE STATION
 public class Riddle1 extends PoliceStation{
 
+	/*
+	* display()
+	*
+	* display method is called by Location B
+	* New Stage is created called "Riddle1".
+	* DJ gives player a riddle, that they must solve to aquire a hint 
+	*3 buttons to submit, for a hint or to back to the Police Station.
+	* 
+	*/
 	public static void display() {
         Stage primaryStage = new Stage();
         primaryStage.initModality(Modality.APPLICATION_MODAL);
@@ -32,7 +49,7 @@ public class Riddle1 extends PoliceStation{
 		ImageView mvR = new ImageView(backgroundR);
 		Group root = new Group();
 		
-	//Story Line
+	//Label for riddle presented by the DJ.
         Label storyLab = new Label("You find the DJ at the club and ask him to tell you what he saw that night." +
 								   "\n" +
 								   "DJ: 'If you want my witness account, you'll have to prove to me you're \n" +
