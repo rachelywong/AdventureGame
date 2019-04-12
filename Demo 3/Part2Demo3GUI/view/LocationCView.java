@@ -19,6 +19,15 @@ import javafx.animation.AnimationTimer;
 
 public class LocationCView extends PoliceStation {
 	
+	/*
+	* display()
+	*
+	* display method is called by Police Station.
+	* New Stage is created called "Local Gym".
+	* Guessing game minigame, where you must use hints previously gathered to make a guess. 
+	*3 buttons to submit, for a hint or to back to the Polic Station.
+	* 
+	*/
 	public static void display() {
         Stage primaryStage = new Stage();
         primaryStage.initModality(Modality.APPLICATION_MODAL);
@@ -89,7 +98,7 @@ public class LocationCView extends PoliceStation {
 	        }
 	    };
 	    */
-		
+	 // Messages that are displayed depending on whether or not locker was guessed correctly by the player.
 	    EventHandler<ActionEvent> event2 = new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e2) {						
 				if (txtField.getText().toUpperCase().equals("1978")) {
