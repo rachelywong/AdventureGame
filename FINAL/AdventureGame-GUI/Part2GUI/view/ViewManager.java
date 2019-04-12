@@ -10,12 +10,9 @@ package view;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import javafx.event.Event;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.scene.layout.Background;
@@ -30,41 +27,35 @@ import model.Detective;
 import model.DetectivePicker;
 import model.InfoLabel;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.Node;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
-import model.Clabel;
 import javafx.scene.control.Label;
-
-
 
 public class ViewManager {
 	
+	//instance variables
 	private static final int HEIGHT = 600;
 	private static final int WIDTH = 800;
 	private AnchorPane mainPane;
 	private Scene mainScene;
 	private Stage mainStage;
-	
 	private final static int MENU_BUTTONS_START_X = 585;
 	private final static int MENU_BUTTONS_START_Y = 130;
-	
-	
 	private IntroSubScene creditsSubScene;
 	private IntroSubScene helpSubScene;
 	private IntroSubScene scoreSubScene;
 	private IntroSubScene detectiveChooserScene;
-	
 	private IntroSubScene sceneToHide;
+	private  Detective choosenDetective; 
+	
+	//Lists that collects assets and buttons 
 	List<IntroButton> menuButton;
-	
 	List<IntroButton> menuButtons;
-	
 	List<DetectivePicker> detectiveList;
-	private  Detective choosenDetective; //private
 	
+	
+	//ViewManager constructor that allows to set the window, and call methods for subscenes, buttons, background and logo
 	public ViewManager() {
 		menuButtons = new ArrayList<>();
 		mainPane = new AnchorPane();
@@ -76,9 +67,6 @@ public class ViewManager {
 		createButtons();
 		createBackground();
 		createLogo();
-		
-		
-
 	}
 	
 	private void showSubScene(IntroSubScene subScene) {
@@ -88,11 +76,7 @@ public class ViewManager {
 		subScene.moveSubScene();
 		sceneToHide = subScene;
 	}
-	
 	private void createSubScene() {
-		
-		
-		
 		
 		helpSubScene = new IntroSubScene();
 		mainPane.getChildren().add(helpSubScene);
@@ -100,7 +84,6 @@ public class ViewManager {
 		Label helpLabel = new Label(" To begin the game please press PLAY \n" + 
 		                            " and then follow the instructions as \n" +  
 		                            " prompted to play throughout the game.");
-		
 		helpLabel.setFont(new Font("Times New Roman", 23));
 		helpLabel.setLayoutX(10);
 		helpLabel.setLayoutY(30);
@@ -117,9 +100,7 @@ public class ViewManager {
 		creditLabel.setLayoutY(30);
 		
 		creditsSubScene.getPane().getChildren().add(creditLabel);
-		
 		helpSubScene.getPane().getChildren().add(helpLabel);
-		
 		scoreSubScene = new IntroSubScene();
 		mainPane.getChildren().add(scoreSubScene);
 		
@@ -128,12 +109,9 @@ public class ViewManager {
 		                             "  tuned for if we ever work on this \n" + 
 		                             "  game after CPSC 219.");
 		scoreLabel.setFont(new Font("Times New Roman", 23));
-		
 		scoreLabel.setLayoutX(10);
 		scoreLabel.setLayoutY(30);
-		
 		scoreSubScene.getPane().getChildren().add(scoreLabel);
-		
 		createDetectiveChooserSubScene();
 	}
 	
@@ -147,8 +125,6 @@ public class ViewManager {
 		detectiveChooserScene.getPane().getChildren().add(chooseDetectiveLabel);
 		detectiveChooserScene.getPane().getChildren().add(createDetectivesToChoose());
 		detectiveChooserScene.getPane().getChildren().add(createButtonToStart());
-		
-		
 	}
 	
 	private HBox createDetectivesToChoose() {
@@ -159,15 +135,12 @@ public class ViewManager {
 			DetectivePicker detectiveToPick = new DetectivePicker(detective);
 			detectiveList.add(detectiveToPick);
 			box.getChildren().add(detectiveToPick);
-			detectiveToPick.setOnMouseClicked(new EventHandler<MouseEvent>() {
-				
+			detectiveToPick.setOnMouseClicked(new EventHandler<MouseEvent>() {	
 				@Override
 				public void handle(MouseEvent event) {
 					System.out.println(event.getX());
 					for (DetectivePicker detective : detectiveList) {
-						detective.setIsCircleChoosen(false);
-						
-						
+						detective.setIsCircleChoosen(false);	
 					}
 					detectiveToPick.setIsCircleChoosen(true);
 					choosenDetective = detectiveToPick.getDetective();
@@ -194,11 +167,9 @@ public class ViewManager {
 					TalkorSteal gameManager = new TalkorSteal();
 					gameManager.createNewGame(mainStage, choosenDetective); //chooseDetective
 				}
-
 			}
 		});
 		return startButton;
-		
 	}
 	
 	public Stage getMainStage() {
