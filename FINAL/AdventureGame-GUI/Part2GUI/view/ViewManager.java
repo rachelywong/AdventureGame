@@ -31,8 +31,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.control.Label;
+import java.util.*;
+import java.io.*;
 
 public class ViewManager {
+
+
+    
 	
 	//instance variables
 	private static final int HEIGHT = 600;
@@ -52,7 +57,7 @@ public class ViewManager {
 	//Lists that collects assets and buttons 
 	List<IntroButton> menuButton;
 	List<IntroButton> menuButtons;
-	List<DetectivePicker> detectiveList;
+	List<DetectivePicker> detectiveList; 
 	
 	
 	//ViewManager constructor that allows to set the window, and call methods for subscenes, buttons, background and logo
@@ -81,37 +86,103 @@ public class ViewManager {
 		helpSubScene = new IntroSubScene();
 		mainPane.getChildren().add(helpSubScene);
 		
-		Label helpLabel = new Label(" To begin the game please press PLAY \n" + 
-		                            " and then follow the instructions as \n" +  
-		                            " prompted to play throughout the game.");
-		helpLabel.setFont(new Font("Times New Roman", 23));
-		helpLabel.setLayoutX(10);
-		helpLabel.setLayoutY(30);
+	    String str = "";
+	    ArrayList < String>  str1 =new ArrayList<String>();
+		try {
+	        File file=new File("help.txt");
+	        Scanner sc=new Scanner(file);
+	        while(sc.hasNext()){
+	            
+	            str1.add(sc.nextLine());  
+	            
+	        }
+	    }
+		catch (Exception e) {
+			
+		}
 		
+		String ss2 = "";
+
+		for (int i=0; i<str1.size(); i++) {
+		    System.out.println();
+		    ss2= ss2+ str1.get(i)+ "\n";
+		}
+		
+		Label helpLabel = new Label(ss2);
+		helpLabel.setFont(new Font("Times New Roman", 23));
+		helpLabel.setLayoutX(30);
+		helpLabel.setLayoutY(30);
+		helpSubScene.getPane().getChildren().add(helpLabel);
+		
+		
+		//credits subscene
 		creditsSubScene = new IntroSubScene();
 		mainPane.getChildren().add(creditsSubScene);
 		
-		Label creditLabel = new Label("  Game created and developed by \n" +   
-		                              "  Team 7 (Elvira, Rachel, Abi, \n" +  
-		                              "  and Teresa) for CPSC 219 - Winter \n" + 
-		                              "  2019. Game uses Java and Javafx.");
+		String stri = "";
+	    ArrayList < String>  str2 =new ArrayList<String>();
+		try {
+	        File file=new File("credits.txt");
+	        Scanner sc=new Scanner(file);
+	        while(sc.hasNext()){
+	            
+	            str2.add(sc.nextLine());
+	        }
+	    }
+		catch (Exception e) {
+			
+		}
+		
+		String ss3 = "";
+
+		
+		for (int i=0; i<str2.size(); i++) {
+		    System.out.println();
+		    ss3= ss3+ str2.get(i)+ "\n";
+		}
+		
+		Label creditLabel = new Label(ss3);
 		creditLabel.setFont(new Font("Times New Roman", 23));
-		creditLabel.setLayoutX(10);
+		creditLabel.setLayoutX(30);
 		creditLabel.setLayoutY(30);
 		
 		creditsSubScene.getPane().getChildren().add(creditLabel);
-		helpSubScene.getPane().getChildren().add(helpLabel);
+
+		
+		//score subscene
 		scoreSubScene = new IntroSubScene();
 		mainPane.getChildren().add(scoreSubScene);
 		
-		Label scoreLabel = new Label("  This version of the game does not \n" + 
-		                             "  utilize scoring methods. Please stay \n" + 
-		                             "  tuned for if we ever work on this \n" + 
-		                             "  game after CPSC 219.");
+		String strin = "";
+	    ArrayList < String>  str3 =new ArrayList<String>();
+		try {
+	        File file=new File("score.txt");
+	        Scanner sc=new Scanner(file);
+	        while(sc.hasNext()){
+	            
+	     
+	            str3.add(sc.nextLine());  
+	            
+	        }
+	    }
+		catch (Exception e) {
+			
+		}
+		
+		String ss4 = "";
+		
+		for (int i=0; i<str3.size(); i++) {
+		    System.out.println();
+		    ss4 = ss4+ str3.get(i)+ "\n";
+		}
+		
+		Label scoreLabel = new Label(ss4);
 		scoreLabel.setFont(new Font("Times New Roman", 23));
-		scoreLabel.setLayoutX(10);
+		scoreLabel.setLayoutX(30);
 		scoreLabel.setLayoutY(30);
 		scoreSubScene.getPane().getChildren().add(scoreLabel);
+		
+		
 		createDetectiveChooserSubScene();
 	}
 	
