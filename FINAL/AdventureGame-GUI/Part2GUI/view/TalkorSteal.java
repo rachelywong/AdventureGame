@@ -52,7 +52,6 @@ public class TalkorSteal {
 	//stealcase subscene
 	private TalkorStealSubScene stealSubScene;
 	private TalkorStealSubScene talkSubScene;
-	
 	private TalkorStealSubScene sceneToHide;
 	
 	
@@ -67,8 +66,6 @@ public class TalkorSteal {
 		createSTButton();
 		createBackground();
 		createSubScenes();
-		
-		
 	}
 	//method to implement hiding , showing logic
 	private void showSubScene(TalkorStealSubScene subScene) {
@@ -125,14 +122,12 @@ public class TalkorSteal {
 			PoliceStation talkManager = new PoliceStation();
 					talkManager.createNewGameS(gameStage); //chooseDetective
 				
-
 			}
 		});
 		
 		return talkButton;
 		
 	}
-	
 	
 	
 	private void createStealSubScene() {
@@ -147,11 +142,7 @@ public class TalkorSteal {
 		//stealSubScene.getPane().getChildren().add(createtalkButtonToStart());
 		
 		}
-	
-	
-	
-	
-	
+
 	//method that helps to add menu buttons
 	private void addMenuButton(TalkStealButton button) {
 		button.setLayoutX(MENU_BUTTONS_START_X);
@@ -160,7 +151,6 @@ public class TalkorSteal {
 		gamePane.getChildren().add(button);
 	}
 	
-
 	private void initializeStage() {
 		gamePane = new AnchorPane();
 		gameScene = new Scene (gamePane, GAME_WIDTH, GAME_HEIGHT);
@@ -176,37 +166,14 @@ public class TalkorSteal {
 		gameStage.show();
 		
 	}
-	
-	//private TalkStealButton createButtonToStart() {
-		//TalkStealButton talkButton = new TalkStealButton("NEXT");
-		//talkButton.setLayoutX(350);
-		//talkButton.setLayoutY(350);
-		//return talkButton;
-		
-		
-	//}
-	
-	
-	//public Stage getMainStage() {
-		//return mainStage;
-	
 
-	
-
-	
-
-	
 	//separate method for each button and calling each button in createSTButton method
 	private void createSTButton() {
 		createStealButton();
 		createTalkButton();
-		createBackButton();
-		
+		createBackButton();	
 	}
-	
 
-	
-	
 	private void createTalkButton() {
 		TalkStealButton talkButton = new TalkStealButton("Talk to the supervisor");
 		addMenuButton(talkButton);
@@ -230,15 +197,12 @@ public class TalkorSteal {
 			@Override
 			public void handle(ActionEvent event) {
 				showSubScene(stealSubScene);
-				
-				
+	
 			}
 			
 		});
 	}
-	
 
-	
 	
 	private void createBackButton() {
 		TalkStealButton backButton = new TalkStealButton("Go back");
@@ -253,82 +217,15 @@ public class TalkorSteal {
 	}
 		});
 	}
-	
-	
-	
-	
+
 	private void createBackground() {
 		Image backgroundImage = new Image("view/resources/topsecret.jpg", 800, 890, false, true);
 		BackgroundImage background = new BackgroundImage(backgroundImage , BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, null);
 		gamePane.setBackground(new Background(background));
-	}
+	}		
+		}
 	
-		
-		
-		
-		
-		
-				
-		}
-		
-	
-	
-	/*
-	private void createGameLoop() {
-		gameTimer = new AnimationTimer() {
-			
-			@Override
-			public void handle(long now) {
-				moveShip();
-				
-			}
-		};
-		
-		gameTimer.start();
-	}
-	//method responsible for moving and rotating a ship
-	private void moveShip() {
-		if  (isLeftKeyPressed && !isRightKeyPressed) {
-			if (angle > -5) { //-30
-				angle= angle -5; // -5
-			}
-			detective.setRotate(angle);
-			if(detective.getLayoutX() > -20) { // -20
-				detective.setLayoutX(detective.getLayoutX()-3); //-3
-			}
-		}
-		if  (isRightKeyPressed && !isLeftKeyPressed) {
-			if (angle > 30) { //30
-				angle = angle + 5;
-			}
-			detective.setRotate(angle);
-			if (detective.getLayoutX()< 522) { //522
-				detective.setLayoutX(detective.getLayoutX()+3);
-			}
-		}
-		if  (!isLeftKeyPressed && !isRightKeyPressed) {
-			if (angle < 0) {
-				angle = angle + 5;
-			}else  if (angle > 0){
-				angle = angle -5;
-			}
-			detective.setRotate(angle);
-		}
-		if  (isLeftKeyPressed && isRightKeyPressed) {
-			if (angle < 0) {
-				angle = angle + 5;
-			}else if (angle > 0) {
-				angle = angle - 5;
-			}
-			detective.setRotate(angle);
-		}
-		}
-		*/
 
-
-/*
- * 
- */
 
 
 
