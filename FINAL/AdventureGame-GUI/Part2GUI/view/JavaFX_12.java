@@ -1,3 +1,13 @@
+/**
+ * @author Team7
+ */
+/**
+ * Class want meant to appear as a sprite animation
+ * after the user wins a game. Due to time limitation 
+ * this class will be utilized in the future.
+ * <p>
+ */
+
 package view;
 
 //import java.util.Random;
