@@ -1,9 +1,11 @@
 /**
  * @author Team7
  */
-
 /**
- * Class represents the mini game of Hangman.
+ * Class represents the mini game of Hangman. This class 
+ * represents an introductory scene where user may choose to 
+ * start a game, get a help how to navigate through the 
+ * game, learn about credits or exit a game. From this scene user may choose a type of detective he wants to play with. 
  * <p>
  */ 
 package view;
@@ -36,9 +38,6 @@ import java.io.*;
 
 public class ViewManager {
 
-
-    
-	
 	//instance variables
 	private static final int HEIGHT = 600;
 	private static final int WIDTH = 800;
@@ -86,7 +85,9 @@ public class ViewManager {
 		helpSubScene = new IntroSubScene();
 		mainPane.getChildren().add(helpSubScene);
 		
-	    String str = "";
+	/*
+	 * Placing all texts for credit, score and help texts in form of textfiles into subscenes
+	 */
 	    ArrayList < String>  str1 =new ArrayList<String>();
 		try {
 	        File file=new File("help.txt");
@@ -113,13 +114,12 @@ public class ViewManager {
 		helpLabel.setLayoutX(30);
 		helpLabel.setLayoutY(30);
 		helpSubScene.getPane().getChildren().add(helpLabel);
-		
-		
+
 		//credits subscene
 		creditsSubScene = new IntroSubScene();
 		mainPane.getChildren().add(creditsSubScene);
 		
-		String stri = "";
+		
 	    ArrayList < String>  str2 =new ArrayList<String>();
 		try {
 	        File file=new File("credits.txt");
@@ -153,7 +153,7 @@ public class ViewManager {
 		scoreSubScene = new IntroSubScene();
 		mainPane.getChildren().add(scoreSubScene);
 		
-		String strin = "";
+	
 	    ArrayList < String>  str3 =new ArrayList<String>();
 		try {
 	        File file=new File("score.txt");
@@ -181,8 +181,7 @@ public class ViewManager {
 		scoreLabel.setLayoutX(30);
 		scoreLabel.setLayoutY(30);
 		scoreSubScene.getPane().getChildren().add(scoreLabel);
-		
-		
+
 		createDetectiveChooserSubScene();
 	}
 	
@@ -329,15 +328,11 @@ public class ViewManager {
 			}
 		});
 	}
-		
-		
-	
-	
+
 	private void createBackground() {
 		Image backgroundImage = new Image("view/resources/disco.png", 800, 600, false, true);
 		BackgroundImage background = new BackgroundImage (backgroundImage, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, null);
-		mainPane.setBackground(new Background(background));
-		
+		mainPane.setBackground(new Background(background));	
 	}
 	
 	private void createLogo() {
