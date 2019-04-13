@@ -24,8 +24,14 @@ In the class Location A, the Hangman game code was adapted from an anonymous use
 desrtfx.
 Title: hangman.java
 Author: desrtfx
-Data: 05/08/15
+Date: 05/08/15
 Avaliability: https://gist.github.com/desrtfx/9fd13c48008e9aec25d7
+
+4. Subscenes, buttons, ViewManager.java and TalkorSteal.java scenes switching:
+Author: cravingforjava
+Date: 12/04/19
+Availability:https://www.youtube.com/watch?v=DkIuA5ZEZ_U&list=PL4wcbt63yAbdtY-GOeuRjIePfUsukSJZ9
+
 
 References for Images:
 
